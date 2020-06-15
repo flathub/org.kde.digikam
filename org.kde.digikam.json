@@ -16,6 +16,7 @@
     "--socket=cups",
     "--socket=wayland",
     "--socket=x11",
+    "--system-talk-name=org.freedesktop.Avahi",
     "--system-talk-name=org.freedesktop.UDisks2",
     "--env=DK_PLUGIN_PATH=/app/lib/plugins/digikam"
   ],
@@ -387,12 +388,176 @@
             {
               "name": "sane-backends",
               "builddir": true,
+              "config-opts": [
+                "--disable-saned",
+                "--enable-avahi",
+                "--with-libcurl",
+                "--with-usb",
+                "--with-snmp",
+                "--with-v4l"
+              ],
+              "post-install": [
+                "grep '^[[:blank:]]*localhost[[:blank:]]*$' \"${FLATPAK_DEST}/etc/sane.d/net.conf\" || echo 'localhost' >> \"${FLATPAK_DEST}/etc/sane.d/net.conf\";",
+                "grep '^[[:blank:]]*net[[:blank:]]*$' \"${FLATPAK_DEST}/etc/sane.d/dll.conf\" || echo 'net' >> \"${FLATPAK_DEST}/etc/sane.d/dll.conf\";"
+              ],
+              "cleanup": [
+                "*.la"
+              ],
               "sources": [
                 {
                   "type": "git",
                   "url": "https://gitlab.com/sane-project/backends.git",
                   "tag": "1.0.30",
                   "commit": "d5187355f6e0de529b562569509a1851dda7ad84"
+                }
+              ],
+              "modules": [
+                {
+                  "name": "net-snmp",
+                  "builddir": true,
+                  "no-parallel-make": true,
+                  "config-opts": [
+                    "--disable-static",
+                    "--enable-shared",
+                    "--disable-embedded-perl",
+                    "--without-perl-modules",
+                    "--without-rpm",
+                    "--enable-ucd-snmp-compatibility",
+                    "--enable-ipv6",
+                    "--with-openssl",
+                    "--with-pic",
+                    "--with-default-snmp-version=3",
+                    "--with-sys-contact=root@localhost"
+                  ],
+                  "build-options": {
+                    "ldflags": "-lncurses -ltinfo"
+                  },
+                  "sources": [
+                    {
+                      "type": "archive",
+                      "url": "https://downloads.sourceforge.net/project/net-snmp/net-snmp/5.8/net-snmp-5.8.tar.gz",
+                      "sha256": "b2fc3500840ebe532734c4786b0da4ef0a5f67e51ef4c86b3345d697e4976adf"
+                    },
+                    {
+                      "type": "shell",
+                      "commands": [
+                        "cp -p /usr/share/automake-*/config.{sub,guess} ."
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "avahi",
+                  "config-opts": [
+                    "--enable-shared",
+                    "--disable-static",
+                    "--with-distro=none",
+                    "--with-systemdsystemunitdir=/app/lib/systemd",
+                    "--enable-dbus",
+                    "--enable-compat-libdns_sd",
+                    "--disable-libdaemon",
+                    "--disable-python",
+                    "--disable-pygobject",
+                    "--disable-python-dbus",
+                    "--disable-gtk",
+                    "--disable-gtk3",
+                    "--disable-qt3",
+                    "--disable-qt4",
+                    "--disable-qt5",
+                    "--disable-mono",
+                    "--disable-monodoc",
+                    "--disable-doxygen-doc",
+                    "--disable-doxygen-dot",
+                    "--disable-doxygen-man",
+                    "--disable-doxygen-rtf",
+                    "--disable-doxygen-xml",
+                    "--disable-doxygen-chm",
+                    "--disable-doxygen-chi",
+                    "--disable-doxygen-html",
+                    "--disable-doxygen-ps",
+                    "--disable-doxygen-pdf",
+                    "--disable-core-docs",
+                    "--disable-manpages",
+                    "--disable-xmltoman"
+                  ],
+                  "cleanup": [
+                    "/bin"
+                  ],
+                  "sources": [
+                    {
+                      "type": "archive",
+                      "url": "https://avahi.org/download/avahi-0.8.tar.gz",
+                      "sha256": "060309d7a333d38d951bc27598c677af1796934dbd98e1024e7ad8de798fedda"
+                    }
+                  ],
+                  "modules": [
+                    "shared-modules/dbus-glib/dbus-glib-0.110.json",
+                    {
+                      "name": "libevent",
+                      "config-opts": [
+                        "--enable-shared",
+                        "--disable-static",
+                        "--enable-openssl",
+                        "--disable-samples"
+                      ],
+                      "cleanup": [
+                        "/bin"
+                      ],
+                      "sources": [
+                        {
+                          "type": "archive",
+                          "url": "https://github.com/libevent/libevent/releases/download/release-2.1.11-stable/libevent-2.1.11-stable.tar.gz",
+                          "sha256": "a65bac6202ea8c5609fd5c7e480e6d25de467ea1917c08290c521752f147283d"
+                        },
+                        {
+                          "type": "patch",
+                          "path": "patches/libevent-disable-network-tests.patch"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "libieee1284",
+                  "config-opts": [
+                    "--disable-static",
+                    "--without-python"
+                  ],
+                  "sources": [
+                    {
+                      "type": "archive",
+                      "url": "https://downloads.sourceforge.net/project/libieee1284/libieee1284/0.2.11//libieee1284-0.2.11.tar.bz2",
+                      "sha256": "7730de107782e5d2b071bdcb5b06a44da74856f00ef4a9be85d1ba4806a38f1a"
+                    },
+                    {
+                      "type": "patch",
+                      "path": "patches/libieee1284-strict-aliasing.patch"
+                    },
+                    {
+                      "type": "shell",
+                      "commands": [
+                        "cp -p /usr/share/automake-*/config.{sub,guess} ."
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "v4l-utils",
+                  "config-opts": [
+                    "--disable-static",
+                    "--disable-doxygen-doc",
+                    "--disable-libdvbv5",
+                    "--disable-v4l-utils",
+                    "--disable-qv4l2",
+                    "--with-udevdir=/app/lib/udev"
+                  ],
+                  "sources": [
+                    {
+                      "type": "archive",
+                      "url": "https://linuxtv.org/downloads/v4l-utils/v4l-utils-1.18.0.tar.bz2",
+                      "sha256": "6cb60d822eeed20486a03cc23e0fc65956fbc1e85e0c1a7477f68bbd9802880d"
+                    }
+                  ]
                 }
               ]
             }
@@ -439,8 +604,8 @@
           "builddir": true,
           "build-options": {
             "arch": {
-              "aarch64" : {
-                "cxxflags" : "-fPIC"
+              "aarch64": {
+                "cxxflags": "-fPIC"
               }
             }
           },

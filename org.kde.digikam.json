@@ -224,7 +224,7 @@
             {
               "type": "git",
               "url": "https://invent.kde.org/education/marble.git",
-              "tag": "v20.04.1",
+              "tag": "v20.04.2",
               "commit": "e3483bec0a7e79b7685055512712f79efaf19deb"
             }
           ]
@@ -305,8 +305,8 @@
             {
               "type": "git",
               "url": "https://github.com/ImageMagick/ImageMagick.git",
-              "tag": "7.0.10-13",
-              "commit": "718905fbd1236b9f063f634cae11b604f0b4edcd"
+              "tag": "7.0.10-19",
+              "commit": "114ea3e5574215e6f1d2761d719d71619efd1793"
             }
           ]
         },
@@ -379,7 +379,7 @@
             {
               "type": "git",
               "url": "https://invent.kde.org/graphics/libksane.git",
-              "tag": "v20.04.1",
+              "tag": "v20.04.2",
               "commit": "5f53423e1d9972747de7c55b94bfd081cd9cad8a"
             }
           ],
@@ -391,8 +391,8 @@
                 {
                   "type": "git",
                   "url": "https://gitlab.com/sane-project/backends.git",
-                  "tag": "RELEASE_1_0_27",
-                  "commit": "82cd8f245cf26879b3f94348d4069dcec8d49f21"
+                  "tag": "1.0.30",
+                  "commit": "d5187355f6e0de529b562569509a1851dda7ad84"
                 }
               ]
             }
@@ -405,7 +405,7 @@
             {
               "type": "git",
               "url": "https://github.com/carlobaldassi/liblqr.git",
-              "branch": "master"
+              "commit": "7b88c05cec2f0e60125e1cfcad18c79721a2b27c"
             }
           ]
         },
@@ -449,8 +449,8 @@
             {
               "type": "git",
               "url": "https://github.com/videolan/x265.git",
-              "tag": "3.3",
-              "commit": "998832e4efa1ca61ff816e65e25ed65e53a639f5"
+              "tag": "3.4",
+              "commit": "07295ba7ab551bb9c1580fdaee3200f1b45711b7"
             }
           ]
         }

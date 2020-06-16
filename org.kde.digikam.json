@@ -42,10 +42,6 @@
       "config-opts": [
         "-DCMAKE_BUILD_TYPE=RelWithDebInfo",
         "-DCMAKE_INSTALL_PREFIX=/app",
-        "-DDIGIKAMSC_CHECKOUT_PO=ON",
-        "-DDIGIKAMSC_CHECKOUT_DOC=OFF",
-        "-DDIGIKAMSC_COMPILE_PO=ON",
-        "-DDIGIKAMSC_COMPILE_DOC=OFF",
         "-DENABLE_MYSQLSUPPORT=ON",
         "-DENABLE_INTERNALMYSQL=ON",
         "-DENABLE_MEDIAPLAYER=ON",
@@ -58,6 +54,12 @@
           "type": "archive",
           "url": "https://download.kde.org/unstable/digikam/digikam-7.0.0-rc.tar.xz",
           "sha256": "3821000e9af31668b9b4f53a48b586b2f7d918bc8ebc52595fc9c7c9155ab573"
+        },
+        {
+          "type": "archive",
+          "url": "https://ipfs.io/ipfs/QmXZ6VZYTVTsUncWP2aoxA6e2soaCGad9eNnUd6GB4EVMg/digikam-7.0.0-rc_po-files.tar.xz",
+          "sha256": "c792af0ce17bafcf7e2904a55ef231f01184295c1b5e6472dcc4ed29aab833e0",
+          "strip-components": 0
         }
       ],
       "modules": [

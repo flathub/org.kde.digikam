@@ -55,12 +55,8 @@
       "sources": [
         {
           "type": "archive",
-          "url": "https://download.kde.org/unstable/digikam/digikam-7.0.0-beta3.tar.xz",
-          "sha256": "97b2f768674afaaca6feb6e661d5c8fc6b88b08f4d4bbab8a6bcc94c19914893"
-        },
-        {
-          "type": "patch",
-          "path": "patches/digikam-fix-appdata.patch"
+          "url": "https://download.kde.org/unstable/digikam/digikam-7.0.0-rc.tar.xz",
+          "sha256": "3821000e9af31668b9b4f53a48b586b2f7d918bc8ebc52595fc9c7c9155ab573"
         }
       ],
       "modules": [

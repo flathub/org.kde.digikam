@@ -202,8 +202,8 @@
             {
               "type": "git",
               "url": "https://github.com/Exiv2/exiv2.git",
-              "tag": "v0.27.2",
-              "commit": "70f9405fafbe19c7bab94b36a1267c4332dc8a8a"
+              "tag": "v0.27.3",
+              "commit": "194bb65ac568a5435874c9d9d73b1c8a68e4edec"
             }
           ]
         },

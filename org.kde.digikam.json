@@ -204,6 +204,10 @@
               "url": "https://github.com/Exiv2/exiv2.git",
               "tag": "v0.27.3",
               "commit": "194bb65ac568a5435874c9d9d73b1c8a68e4edec"
+            },
+            {
+              "type": "patch",
+              "path": "patches/exiv2-fix-compilation-under-arm.patch"
             }
           ]
         },

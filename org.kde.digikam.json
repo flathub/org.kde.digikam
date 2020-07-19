@@ -166,8 +166,8 @@
             {
               "type": "git",
               "url": "https://github.com/Itseez/opencv.git",
-              "tag": "4.3.0",
-              "commit": "01b2c5a77ca6dbef3baef24ebc0a5984579231d9"
+              "tag": "4.4.0",
+              "commit": "c3bb57afeaf030f10939204d48d7c2a3842f4293"
             }
           ]
         },

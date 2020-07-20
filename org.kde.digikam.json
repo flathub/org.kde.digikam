@@ -620,6 +620,21 @@
           ]
         }
       ]
+    },
+    {
+      "name": "mosaicwall",
+      "buildsystem": "cmake-ninja",
+      "builddir": true,
+      "config-opts": [
+        "-DENABLE_DPLUGIN=ON"
+      ],
+      "sources": [
+        {
+          "type": "git",
+          "url": "https://github.com/scheckmedia/ImageMosaicWall.git",
+          "commit": "76379e618f74f7ec2cda32a17755ff664ff64c70"
+        }
+      ]
     }
   ]
 }

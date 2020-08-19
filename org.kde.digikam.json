@@ -29,7 +29,8 @@
     "/share/doc",
     "/share/eigen3",
     "/share/man",
-    "/share/pkgconfig"
+    "/share/pkgconfig",
+    "*.la"
   ],
   "cleanup-commands": [
     "/app/cleanup-BaseApp.sh"
@@ -399,9 +400,6 @@
               "post-install": [
                 "grep '^[[:blank:]]*localhost[[:blank:]]*$' \"${FLATPAK_DEST}/etc/sane.d/net.conf\" || echo 'localhost' >> \"${FLATPAK_DEST}/etc/sane.d/net.conf\";",
                 "grep '^[[:blank:]]*net[[:blank:]]*$' \"${FLATPAK_DEST}/etc/sane.d/dll.conf\" || echo 'net' >> \"${FLATPAK_DEST}/etc/sane.d/dll.conf\";"
-              ],
-              "cleanup": [
-                "*.la"
               ],
               "sources": [
                 {

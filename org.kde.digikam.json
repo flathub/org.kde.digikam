@@ -505,9 +505,10 @@
                       ],
                       "sources": [
                         {
-                          "type": "archive",
-                          "url": "https://github.com/libevent/libevent/releases/download/release-2.1.12-stable/libevent-2.1.12-stable.tar.gz",
-                          "sha256": "92e6de1be9ec176428fd2367677e61ceffc2ee1cb119035037a27d346b0403bb"
+                          "type": "git",
+                          "url": "https://github.com/libevent/libevent.git",
+                          "tag": "release-2.1.12-stable",
+                          "commit": "5df3037d10556bfcb675bc73e516978b75fc7bc7"
                         },
                         {
                           "type": "patch",

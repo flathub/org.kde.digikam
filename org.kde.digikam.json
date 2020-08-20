@@ -633,7 +633,8 @@
         {
           "type": "git",
           "url": "https://github.com/scheckmedia/ImageMosaicWall.git",
-          "commit": "76379e618f74f7ec2cda32a17755ff664ff64c70"
+          "tag": "v0.2",
+          "commit": "ed7be394843062a2575cc2508e9b4cf0e5e1618c"
         }
       ]
     }

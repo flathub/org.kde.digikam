@@ -306,8 +306,8 @@
             {
               "type": "git",
               "url": "https://github.com/ImageMagick/ImageMagick.git",
-              "tag": "7.0.10-24",
-              "commit": "44723d18034669974f54f582d28d9ce19b842d58"
+              "tag": "7.0.10-28",
+              "commit": "6779a16b3d3cff3d3b78244c3ff98a3dfe3bb9b6"
             }
           ]
         },

@@ -594,6 +594,10 @@
             {
               "type": "patch",
               "path": "patches/qtav-fix-build.patch"
+            },
+            {
+              "type": "patch",
+              "path": "patches/qtav-fix-build-with-Qt-5.15.patch"
             }
           ]
         },

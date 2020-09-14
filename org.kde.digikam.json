@@ -390,7 +390,7 @@
               "builddir": true,
               "config-opts": [
                 "--disable-saned",
-                "--enable-avahi",
+                "--with-avahi",
                 "--with-libcurl",
                 "--with-usb",
                 "--with-snmp",
@@ -404,8 +404,8 @@
                 {
                   "type": "git",
                   "url": "https://gitlab.com/sane-project/backends.git",
-                  "tag": "1.0.30",
-                  "commit": "d5187355f6e0de529b562569509a1851dda7ad84"
+                  "tag": "1.0.31",
+                  "commit": "871813a22db1b03adcbf4f5dc4ea9eb29f12a36d"
                 }
               ],
               "modules": [

@@ -556,6 +556,34 @@
                       "sha256": "956118713f7ccb405c55c7088a6a2490c32d54300dd9a30d8d5008c28d3726f7"
                     }
                   ]
+                },
+                {
+                  "name": "poppler",
+                  "buildsystem": "cmake-ninja",
+                  "config-opts": [
+                    "-DENABLE_LIBOPENJPEG=none",
+                    "-DENABLE_UNSTABLE_API_ABI_HEADERS=ON"
+                  ],
+                  "sources": [
+                    {
+                      "type": "archive",
+                      "url": "https://poppler.freedesktop.org/poppler-20.09.0.tar.xz",
+                      "sha256": "4ed6eb5ddc4c37f2435c9d78ff9c7c4036455aea3507d1ce8400070aab745363"
+                    }
+                  ],
+                  "modules": [
+                    {
+                      "name": "poppler-data",
+                      "buildsystem": "cmake-ninja",
+                      "sources": [
+                        {
+                          "type": "archive",
+                          "url": "https://poppler.freedesktop.org/poppler-data-0.4.9.tar.gz",
+                          "sha256": "1f9c7e7de9ecd0db6ab287349e31bf815ca108a5a175cf906a90163bdbe32012"
+                        }
+                      ]
+                    }
+                  ]
                 }
               ]
             }

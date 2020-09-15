@@ -20,6 +20,15 @@
     "--system-talk-name=org.freedesktop.UDisks2",
     "--env=DK_PLUGIN_PATH=/app/lib/plugins/digikam"
   ],
+  "add-extensions": {
+      "org.freedesktop.Platform.ffmpeg-full": {
+      "directory": "lib/ffmpeg",
+      "add-ld-path": ".",
+      "version": "20.08",
+      "autodownload": true,
+      "autodelete": false
+      }
+    },
   "rename-icon": "digikam",
   "cleanup": [
     "/include",
@@ -33,6 +42,7 @@
     "*.la"
   ],
   "cleanup-commands": [
+    "mkdir -p ${FLATPAK_DEST}/lib/ffmpeg",
     "/app/cleanup-BaseApp.sh"
   ],
   "modules": [

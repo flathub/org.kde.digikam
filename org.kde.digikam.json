@@ -239,7 +239,7 @@
             {
               "type": "git",
               "url": "https://invent.kde.org/education/marble.git",
-              "tag": "v20.08.1",
+              "tag": "v20.08.2",
               "commit": "7039b70f0255376e5d67dad603f5d67f8c3c07db"
             }
           ]

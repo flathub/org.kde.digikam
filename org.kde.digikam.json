@@ -381,8 +381,8 @@
             {
               "type": "git",
               "url": "https://github.com/mdadams/jasper.git",
-              "tag": "version-2.0.20",
-              "commit": "d10a710f31da3d079a984d35ff6cc82a853d25d7"
+              "tag": "version-2.0.22",
+              "commit": "95b2f0583a71c92cddefb54b522efe717b7a5adc"
             }
           ]
         },

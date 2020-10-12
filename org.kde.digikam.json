@@ -394,7 +394,7 @@
             {
               "type": "git",
               "url": "https://invent.kde.org/graphics/libksane.git",
-              "tag": "v20.08.1",
+              "tag": "v20.08.2",
               "commit": "0238e9b8351833d4811b371c92f0f1c4567b1aa0"
             }
           ],

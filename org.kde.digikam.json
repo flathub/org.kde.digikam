@@ -174,8 +174,8 @@
             {
               "type": "git",
               "url": "https://github.com/Itseez/opencv.git",
-              "tag": "4.4.0",
-              "commit": "c3bb57afeaf030f10939204d48d7c2a3842f4293"
+              "tag": "4.5.0",
+              "commit": "d5fd2f0155ffad366f9ac912dfd6d189a7a6a98e"
             }
           ]
         },
@@ -239,7 +239,7 @@
             {
               "type": "git",
               "url": "https://invent.kde.org/education/marble.git",
-              "tag": "v20.08.1",
+              "tag": "v20.08.2",
               "commit": "7039b70f0255376e5d67dad603f5d67f8c3c07db"
             }
           ]
@@ -296,7 +296,7 @@
               "type": "git",
               "dest": "lensfun-git",
               "url": "https://github.com/lensfun/lensfun.git",
-              "commit": "79ff00ad8c5524a0264f554e116edd79e2b241d7"
+              "commit": "1caa0ade20f0d52f458370995211e115db1dd0a6"
             }
           ]
         },
@@ -320,8 +320,8 @@
             {
               "type": "git",
               "url": "https://github.com/ImageMagick/ImageMagick.git",
-              "tag": "7.0.10-29",
-              "commit": "84a16a9da0ccee98032874201202545a23ca53b2"
+              "tag": "7.0.10-34",
+              "commit": "c8fef4ef27c062b4ba5be162d890169a32083915"
             }
           ]
         },
@@ -335,8 +335,8 @@
             {
               "type": "git",
               "url": "https://github.com/gphoto/libgphoto2.git",
-              "tag": "v2.5.25",
-              "commit": "8fa3d32ffdab83e2ad98576a7e8b00243e700d82"
+              "tag": "v2.5.26",
+              "commit": "5231889a9a6971d880010bf4f2064bdd4fe01f9a"
             },
             {
               "type": "script",
@@ -347,22 +347,7 @@
             }
           ],
           "modules": [
-            {
-              "name": "libusb",
-              "builddir": true,
-              "config-opts": [
-                "--disable-static",
-                "--disable-udev"
-              ],
-              "sources": [
-                {
-                  "type": "git",
-                  "url": "https://github.com/libusb/libusb.git",
-                  "tag": "v1.0.23",
-                  "commit": "e782eeb2514266f6738e242cdcb18e3ae1ed06fa"
-                }
-              ]
-            }
+            "shared-modules/libusb/libusb.json"
           ]
         },
         {
@@ -381,8 +366,8 @@
             {
               "type": "git",
               "url": "https://github.com/mdadams/jasper.git",
-              "tag": "version-2.0.20",
-              "commit": "d10a710f31da3d079a984d35ff6cc82a853d25d7"
+              "tag": "version-2.0.22",
+              "commit": "95b2f0583a71c92cddefb54b522efe717b7a5adc"
             }
           ]
         },
@@ -394,7 +379,7 @@
             {
               "type": "git",
               "url": "https://invent.kde.org/graphics/libksane.git",
-              "tag": "v20.08.1",
+              "tag": "v20.08.2",
               "commit": "0238e9b8351833d4811b371c92f0f1c4567b1aa0"
             }
           ],
@@ -581,8 +566,8 @@
                   "sources": [
                     {
                       "type": "archive",
-                      "url": "https://poppler.freedesktop.org/poppler-20.09.0.tar.xz",
-                      "sha256": "4ed6eb5ddc4c37f2435c9d78ff9c7c4036455aea3507d1ce8400070aab745363"
+                      "url": "https://poppler.freedesktop.org/poppler-20.10.0.tar.xz",
+                      "sha256": "434ecbbb539c1a75955030a1c9b24c7b58200b7f68d2e4269e29acf2f8f13336"
                     }
                   ],
                   "modules": [

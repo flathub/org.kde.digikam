@@ -296,7 +296,7 @@
               "type": "git",
               "dest": "lensfun-git",
               "url": "https://github.com/lensfun/lensfun.git",
-              "commit": "1caa0ade20f0d52f458370995211e115db1dd0a6"
+              "commit": "4672d765a17bfef7bc994ca7008cb717c61045d5"
             }
           ]
         },

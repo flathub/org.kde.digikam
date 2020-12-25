@@ -85,8 +85,8 @@
           "sources": [
             {
               "type": "archive",
-              "url": "https://downloads.sourceforge.net/project/boost/boost/1.74.0/boost_1_74_0.tar.bz2",
-              "sha256": "83bfc1507731a0906e387fc28b7ef5417d591429e51e788417fe9ff025e116b1"
+              "url": "https://downloads.sourceforge.net/project/boost/boost/1.75.0/boost_1_75_0.tar.bz2",
+              "sha256": "953db31e016db7bb207f11432bef7df100516eeb746843fa0486a222e3fd49cb"
             }
           ]
         },
@@ -98,8 +98,8 @@
             {
               "type": "git",
               "url": "https://gitlab.com/libeigen/eigen.git",
-              "tag": "3.3.7",
-              "commit": "21ae2afd4edaa1b69782c67a54182d34efe43f9c"
+              "tag": "3.3.9",
+              "commit": "0fd6b4f71dd85b2009ee4d1aeb296e2c11fc9d68"
             }
           ]
         },
@@ -174,8 +174,8 @@
             {
               "type": "git",
               "url": "https://github.com/Itseez/opencv.git",
-              "tag": "4.5.0",
-              "commit": "d5fd2f0155ffad366f9ac912dfd6d189a7a6a98e"
+              "tag": "4.5.1",
+              "commit": "1363496c1106606684d40447f5d1149b2c66a9f8"
             }
           ]
         },
@@ -239,8 +239,8 @@
             {
               "type": "git",
               "url": "https://invent.kde.org/education/marble.git",
-              "tag": "v20.08.2",
-              "commit": "7039b70f0255376e5d67dad603f5d67f8c3c07db"
+              "tag": "v20.12.0",
+              "commit": "0d3832e66e6f36996566982d9de291bf150c10b4"
             }
           ]
         },
@@ -296,7 +296,7 @@
               "type": "git",
               "dest": "lensfun-git",
               "url": "https://github.com/lensfun/lensfun.git",
-              "commit": "1caa0ade20f0d52f458370995211e115db1dd0a6"
+              "commit": "4672d765a17bfef7bc994ca7008cb717c61045d5"
             }
           ]
         },
@@ -320,8 +320,8 @@
             {
               "type": "git",
               "url": "https://github.com/ImageMagick/ImageMagick.git",
-              "tag": "7.0.10-34",
-              "commit": "c8fef4ef27c062b4ba5be162d890169a32083915"
+              "tag": "7.0.10-51",
+              "commit": "0550776ab5c402f8203fbacf0dfc52e848ef00ae"
             }
           ]
         },
@@ -366,8 +366,8 @@
             {
               "type": "git",
               "url": "https://github.com/mdadams/jasper.git",
-              "tag": "version-2.0.22",
-              "commit": "95b2f0583a71c92cddefb54b522efe717b7a5adc"
+              "tag": "version-2.0.23",
+              "commit": "cc02d63dde901e06d1f866984fd0e80601deaa13"
             }
           ]
         },
@@ -379,8 +379,8 @@
             {
               "type": "git",
               "url": "https://invent.kde.org/graphics/libksane.git",
-              "tag": "v20.08.2",
-              "commit": "0238e9b8351833d4811b371c92f0f1c4567b1aa0"
+              "tag": "v20.12.0",
+              "commit": "2659134fed260cbb85e708390a787fd8362105c9"
             }
           ],
           "modules": [
@@ -566,8 +566,8 @@
                   "sources": [
                     {
                       "type": "archive",
-                      "url": "https://poppler.freedesktop.org/poppler-20.10.0.tar.xz",
-                      "sha256": "434ecbbb539c1a75955030a1c9b24c7b58200b7f68d2e4269e29acf2f8f13336"
+                      "url": "https://poppler.freedesktop.org/poppler-20.12.1.tar.xz",
+                      "sha256": "d0aa2586c0a4296c775f0d2045f28bb95a694113fc995f95350faa12930f7b35"
                     }
                   ],
                   "modules": [
@@ -577,8 +577,8 @@
                       "sources": [
                         {
                           "type": "archive",
-                          "url": "https://poppler.freedesktop.org/poppler-data-0.4.9.tar.gz",
-                          "sha256": "1f9c7e7de9ecd0db6ab287349e31bf815ca108a5a175cf906a90163bdbe32012"
+                          "url": "https://poppler.freedesktop.org/poppler-data-0.4.10.tar.gz",
+                          "sha256": "6e2fcef66ec8c44625f94292ccf8af9f1d918b410d5aa69c274ce67387967b30"
                         }
                       ]
                     }
@@ -661,8 +661,8 @@
         {
           "type": "git",
           "url": "https://github.com/scheckmedia/ImageMosaicWall.git",
-          "tag": "v0.2",
-          "commit": "ed7be394843062a2575cc2508e9b4cf0e5e1618c"
+          "tag": "v0.3",
+          "commit": "3302603b774186bffe967d76a087de8d58b91d0f"
         }
       ]
     }

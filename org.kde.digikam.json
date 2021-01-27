@@ -21,14 +21,14 @@
     "--env=DK_PLUGIN_PATH=/app/lib/plugins/digikam"
   ],
   "add-extensions": {
-      "org.freedesktop.Platform.ffmpeg-full": {
+    "org.freedesktop.Platform.ffmpeg-full": {
       "directory": "lib/ffmpeg",
       "add-ld-path": ".",
       "version": "20.08",
       "autodownload": true,
       "autodelete": false
-      }
-    },
+    }
+  },
   "rename-icon": "digikam",
   "cleanup": [
     "/include",
@@ -67,8 +67,8 @@
           "sha256": "b103c8463adf04939583199e13f8e83015d8a4a9ad79ebfd502d2a50b5a5abbe"
         },
         {
-            "type": "patch",
-            "path": "patches/i18n.patch"
+          "type": "patch",
+          "path": "patches/i18n.patch"
         }
       ],
       "modules": [

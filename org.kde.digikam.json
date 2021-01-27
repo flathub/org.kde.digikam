@@ -108,7 +108,6 @@
           "buildsystem": "cmake-ninja",
           "builddir": true,
           "config-opts": [
-            "-DCMAKE_BUILD_TYPE=ReleaseWithDebInfo",
             "-DBUILD_EXAMPLES=OFF",
             "-DBUILD_TESTS=OFF",
             "-DBUILD_DOCS=OFF",

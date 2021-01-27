@@ -163,7 +163,7 @@
             "-DWITH_OPENCLAMDFFT=OFF",
             "-DWITH_OPENCLAMDBLAS=OFF",
             "-DCV_ENABLE_INTRINSICS=OFF",
-            "-DCV_DISABLE_OPTIMIZATION=OFF",
+            "-DCV_DISABLE_OPTIMIZATION=ON",
             "-DCV_TRACE=OFF",
             "-DWITH_OPENJPEG=OFF"
           ],

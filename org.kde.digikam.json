@@ -63,12 +63,8 @@
       "sources": [
         {
           "type": "archive",
-          "url": "https://download.kde.org/stable/digikam/7.1.0/digikam-7.1.0.tar.xz",
-          "sha256": "b103c8463adf04939583199e13f8e83015d8a4a9ad79ebfd502d2a50b5a5abbe"
-        },
-        {
-          "type": "patch",
-          "path": "patches/i18n.patch"
+          "url": "https://download.kde.org/unstable/digikam/digikam-7.2.0-beta2.tar.xz",
+          "sha256": "ff96913e42a44e1dc428de7a945bb6e6403cdf822dfdc05ce02d5a2efe7b6e32"
         }
       ],
       "modules": [
@@ -262,8 +258,8 @@
             {
               "type": "git",
               "url": "https://invent.kde.org/education/marble.git",
-              "tag": "v20.12.0",
-              "commit": "0d3832e66e6f36996566982d9de291bf150c10b4"
+              "tag": "v20.12.1",
+              "commit": "bbb555ce11e647cc37eb78ab3b677c8e92e8262f"
             }
           ]
         },
@@ -319,7 +315,7 @@
               "type": "git",
               "dest": "lensfun-git",
               "url": "https://github.com/lensfun/lensfun.git",
-              "commit": "4672d765a17bfef7bc994ca7008cb717c61045d5"
+              "commit": "ad957f64fa08fecf84ab33b9d8b8dfe92073a03c"
             }
           ]
         },
@@ -343,8 +339,8 @@
             {
               "type": "git",
               "url": "https://github.com/ImageMagick/ImageMagick.git",
-              "tag": "7.0.10-51",
-              "commit": "0550776ab5c402f8203fbacf0dfc52e848ef00ae"
+              "tag": "7.0.10-60",
+              "commit": "c04ba148f9af97163850031525a4b3a5b345b380"
             }
           ]
         },
@@ -389,8 +385,8 @@
             {
               "type": "git",
               "url": "https://github.com/mdadams/jasper.git",
-              "tag": "version-2.0.23",
-              "commit": "cc02d63dde901e06d1f866984fd0e80601deaa13"
+              "tag": "version-2.0.24",
+              "commit": "9a2835a81ce9c41a48f36dadce79f110da8d6c75"
             }
           ]
         },
@@ -402,7 +398,7 @@
             {
               "type": "git",
               "url": "https://invent.kde.org/graphics/libksane.git",
-              "tag": "v20.12.0",
+              "tag": "v20.12.1",
               "commit": "2659134fed260cbb85e708390a787fd8362105c9"
             }
           ],
@@ -589,8 +585,8 @@
                   "sources": [
                     {
                       "type": "archive",
-                      "url": "https://poppler.freedesktop.org/poppler-20.12.1.tar.xz",
-                      "sha256": "d0aa2586c0a4296c775f0d2045f28bb95a694113fc995f95350faa12930f7b35"
+                      "url": "https://poppler.freedesktop.org/poppler-21.01.0.tar.xz",
+                      "sha256": "016dde34e5f868ea98a32ca99b643325a9682281500942b7113f4ec88d20e2f3"
                     }
                   ],
                   "modules": [

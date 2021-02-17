@@ -63,8 +63,8 @@
       "sources": [
         {
           "type": "archive",
-          "url": "https://download.kde.org/unstable/digikam/digikam-7.2.0-beta2.tar.xz",
-          "sha256": "ff96913e42a44e1dc428de7a945bb6e6403cdf822dfdc05ce02d5a2efe7b6e32"
+          "url": "https://download.kde.org/unstable/digikam/digikam-7.2.0-rc.tar.xz",
+          "sha256": "cb62f094f883af2df484833115af1b3ae50a64a5194402b3f861c993102f2f3d"
         }
       ],
       "modules": [
@@ -258,8 +258,8 @@
             {
               "type": "git",
               "url": "https://invent.kde.org/education/marble.git",
-              "tag": "v20.12.1",
-              "commit": "bbb555ce11e647cc37eb78ab3b677c8e92e8262f"
+              "tag": "v20.12.2",
+              "commit": "3d61a2735b94b5c6682a0e1178b68039482a8468"
             }
           ]
         },
@@ -339,8 +339,8 @@
             {
               "type": "git",
               "url": "https://github.com/ImageMagick/ImageMagick.git",
-              "tag": "7.0.10-60",
-              "commit": "c04ba148f9af97163850031525a4b3a5b345b380"
+              "tag": "7.0.10-62",
+              "commit": "35b4991eb0939a327f3489988c366e21068b0178"
             }
           ]
         },
@@ -385,8 +385,8 @@
             {
               "type": "git",
               "url": "https://github.com/mdadams/jasper.git",
-              "tag": "version-2.0.24",
-              "commit": "9a2835a81ce9c41a48f36dadce79f110da8d6c75"
+              "tag": "version-2.0.25",
+              "commit": "9092dcb7f7680204ef523c73eb6132162b4358e3"
             }
           ]
         },
@@ -398,7 +398,7 @@
             {
               "type": "git",
               "url": "https://invent.kde.org/graphics/libksane.git",
-              "tag": "v20.12.1",
+              "tag": "v20.12.2",
               "commit": "2659134fed260cbb85e708390a787fd8362105c9"
             }
           ],
@@ -422,8 +422,8 @@
                 {
                   "type": "git",
                   "url": "https://gitlab.com/sane-project/backends.git",
-                  "tag": "1.0.31",
-                  "commit": "871813a22db1b03adcbf4f5dc4ea9eb29f12a36d"
+                  "tag": "1.0.32",
+                  "commit": "c1c567c49b3bc9d86a5796b7fd9b17816700f75c"
                 }
               ],
               "modules": [
@@ -585,8 +585,8 @@
                   "sources": [
                     {
                       "type": "archive",
-                      "url": "https://poppler.freedesktop.org/poppler-21.01.0.tar.xz",
-                      "sha256": "016dde34e5f868ea98a32ca99b643325a9682281500942b7113f4ec88d20e2f3"
+                      "url": "https://poppler.freedesktop.org/poppler-21.02.0.tar.xz",
+                      "sha256": "5c14759c99891e6e472aced6d5f0ff1dacf85d80cd9026d365c55c653edf792c"
                     }
                   ],
                   "modules": [

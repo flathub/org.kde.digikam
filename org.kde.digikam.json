@@ -69,6 +69,10 @@
         {
             "type": "patch",
             "path": "patches/i18n.patch"
+        },
+        {
+            "type": "patch",
+            "path": "patches/8049b6070d51bdef068c02a20f559e43e8c1f280.patch"
         }
       ],
       "modules": [

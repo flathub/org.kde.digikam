@@ -63,8 +63,8 @@
       "sources": [
         {
           "type": "archive",
-          "url": "https://download.kde.org/unstable/digikam/digikam-7.2.0-rc.tar.xz",
-          "sha256": "cb62f094f883af2df484833115af1b3ae50a64a5194402b3f861c993102f2f3d"
+          "url": "https://download.kde.org/stable/digikam/7.2.0/digikam-7.2.0.tar.xz",
+          "sha256": "cd87ece143aefa02e692a4af5c3c3cc107b9a4d61804d79fa77dd2e344798a17"
         }
       ],
       "modules": [
@@ -258,8 +258,8 @@
             {
               "type": "git",
               "url": "https://invent.kde.org/education/marble.git",
-              "tag": "v20.12.2",
-              "commit": "3d61a2735b94b5c6682a0e1178b68039482a8468"
+              "tag": "v21.03.80",
+              "commit": "4c5265dc18069ef768d6bf5cb686c192b6890681"
             }
           ]
         },
@@ -315,7 +315,7 @@
               "type": "git",
               "dest": "lensfun-git",
               "url": "https://github.com/lensfun/lensfun.git",
-              "commit": "ad957f64fa08fecf84ab33b9d8b8dfe92073a03c"
+              "commit": "d772cc521d8c0d7e681aec9a0f04de11b936ea9d"
             }
           ]
         },
@@ -339,8 +339,8 @@
             {
               "type": "git",
               "url": "https://github.com/ImageMagick/ImageMagick.git",
-              "tag": "7.0.10-62",
-              "commit": "35b4991eb0939a327f3489988c366e21068b0178"
+              "tag": "7.0.11-4",
+              "commit": "8cb632a7ee3bee251b38d8d542a1ba07567b1cf7"
             }
           ]
         },
@@ -354,8 +354,8 @@
             {
               "type": "git",
               "url": "https://github.com/gphoto/libgphoto2.git",
-              "tag": "v2.5.26",
-              "commit": "5231889a9a6971d880010bf4f2064bdd4fe01f9a"
+              "tag": "v2.5.27",
+              "commit": "07241531bf989af945fa76f910a21c338eb353b5"
             },
             {
               "type": "script",
@@ -385,8 +385,8 @@
             {
               "type": "git",
               "url": "https://github.com/mdadams/jasper.git",
-              "tag": "version-2.0.25",
-              "commit": "9092dcb7f7680204ef523c73eb6132162b4358e3"
+              "tag": "version-2.0.27",
+              "commit": "10322667205fa9c198ca26f7ace197ed00846f83"
             }
           ]
         },
@@ -398,8 +398,8 @@
             {
               "type": "git",
               "url": "https://invent.kde.org/graphics/libksane.git",
-              "tag": "v20.12.2",
-              "commit": "2659134fed260cbb85e708390a787fd8362105c9"
+              "tag": "v21.03.80",
+              "commit": "be40f1a620a8508aebae86e32d4977e52e1097ec"
             }
           ],
           "modules": [
@@ -585,8 +585,8 @@
                   "sources": [
                     {
                       "type": "archive",
-                      "url": "https://poppler.freedesktop.org/poppler-21.02.0.tar.xz",
-                      "sha256": "5c14759c99891e6e472aced6d5f0ff1dacf85d80cd9026d365c55c653edf792c"
+                      "url": "https://poppler.freedesktop.org/poppler-21.03.0.tar.xz",
+                      "sha256": "fd51ead4aac1d2f4684fa6e7b0ec06f0233ed21667e720a4e817e4455dd63d27"
                     }
                   ],
                   "modules": [

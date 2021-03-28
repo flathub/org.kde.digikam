@@ -21,14 +21,14 @@
     "--env=DK_PLUGIN_PATH=/app/lib/plugins/digikam"
   ],
   "add-extensions": {
-      "org.freedesktop.Platform.ffmpeg-full": {
+    "org.freedesktop.Platform.ffmpeg-full": {
       "directory": "lib/ffmpeg",
       "add-ld-path": ".",
       "version": "20.08",
       "autodownload": true,
       "autodelete": false
-      }
-    },
+    }
+  },
   "rename-icon": "digikam",
   "cleanup": [
     "/include",
@@ -63,16 +63,8 @@
       "sources": [
         {
           "type": "archive",
-          "url": "https://download.kde.org/stable/digikam/7.1.0/digikam-7.1.0.tar.xz",
-          "sha256": "b103c8463adf04939583199e13f8e83015d8a4a9ad79ebfd502d2a50b5a5abbe"
-        },
-        {
-            "type": "patch",
-            "path": "patches/i18n.patch"
-        },
-        {
-            "type": "patch",
-            "path": "patches/8049b6070d51bdef068c02a20f559e43e8c1f280.patch"
+          "url": "https://download.kde.org/unstable/digikam/digikam-7.2.0-rc.tar.xz",
+          "sha256": "cb62f094f883af2df484833115af1b3ae50a64a5194402b3f861c993102f2f3d"
         }
       ],
       "modules": [
@@ -112,7 +104,6 @@
           "buildsystem": "cmake-ninja",
           "builddir": true,
           "config-opts": [
-            "-DCMAKE_BUILD_TYPE=ReleaseWithDebInfo",
             "-DBUILD_EXAMPLES=OFF",
             "-DBUILD_TESTS=OFF",
             "-DBUILD_DOCS=OFF",
@@ -122,7 +113,30 @@
             "-DOPENCV_BUILD_3RDPARTY_LIBS=OFF",
             "-DINSTALL_C_EXAMPLES=OFF",
             "-DINSTALL_PYTHON_EXAMPLES=OFF",
-            "-DBUILD_LIST=dnn,flann,imgproc,imgcodecs,objdetect,calib3d,features2d",
+            "-DBUILD_opencv_core=ON",
+            "-DBUILD_opencv_imgproc=ON",
+            "-DBUILD_opencv_imgcodecs=ON",
+            "-DBUILD_opencv_objdetect=ON",
+            "-DBUILD_opencv_calib3d=ON",
+            "-DBUILD_opencv_features2d=ON",
+            "-DBUILD_opencv_flann=ON",
+            "-DBUILD_opencv_dnn=ON",
+            "-DBUILD_opencv_photo=OFF",
+            "-DBUILD_opencv_java=OFF",
+            "-DBUILD_opencv_java_bindings_generator=OFF",
+            "-DBUILD_opencv_js=OFF",
+            "-DBUILD_opencv_python2=OFF",
+            "-DBUILD_opencv_python3=OFF",
+            "-DBUILD_opencv_python_bindings_generator=OFF",
+            "-DBUILD_opencv_shape=OFF",
+            "-DBUILD_opencv_highgui=OFF",
+            "-DBUILD_opencv_superres=OFF",
+            "-DBUILD_opencv_stitching=OFF",
+            "-DBUILD_opencv_videostab=OFF",
+            "-DBUILD_opencv_videoio=OFF",
+            "-DBUILD_opencv_video=OFF",
+            "-DBUILD_opencv_apps=OFF",
+            "-DBUILD_opencv_gapi=OFF",
             "-DWITH_PROTOBUF=ON",
             "-DWITH_1394=OFF",
             "-DWITH_VTK=OFF",
@@ -136,6 +150,7 @@
             "-DWITH_JASPER=OFF",
             "-DWITH_JPEG=OFF",
             "-DWITH_MATLAB=OFF",
+            "-DWITH_OPENJPEG=OFF",
             "-DWITH_OPENEXR=OFF",
             "-DWITH_OPENNI=OFF",
             "-DWITH_OPENMP=OFF",
@@ -167,7 +182,7 @@
             "-DWITH_OPENCLAMDFFT=OFF",
             "-DWITH_OPENCLAMDBLAS=OFF",
             "-DCV_ENABLE_INTRINSICS=OFF",
-            "-DCV_DISABLE_OPTIMIZATION=OFF",
+            "-DCV_DISABLE_OPTIMIZATION=ON",
             "-DCV_TRACE=OFF",
             "-DWITH_OPENJPEG=OFF"
           ],
@@ -243,8 +258,8 @@
             {
               "type": "git",
               "url": "https://invent.kde.org/education/marble.git",
-              "tag": "v20.12.0",
-              "commit": "0d3832e66e6f36996566982d9de291bf150c10b4"
+              "tag": "v20.12.2",
+              "commit": "3d61a2735b94b5c6682a0e1178b68039482a8468"
             }
           ]
         },
@@ -300,7 +315,7 @@
               "type": "git",
               "dest": "lensfun-git",
               "url": "https://github.com/lensfun/lensfun.git",
-              "commit": "4672d765a17bfef7bc994ca7008cb717c61045d5"
+              "commit": "ad957f64fa08fecf84ab33b9d8b8dfe92073a03c"
             }
           ]
         },
@@ -324,8 +339,8 @@
             {
               "type": "git",
               "url": "https://github.com/ImageMagick/ImageMagick.git",
-              "tag": "7.0.10-51",
-              "commit": "0550776ab5c402f8203fbacf0dfc52e848ef00ae"
+              "tag": "7.0.10-62",
+              "commit": "35b4991eb0939a327f3489988c366e21068b0178"
             }
           ]
         },
@@ -370,8 +385,8 @@
             {
               "type": "git",
               "url": "https://github.com/mdadams/jasper.git",
-              "tag": "version-2.0.23",
-              "commit": "cc02d63dde901e06d1f866984fd0e80601deaa13"
+              "tag": "version-2.0.25",
+              "commit": "9092dcb7f7680204ef523c73eb6132162b4358e3"
             }
           ]
         },
@@ -383,7 +398,7 @@
             {
               "type": "git",
               "url": "https://invent.kde.org/graphics/libksane.git",
-              "tag": "v20.12.0",
+              "tag": "v20.12.2",
               "commit": "2659134fed260cbb85e708390a787fd8362105c9"
             }
           ],
@@ -407,8 +422,8 @@
                 {
                   "type": "git",
                   "url": "https://gitlab.com/sane-project/backends.git",
-                  "tag": "1.0.31",
-                  "commit": "871813a22db1b03adcbf4f5dc4ea9eb29f12a36d"
+                  "tag": "1.0.32",
+                  "commit": "c1c567c49b3bc9d86a5796b7fd9b17816700f75c"
                 }
               ],
               "modules": [
@@ -570,8 +585,8 @@
                   "sources": [
                     {
                       "type": "archive",
-                      "url": "https://poppler.freedesktop.org/poppler-20.12.1.tar.xz",
-                      "sha256": "d0aa2586c0a4296c775f0d2045f28bb95a694113fc995f95350faa12930f7b35"
+                      "url": "https://poppler.freedesktop.org/poppler-21.02.0.tar.xz",
+                      "sha256": "5c14759c99891e6e472aced6d5f0ff1dacf85d80cd9026d365c55c653edf792c"
                     }
                   ],
                   "modules": [

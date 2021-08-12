@@ -1,0 +1,59 @@
+From 8587be8fbb5806a0c53ee2ad43ded389c3eaf524 Mon Sep 17 00:00:00 2001
+From: Gilles Caulier <caulier.gilles@gmail.com>
+Date: Tue, 13 Jul 2021 08:56:00 +0200
+Subject: [PATCH] Fix possible linking failure with digikam core in static
+ libraries used by plugin and unit-tests.
+
+---
+ core/dplugins/generic/tools/panorama/CMakeLists.txt        | 1 +
+ core/dplugins/generic/webservices/mediawiki/CMakeLists.txt | 5 +++++
+ core/dplugins/generic/webservices/vkontakte/CMakeLists.txt | 5 +++++
+ 3 files changed, 11 insertions(+)
+
+diff --git a/core/dplugins/generic/tools/panorama/CMakeLists.txt b/core/dplugins/generic/tools/panorama/CMakeLists.txt
+index 458fbc003e..55e51e84d2 100644
+--- a/core/dplugins/generic/tools/panorama/CMakeLists.txt
++++ b/core/dplugins/generic/tools/panorama/CMakeLists.txt
+@@ -66,6 +66,7 @@ if(MSVC)
+ endif()
+ 
+ target_link_libraries(panoparser
++                      PRIVATE
+                       digikamcore
+ )
+ 
+diff --git a/core/dplugins/generic/webservices/mediawiki/CMakeLists.txt b/core/dplugins/generic/webservices/mediawiki/CMakeLists.txt
+index 959fc4a733..34e51aab1a 100644
+--- a/core/dplugins/generic/webservices/mediawiki/CMakeLists.txt
++++ b/core/dplugins/generic/webservices/mediawiki/CMakeLists.txt
+@@ -47,6 +47,11 @@ set(libmediawiki_SRCS
+ # For unit-tests and plugin
+ add_library(mediawikibackend STATIC ${libmediawiki_SRCS})
+ 
++target_link_libraries(mediawikibackend
++                      PRIVATE
++                      digikamcore
++)
++
+ # --------------------------------------------------------------------------------
+ 
+ set(mediawikiplugin_SRCS
+diff --git a/core/dplugins/generic/webservices/vkontakte/CMakeLists.txt b/core/dplugins/generic/webservices/vkontakte/CMakeLists.txt
+index c67c204c5e..0690585298 100644
+--- a/core/dplugins/generic/webservices/vkontakte/CMakeLists.txt
++++ b/core/dplugins/generic/webservices/vkontakte/CMakeLists.txt
+@@ -69,6 +69,11 @@ set(libvkontakte_SRCS
+ # For unit-tests and plugin
+ add_library(vkontaktebackend STATIC ${libvkontakte_SRCS})
+ 
++target_link_libraries(vkontaktebackend
++                      PRIVATE
++                      digikamcore
++)
++
+ # --------------------------------------------------------------------------------
+ 
+ set(vkontakteplugin_SRCS
+-- 
+GitLab
+

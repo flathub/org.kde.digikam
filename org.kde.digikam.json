@@ -72,6 +72,10 @@
         {
           "type": "patch",
           "path": "patches/digikam-fix-possible-linking-failure.patch"
+        },
+        {
+          "type": "patch",
+          "path": "patches/digikam-add-7.3.0-release.patch"
         }
       ],
       "modules": [

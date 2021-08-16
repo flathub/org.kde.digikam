@@ -60,11 +60,22 @@
         "-DENABLE_APPSTYLES=ON",
         "-DENABLE_QWEBENGINE=ON"
       ],
+      "post-install": [
+        "gunzip -S z /app/share/icons/hicolor/scalable/apps/*.svgz"
+      ],
       "sources": [
         {
           "type": "archive",
-          "url": "https://download.kde.org/stable/digikam/7.2.0/digikam-7.2.0.tar.xz",
-          "sha256": "cd87ece143aefa02e692a4af5c3c3cc107b9a4d61804d79fa77dd2e344798a17"
+          "url": "https://download.kde.org/stable/digikam/7.3.0/digikam-7.3.0.tar.xz",
+          "sha256": "95aea93be1cfd39bb52333b82b3e57bf68080c7d1319d754d167a20f6dbe4551"
+        },
+        {
+          "type": "patch",
+          "path": "patches/digikam-fix-possible-linking-failure.patch"
+        },
+        {
+          "type": "patch",
+          "path": "patches/digikam-add-7.3.0-release.patch"
         }
       ],
       "modules": [
@@ -81,8 +92,8 @@
           "sources": [
             {
               "type": "archive",
-              "url": "https://downloads.sourceforge.net/project/boost/boost/1.75.0/boost_1_75_0.tar.bz2",
-              "sha256": "953db31e016db7bb207f11432bef7df100516eeb746843fa0486a222e3fd49cb"
+              "url": "https://downloads.sourceforge.net/project/boost/boost/1.77.0/boost_1_77_0.tar.bz2",
+              "sha256": "fc9f85fc030e233142908241af7a846e60630aa7388de9a5fafb1f3a26840854"
             }
           ]
         },
@@ -193,8 +204,8 @@
             {
               "type": "git",
               "url": "https://github.com/Itseez/opencv.git",
-              "tag": "4.5.1",
-              "commit": "1363496c1106606684d40447f5d1149b2c66a9f8"
+              "tag": "4.5.3",
+              "commit": "ad6e82942b37be8ee2c71c1d9bc7fe79cd16f7ab"
             }
           ]
         },
@@ -229,12 +240,8 @@
             {
               "type": "git",
               "url": "https://github.com/Exiv2/exiv2.git",
-              "tag": "v0.27.3",
-              "commit": "194bb65ac568a5435874c9d9d73b1c8a68e4edec"
-            },
-            {
-              "type": "patch",
-              "path": "patches/exiv2-fix-compilation-under-arm.patch"
+              "tag": "v0.27.4",
+              "commit": "15098f4ef50cc721ad0018218acab2ff06e60beb"
             }
           ]
         },
@@ -258,8 +265,8 @@
             {
               "type": "git",
               "url": "https://invent.kde.org/education/marble.git",
-              "tag": "v21.03.80",
-              "commit": "4c5265dc18069ef768d6bf5cb686c192b6890681"
+              "tag": "v21.08.0",
+              "commit": "0a83b76eaae27d2903a4276b122d82918eb73c5c"
             }
           ]
         },
@@ -315,7 +322,7 @@
               "type": "git",
               "dest": "lensfun-git",
               "url": "https://github.com/lensfun/lensfun.git",
-              "commit": "d772cc521d8c0d7e681aec9a0f04de11b936ea9d"
+              "commit": "af416507c15cf1f4630f030a75624b20a73cbf9a"
             }
           ]
         },
@@ -339,8 +346,8 @@
             {
               "type": "git",
               "url": "https://github.com/ImageMagick/ImageMagick.git",
-              "tag": "7.0.11-4",
-              "commit": "8cb632a7ee3bee251b38d8d542a1ba07567b1cf7"
+              "tag": "7.1.0-4",
+              "commit": "53694931e6abe01d86ecabd3b45dc60a0d7461df"
             }
           ]
         },
@@ -385,8 +392,8 @@
             {
               "type": "git",
               "url": "https://github.com/mdadams/jasper.git",
-              "tag": "version-2.0.27",
-              "commit": "10322667205fa9c198ca26f7ace197ed00846f83"
+              "tag": "version-2.0.33",
+              "commit": "fe00207dc10db1d7cc6f2757961c5c6bdfd10973"
             }
           ]
         },
@@ -398,8 +405,8 @@
             {
               "type": "git",
               "url": "https://invent.kde.org/graphics/libksane.git",
-              "tag": "v21.03.80",
-              "commit": "be40f1a620a8508aebae86e32d4977e52e1097ec"
+              "tag": "v21.08.0",
+              "commit": "f720b938eda9ceded53408a7ef8970f9042dca6d"
             }
           ],
           "modules": [
@@ -450,8 +457,8 @@
                   "sources": [
                     {
                       "type": "archive",
-                      "url": "https://downloads.sourceforge.net/project/net-snmp/net-snmp/5.9/net-snmp-5.9.tar.gz",
-                      "sha256": "04303a66f85d6d8b16d3cc53bde50428877c82ab524e17591dfceaeb94df6071"
+                      "url": "https://downloads.sourceforge.net/project/net-snmp/net-snmp/5.9.1/net-snmp-5.9.1.tar.gz",
+                      "sha256": "eb7fd4a44de6cddbffd9a92a85ad1309e5c1054fb9d5a7dd93079c8953f48c3f"
                     },
                     {
                       "type": "shell",
@@ -585,8 +592,8 @@
                   "sources": [
                     {
                       "type": "archive",
-                      "url": "https://poppler.freedesktop.org/poppler-21.03.0.tar.xz",
-                      "sha256": "fd51ead4aac1d2f4684fa6e7b0ec06f0233ed21667e720a4e817e4455dd63d27"
+                      "url": "https://poppler.freedesktop.org/poppler-21.08.0.tar.xz",
+                      "sha256": "e9cf5dc5964bce4bb0264d1c4f8122706c910588b421cfc30abc97d6b23e602d"
                     }
                   ],
                   "modules": [
@@ -666,7 +673,8 @@
               "commit": "07295ba7ab551bb9c1580fdaee3200f1b45711b7"
             }
           ]
-        }
+        },
+        "shared-modules/glu/glu-9.json"
       ]
     },
     {

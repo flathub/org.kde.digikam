@@ -69,7 +69,13 @@
         {
           "type": "archive",
           "url": "https://download.kde.org/stable/digikam/7.5.0/digiKam-7.5.0.tar.xz",
-          "sha256": "cc143dcdba0ab138036d78cd80b29d5cfd32bceb2c3e74e46b363a661dfca780"
+          "sha256": "cc143dcdba0ab138036d78cd80b29d5cfd32bceb2c3e74e46b363a661dfca780",
+          "x-checker-data": {
+            "type": "anitya",
+            "project-id": 437,
+            "stable-only": true,
+            "url-template": "https://download.kde.org/stable/digikam/$version/digiKam-$version.tar.xz"
+          }
         }
       ],
       "modules": [
@@ -100,7 +106,11 @@
               "type": "git",
               "url": "https://gitlab.com/libeigen/eigen.git",
               "tag": "3.4.0",
-              "commit": "3147391d946bb4b6c68edd901f2add6ac1f31f8c"
+              "commit": "3147391d946bb4b6c68edd901f2add6ac1f31f8c",
+              "x-checker-data": {
+                "type": "git",
+                "tag-pattern": "^([\\d.]+)$"
+              }
             }
           ]
         },
@@ -199,7 +209,11 @@
               "type": "git",
               "url": "https://github.com/Itseez/opencv.git",
               "tag": "4.5.5",
-              "commit": "dad26339a975b49cfb6c7dbe4bd5276c9dcb36e2"
+              "commit": "dad26339a975b49cfb6c7dbe4bd5276c9dcb36e2",
+              "x-checker-data": {
+                "type": "git",
+                "tag-pattern": "^([\\d.]+)$"
+              }
             }
           ]
         },
@@ -235,7 +249,11 @@
               "type": "git",
               "url": "https://github.com/Exiv2/exiv2.git",
               "tag": "v0.27.5",
-              "commit": "ad5484cb1eaba3ad0e49b290d244f6b1ee9ff076"
+              "commit": "ad5484cb1eaba3ad0e49b290d244f6b1ee9ff076",
+              "x-checker-data": {
+                "type": "git",
+                "tag-pattern": "^v([\\d.]+)$"
+              }
             }
           ]
         },
@@ -260,7 +278,11 @@
               "type": "git",
               "url": "https://invent.kde.org/education/marble.git",
               "tag": "v21.12.1",
-              "commit": "7cb2cffac7b296a7f9df8f0d9b1cd694af4a2696"
+              "commit": "7cb2cffac7b296a7f9df8f0d9b1cd694af4a2696",
+              "x-checker-data": {
+                "type": "git",
+                "tag-pattern": "^v([\\d.]+)$"
+              }
             }
           ]
         },
@@ -356,7 +378,11 @@
               "type": "git",
               "url": "https://github.com/gphoto/libgphoto2.git",
               "tag": "v2.5.28",
-              "commit": "7ac02fa09a92fce2eeb43f8e821ab171644835ac"
+              "commit": "7ac02fa09a92fce2eeb43f8e821ab171644835ac",
+              "x-checker-data": {
+                "type": "git",
+                "tag-pattern": "^v([\\d.]+)$"
+              }
             },
             {
               "type": "script",
@@ -387,7 +413,11 @@
               "type": "git",
               "url": "https://github.com/mdadams/jasper.git",
               "tag": "version-2.0.33",
-              "commit": "fe00207dc10db1d7cc6f2757961c5c6bdfd10973"
+              "commit": "fe00207dc10db1d7cc6f2757961c5c6bdfd10973",
+              "x-checker-data": {
+                "type": "git",
+                "tag-pattern": "^version-([\\d.]+)$"
+              }
             }
           ]
         },
@@ -400,7 +430,11 @@
               "type": "git",
               "url": "https://invent.kde.org/graphics/libksane.git",
               "tag": "v21.12.1",
-              "commit": "04308fd341ea338f255414c44c5429e6982ec9ab"
+              "commit": "04308fd341ea338f255414c44c5429e6982ec9ab",
+              "x-checker-data": {
+                "type": "git",
+                "tag-pattern": "^v([\\d.]+)$"
+              }
             }
           ],
           "modules": [
@@ -424,7 +458,11 @@
                   "type": "git",
                   "url": "https://gitlab.com/sane-project/backends.git",
                   "tag": "1.1.1",
-                  "commit": "332edc8b7ce642bb06132cf204a8c2dd57720bce"
+                  "commit": "332edc8b7ce642bb06132cf204a8c2dd57720bce",
+                  "x-checker-data": {
+                    "type": "git",
+                    "tag-pattern": "^([\\d.]+)$"
+                  }
                 }
               ],
               "modules": [
@@ -452,7 +490,13 @@
                     {
                       "type": "archive",
                       "url": "https://downloads.sourceforge.net/project/net-snmp/net-snmp/5.9.1/net-snmp-5.9.1.tar.gz",
-                      "sha256": "eb7fd4a44de6cddbffd9a92a85ad1309e5c1054fb9d5a7dd93079c8953f48c3f"
+                      "sha256": "eb7fd4a44de6cddbffd9a92a85ad1309e5c1054fb9d5a7dd93079c8953f48c3f",
+                      "x-checker-data": {
+                        "type": "anitya",
+                        "project-id": 2062,
+                        "stable-only": true,
+                        "url-template": "https://downloads.sourceforge.net/project/net-snmp/net-snmp/$version/net-snmp-$version.tar.gz"
+                      }
                     },
                     {
                       "type": "shell",
@@ -587,7 +631,13 @@
                     {
                       "type": "archive",
                       "url": "https://poppler.freedesktop.org/poppler-22.01.0.tar.xz",
-                      "sha256": "7d3493056b5b86413e5c693c2cae02c5c06cd8e618d14c2c31e2c84b67b2313e"
+                      "sha256": "7d3493056b5b86413e5c693c2cae02c5c06cd8e618d14c2c31e2c84b67b2313e",
+                      "x-checker-data": {
+                        "type": "anitya",
+                        "project-id": 3686,
+                        "stable-only": true,
+                        "url-template": "https://poppler.freedesktop.org/poppler-$version.tar.xz"
+                      }
                     }
                   ],
                   "modules": [
@@ -598,7 +648,13 @@
                         {
                           "type": "archive",
                           "url": "https://poppler.freedesktop.org/poppler-data-0.4.11.tar.gz",
-                          "sha256": "2cec05cd1bb03af98a8b06a1e22f6e6e1a65b1e2f3816cb3069bb0874825f08c"
+                          "sha256": "2cec05cd1bb03af98a8b06a1e22f6e6e1a65b1e2f3816cb3069bb0874825f08c",
+                          "x-checker-data": {
+                            "type": "anitya",
+                            "project-id": 3687,
+                            "stable-only": true,
+                            "url-template": "https://poppler.freedesktop.org/poppler-data-$version.tar.gz"
+                          }
                         }
                       ]
                     }
@@ -635,7 +691,11 @@
               "url": "https://github.com/wang-bin/QtAV.git",
               "tag": "v1.13.0",
               "commit": "b51fee72a82fab049faf932fd0414d6a58e6caec",
-              "disable-submodules": false
+              "disable-submodules": false,
+              "x-checker-data": {
+                "type": "git",
+                "tag-pattern": "^v([\\d.]+)$"
+              }
             },
             {
               "type": "patch",
@@ -664,7 +724,11 @@
               "type": "git",
               "url": "https://github.com/videolan/x265.git",
               "tag": "3.4",
-              "commit": "07295ba7ab551bb9c1580fdaee3200f1b45711b7"
+              "commit": "07295ba7ab551bb9c1580fdaee3200f1b45711b7",
+              "x-checker-data": {
+                "type": "git",
+                "tag-pattern": "^([\\d.]+)$"
+              }
             }
           ]
         },
@@ -683,7 +747,11 @@
           "type": "git",
           "url": "https://github.com/scheckmedia/ImageMosaicWall.git",
           "tag": "v0.3",
-          "commit": "3302603b774186bffe967d76a087de8d58b91d0f"
+          "commit": "3302603b774186bffe967d76a087de8d58b91d0f",
+          "x-checker-data": {
+            "type": "git",
+            "tag-pattern": "^v([\\d.]+)$"
+          }
         }
       ]
     }

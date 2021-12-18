@@ -66,16 +66,8 @@
       "sources": [
         {
           "type": "archive",
-          "url": "https://download.kde.org/stable/digikam/7.3.0/digikam-7.3.0.tar.xz",
-          "sha256": "95aea93be1cfd39bb52333b82b3e57bf68080c7d1319d754d167a20f6dbe4551"
-        },
-        {
-          "type": "patch",
-          "path": "patches/digikam-fix-possible-linking-failure.patch"
-        },
-        {
-          "type": "patch",
-          "path": "patches/digikam-add-7.3.0-release.patch"
+          "url": "https://download.kde.org/stable/digikam/7.4.0/digiKam-7.4.0.tar.xz",
+          "sha256": "d08ab66da732bb449bc10106ec11dd9defa5b3562ded3741b041dbbaa715504a"
         }
       ],
       "modules": [

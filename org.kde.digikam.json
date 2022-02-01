@@ -53,6 +53,7 @@
       "config-opts": [
         "-DCMAKE_BUILD_TYPE=RelWithDebInfo",
         "-DCMAKE_INSTALL_PREFIX=/app",
+        "-DCMAKE_CXX_FLAGS=-isystem /app/include/KF5",
         "-DENABLE_MYSQLSUPPORT=ON",
         "-DENABLE_INTERNALMYSQL=ON",
         "-DENABLE_MEDIAPLAYER=ON",
@@ -66,8 +67,8 @@
       "sources": [
         {
           "type": "archive",
-          "url": "https://download.kde.org/stable/digikam/7.4.0/digiKam-7.4.0.tar.xz",
-          "sha256": "d08ab66da732bb449bc10106ec11dd9defa5b3562ded3741b041dbbaa715504a"
+          "url": "https://download.kde.org/stable/digikam/7.5.0/digiKam-7.5.0.tar.xz",
+          "sha256": "cc143dcdba0ab138036d78cd80b29d5cfd32bceb2c3e74e46b363a661dfca780"
         }
       ],
       "modules": [
@@ -97,8 +98,8 @@
             {
               "type": "git",
               "url": "https://gitlab.com/libeigen/eigen.git",
-              "tag": "3.3.9",
-              "commit": "0fd6b4f71dd85b2009ee4d1aeb296e2c11fc9d68"
+              "tag": "3.4.0",
+              "commit": "3147391d946bb4b6c68edd901f2add6ac1f31f8c"
             }
           ]
         },
@@ -196,8 +197,8 @@
             {
               "type": "git",
               "url": "https://github.com/Itseez/opencv.git",
-              "tag": "4.5.3",
-              "commit": "ad6e82942b37be8ee2c71c1d9bc7fe79cd16f7ab"
+              "tag": "4.5.5",
+              "commit": "dad26339a975b49cfb6c7dbe4bd5276c9dcb36e2"
             }
           ]
         },
@@ -232,8 +233,8 @@
             {
               "type": "git",
               "url": "https://github.com/Exiv2/exiv2.git",
-              "tag": "v0.27.4",
-              "commit": "15098f4ef50cc721ad0018218acab2ff06e60beb"
+              "tag": "v0.27.5",
+              "commit": "ad5484cb1eaba3ad0e49b290d244f6b1ee9ff076"
             }
           ]
         },
@@ -257,8 +258,8 @@
             {
               "type": "git",
               "url": "https://invent.kde.org/education/marble.git",
-              "tag": "v21.08.0",
-              "commit": "0a83b76eaae27d2903a4276b122d82918eb73c5c"
+              "tag": "v21.12.1",
+              "commit": "7cb2cffac7b296a7f9df8f0d9b1cd694af4a2696"
             }
           ]
         },
@@ -314,7 +315,7 @@
               "type": "git",
               "dest": "lensfun-git",
               "url": "https://github.com/lensfun/lensfun.git",
-              "commit": "af416507c15cf1f4630f030a75624b20a73cbf9a"
+              "commit": "3756b08f1d119c6347c79b8c636a4bc0ab4a9b1d"
             }
           ]
         },
@@ -338,8 +339,8 @@
             {
               "type": "git",
               "url": "https://github.com/ImageMagick/ImageMagick.git",
-              "tag": "7.1.0-4",
-              "commit": "53694931e6abe01d86ecabd3b45dc60a0d7461df"
+              "tag": "7.1.0-22",
+              "commit": "c10371db6c8363d76f204877110d1d0980502ce8"
             }
           ]
         },
@@ -353,8 +354,8 @@
             {
               "type": "git",
               "url": "https://github.com/gphoto/libgphoto2.git",
-              "tag": "v2.5.27",
-              "commit": "07241531bf989af945fa76f910a21c338eb353b5"
+              "tag": "v2.5.28",
+              "commit": "7ac02fa09a92fce2eeb43f8e821ab171644835ac"
             },
             {
               "type": "script",
@@ -397,8 +398,8 @@
             {
               "type": "git",
               "url": "https://invent.kde.org/graphics/libksane.git",
-              "tag": "v21.08.0",
-              "commit": "f720b938eda9ceded53408a7ef8970f9042dca6d"
+              "tag": "v21.12.1",
+              "commit": "04308fd341ea338f255414c44c5429e6982ec9ab"
             }
           ],
           "modules": [
@@ -421,8 +422,8 @@
                 {
                   "type": "git",
                   "url": "https://gitlab.com/sane-project/backends.git",
-                  "tag": "1.0.32",
-                  "commit": "c1c567c49b3bc9d86a5796b7fd9b17816700f75c"
+                  "tag": "1.1.1",
+                  "commit": "332edc8b7ce642bb06132cf204a8c2dd57720bce"
                 }
               ],
               "modules": [
@@ -505,7 +506,7 @@
                     }
                   ],
                   "modules": [
-                    "shared-modules/dbus-glib/dbus-glib-0.110.json",
+                    "shared-modules/dbus-glib/dbus-glib.json",
                     {
                       "name": "libevent",
                       "config-opts": [
@@ -569,8 +570,8 @@
                   "sources": [
                     {
                       "type": "archive",
-                      "url": "https://linuxtv.org/downloads/v4l-utils/v4l-utils-1.20.0.tar.bz2",
-                      "sha256": "956118713f7ccb405c55c7088a6a2490c32d54300dd9a30d8d5008c28d3726f7"
+                      "url": "https://linuxtv.org/downloads/v4l-utils/v4l-utils-1.22.1.tar.bz2",
+                      "sha256": "65c6fbe830a44ca105c443b027182c1b2c9053a91d1e72ad849dfab388b94e31"
                     }
                   ]
                 },
@@ -584,8 +585,8 @@
                   "sources": [
                     {
                       "type": "archive",
-                      "url": "https://poppler.freedesktop.org/poppler-21.08.0.tar.xz",
-                      "sha256": "e9cf5dc5964bce4bb0264d1c4f8122706c910588b421cfc30abc97d6b23e602d"
+                      "url": "https://poppler.freedesktop.org/poppler-22.01.0.tar.xz",
+                      "sha256": "7d3493056b5b86413e5c693c2cae02c5c06cd8e618d14c2c31e2c84b67b2313e"
                     }
                   ],
                   "modules": [
@@ -595,8 +596,8 @@
                       "sources": [
                         {
                           "type": "archive",
-                          "url": "https://poppler.freedesktop.org/poppler-data-0.4.10.tar.gz",
-                          "sha256": "6e2fcef66ec8c44625f94292ccf8af9f1d918b410d5aa69c274ce67387967b30"
+                          "url": "https://poppler.freedesktop.org/poppler-data-0.4.11.tar.gz",
+                          "sha256": "2cec05cd1bb03af98a8b06a1e22f6e6e1a65b1e2f3816cb3069bb0874825f08c"
                         }
                       ]
                     }

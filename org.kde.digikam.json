@@ -18,6 +18,7 @@
     "--socket=x11",
     "--system-talk-name=org.freedesktop.Avahi",
     "--system-talk-name=org.freedesktop.UDisks2",
+    "--talk-name=org.kde.StatusNotifierWatcher",
     "--env=DK_PLUGIN_PATH=/app/lib/plugins/digikam"
   ],
   "add-extensions": {

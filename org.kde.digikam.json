@@ -68,8 +68,8 @@
       "sources": [
         {
           "type": "archive",
-          "url": "https://download.kde.org/stable/digikam/7.5.0/digiKam-7.5.0.tar.xz",
-          "sha256": "cc143dcdba0ab138036d78cd80b29d5cfd32bceb2c3e74e46b363a661dfca780"
+          "url": "https://download.kde.org/stable/digikam/7.6.0/digiKam-7.6.0.tar.xz",
+          "sha256": "d8e1ee7321d3fc313916f515756e3029ac4187dc453b6933848d4de5314b6641"
         }
       ],
       "modules": [
@@ -259,8 +259,8 @@
             {
               "type": "git",
               "url": "https://invent.kde.org/education/marble.git",
-              "tag": "v21.12.1",
-              "commit": "7cb2cffac7b296a7f9df8f0d9b1cd694af4a2696"
+              "tag": "v21.12.3",
+              "commit": "fe72acbc83f882ba59f7ac9f8523df2321077d6f"
             }
           ]
         },
@@ -355,8 +355,8 @@
             {
               "type": "git",
               "url": "https://github.com/gphoto/libgphoto2.git",
-              "tag": "v2.5.28",
-              "commit": "7ac02fa09a92fce2eeb43f8e821ab171644835ac"
+              "tag": "v2.5.29",
+              "commit": "1691f4705cc08b08c7569ae3e83001ba8c3f28c2"
             },
             {
               "type": "script",
@@ -386,8 +386,8 @@
             {
               "type": "git",
               "url": "https://github.com/mdadams/jasper.git",
-              "tag": "version-2.0.33",
-              "commit": "fe00207dc10db1d7cc6f2757961c5c6bdfd10973"
+              "tag": "version-3.0.2",
+              "commit": "2678639c1f233522819093d128f19a4ac4a5cc03"
             }
           ]
         },
@@ -399,8 +399,8 @@
             {
               "type": "git",
               "url": "https://invent.kde.org/graphics/libksane.git",
-              "tag": "v21.12.1",
-              "commit": "04308fd341ea338f255414c44c5429e6982ec9ab"
+              "tag": "v21.12.3",
+              "commit": "d31311b3aaf4e601808634989159b462a7c926b6"
             }
           ],
           "modules": [
@@ -586,8 +586,8 @@
                   "sources": [
                     {
                       "type": "archive",
-                      "url": "https://poppler.freedesktop.org/poppler-22.01.0.tar.xz",
-                      "sha256": "7d3493056b5b86413e5c693c2cae02c5c06cd8e618d14c2c31e2c84b67b2313e"
+                      "url": "https://poppler.freedesktop.org/poppler-22.03.0.tar.xz",
+                      "sha256": "728c78ba94d75a55f6b6355d4fbdaa6f49934d9616be58e5e679a9cfd0980e1e"
                     }
                   ],
                   "modules": [

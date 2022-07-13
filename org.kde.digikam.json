@@ -68,8 +68,8 @@
       "sources": [
         {
           "type": "archive",
-          "url": "https://download.kde.org/stable/digikam/7.6.0/digiKam-7.6.0.tar.xz",
-          "sha256": "d8e1ee7321d3fc313916f515756e3029ac4187dc453b6933848d4de5314b6641"
+          "url": "https://download.kde.org/stable/digikam/7.7.0/digiKam-7.7.0.tar.xz",
+          "sha256": "c0c6dd2ea8a07514acbf2462f3a54518e7e8099b3337f881336168cff63d771c"
         }
       ],
       "modules": [
@@ -198,8 +198,8 @@
             {
               "type": "git",
               "url": "https://github.com/Itseez/opencv.git",
-              "tag": "4.5.5",
-              "commit": "dad26339a975b49cfb6c7dbe4bd5276c9dcb36e2"
+              "tag": "4.6.0",
+              "commit": "b0dc474160e389b9c9045da5db49d03ae17c6a6b"
             }
           ]
         },
@@ -259,8 +259,8 @@
             {
               "type": "git",
               "url": "https://invent.kde.org/education/marble.git",
-              "tag": "v21.12.3",
-              "commit": "fe72acbc83f882ba59f7ac9f8523df2321077d6f"
+              "tag": "v22.04.3",
+              "commit": "a3cf2c3de2163a49e34074f27365006f578aea60"
             }
           ]
         },
@@ -316,7 +316,7 @@
               "type": "git",
               "dest": "lensfun-git",
               "url": "https://github.com/lensfun/lensfun.git",
-              "commit": "3756b08f1d119c6347c79b8c636a4bc0ab4a9b1d"
+              "commit": "c7ca3c96a8c727b7762578b619e2b0f1a2924ba8"
             }
           ]
         },
@@ -340,8 +340,8 @@
             {
               "type": "git",
               "url": "https://github.com/ImageMagick/ImageMagick.git",
-              "tag": "7.1.0-22",
-              "commit": "c10371db6c8363d76f204877110d1d0980502ce8"
+              "tag": "7.1.0.43",
+              "commit": "c95ef31d1ed702cc502f06202b17fee39e27ced9"
             }
           ]
         },
@@ -355,8 +355,8 @@
             {
               "type": "git",
               "url": "https://github.com/gphoto/libgphoto2.git",
-              "tag": "v2.5.29",
-              "commit": "1691f4705cc08b08c7569ae3e83001ba8c3f28c2"
+              "tag": "v2.5.30",
+              "commit": "6511898c4be52a9306f0791476561bdcebf5317d"
             },
             {
               "type": "script",
@@ -386,8 +386,8 @@
             {
               "type": "git",
               "url": "https://github.com/mdadams/jasper.git",
-              "tag": "version-3.0.2",
-              "commit": "2678639c1f233522819093d128f19a4ac4a5cc03"
+              "tag": "version-3.0.5",
+              "commit": "2f472a1d7f3faa213bc826ae258768d849964cfe"
             }
           ]
         },
@@ -399,8 +399,8 @@
             {
               "type": "git",
               "url": "https://invent.kde.org/graphics/libksane.git",
-              "tag": "v21.12.3",
-              "commit": "d31311b3aaf4e601808634989159b462a7c926b6"
+              "tag": "v22.04.3",
+              "commit": "399d5611b66d5ec88206f4353b905f40d2069bdb"
             }
           ],
           "modules": [
@@ -451,8 +451,8 @@
                   "sources": [
                     {
                       "type": "archive",
-                      "url": "https://downloads.sourceforge.net/project/net-snmp/net-snmp/5.9.1/net-snmp-5.9.1.tar.gz",
-                      "sha256": "eb7fd4a44de6cddbffd9a92a85ad1309e5c1054fb9d5a7dd93079c8953f48c3f"
+                      "url": "https://downloads.sourceforge.net/project/net-snmp/net-snmp/5.9.2/net-snmp-5.9.2.tar.gz",
+                      "sha256": "21e86b06c8b54639f915781c9bf6433a79da5b7aa109087ea47a9b5378a6c5fd"
                     },
                     {
                       "type": "shell",
@@ -586,8 +586,8 @@
                   "sources": [
                     {
                       "type": "archive",
-                      "url": "https://poppler.freedesktop.org/poppler-22.03.0.tar.xz",
-                      "sha256": "728c78ba94d75a55f6b6355d4fbdaa6f49934d9616be58e5e679a9cfd0980e1e"
+                      "url": "https://poppler.freedesktop.org/poppler-22.07.0.tar.xz",
+                      "sha256": "420230c5c43782e2151259b3e523e632f4861342aad70e7e20b8773d9eaf3428"
                     }
                   ],
                   "modules": [

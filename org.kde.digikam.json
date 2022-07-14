@@ -32,10 +32,13 @@
   },
   "rename-icon": "digikam",
   "cleanup": [
+    "/doc",
     "/include",
     "/lib/cmake",
     "/lib/libexec",
     "/lib/pkgconfig",
+    "/lib/vigra/*.cmake",
+    "/man",
     "/share/doc",
     "/share/eigen3",
     "/share/man",
@@ -77,7 +80,7 @@
           "name": "boost",
           "buildsystem": "simple",
           "build-commands": [
-            "./bootstrap.sh --prefix=/app --with-libraries=system",
+            "./bootstrap.sh --prefix=/app --with-libraries=system,filesystem",
             "./b2 install variant=release link=shared runtime-link=shared cxxflags='$CXXFLAGS' linkflags='$LDFLAGS' -j $FLATPAK_BUILDER_N_JOBS"
           ],
           "cleanup": [
@@ -697,6 +700,133 @@
           "url": "https://github.com/scheckmedia/ImageMosaicWall.git",
           "tag": "v0.3",
           "commit": "3302603b774186bffe967d76a087de8d58b91d0f"
+        }
+      ]
+    },
+    {
+      "name": "hugin",
+      "buildsystem": "cmake-ninja",
+      "builddir": true,
+      "sources": [
+        {
+          "type": "archive",
+          "url": "https://download.sourceforge.net/project/hugin/hugin/hugin-2021.0/hugin-2021.0.0.tar.bz2",
+          "sha256": "047aea8a7fa47844b34ef27c19d3b697e84939dcb1fdbbeb2c204621b66eead9"
+        }
+      ],
+      "modules": [
+        {
+          "name": "wxWidgets",
+          "buildsystem": "cmake-ninja",
+          "builddir": true,
+          "sources": [
+            {
+              "type": "archive",
+              "url": "https://github.com/wxWidgets/wxWidgets/releases/download/v3.2.0/wxWidgets-3.2.0.tar.bz2",
+              "sha256": "356e9b55f1ae3d58ae1fed61478e9b754d46b820913e3bfbc971c50377c1903a"
+            }
+          ]
+        },
+        {
+          "name": "vigra",
+          "buildsystem": "cmake-ninja",
+          "builddir": true,
+          "config-opts": [
+            "-DWITH_OPENEXR=ON"
+          ],
+          "sources": [
+            {
+              "type": "git",
+              "url": "https://github.com/ukoethe/vigra.git",
+              "tag": "Version-1-11-1",
+              "commit": "ed1e79e4cdcec370cdeef2153f7d3c586a77f2d6"
+            }
+          ],
+          "modules": [
+            {
+              "name": "openexr",
+              "buildsystem": "cmake-ninja",
+              "builddir": true,
+              "sources": [
+                {
+                  "type": "git",
+                  "url": "https://github.com/AcademySoftwareFoundation/openexr.git",
+                  "tag": "v2.5.8",
+                  "commit": "918b8f543e81b5a1e1aca494ab7352ca280afc9e"
+                }
+              ],
+              "modules": [
+                {
+                  "name": "imath",
+                  "buildsystem": "cmake-ninja",
+                  "builddir": true,
+                  "sources": [
+                    {
+                      "type": "git",
+                      "url": "https://github.com/AcademySoftwareFoundation/Imath.git",
+                      "tag": "v3.1.5",
+                      "commit": "90c47b495b3ecf863a8a5de562c6e47d49cfb27b"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "shared-modules/glew/glew.json",
+        {
+          "name": "libpano13",
+          "buildsystem": "cmake-ninja",
+          "builddir": true,
+          "sources": [
+            {
+              "type": "archive",
+              "url": "https://downloads.sourceforge.net/project/panotools/libpano13/libpano13-2.9.19/libpano13-2.9.19.tar.gz",
+              "sha256": "037357383978341dea8f572a5d2a0876c5ab0a83dffda431bd393357e91d95a8"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "enblend",
+      "buildsystem": "cmake-ninja",
+      "config-opts": [
+        "-DENABLE_OPENMP=on"
+      ],
+      "modules": [
+        {
+          "name": "gsl",
+          "config-opts": [
+            "--enable-shared",
+            "--disable-static"
+          ],
+          "sources": [
+            {
+              "type": "archive",
+              "url": "http://mirror.sergal.org/gnu/gsl/gsl-2.5.tar.gz",
+              "sha256": "0460ad7c2542caaddc6729762952d345374784100223995eb14d614861f2258d"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "type": "archive",
+          "url": "https://download.sourceforge.net/project/enblend/enblend-enfuse/enblend-enfuse-4.2/enblend-enfuse-4.2.tar.gz",
+          "sha256": "8703e324939ebd70d76afd350e56800f5ea2c053a040a5f5218b2a1a4300bd48"
+        },
+        {
+          "type": "patch",
+          "path": "patches/enblend-cmake.patch"
+        },
+        {
+          "type": "patch",
+          "path": "patches/enblend-dl.patch"
+        },
+        {
+          "type": "patch",
+          "path": "patches/enblend-cxx.patch"
         }
       ]
     }

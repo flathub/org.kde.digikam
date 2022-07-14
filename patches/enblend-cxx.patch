@@ -1,0 +1,11 @@
+--- enblend/src/minimizer.cc-orig	2021-11-27 22:16:42.960088158 -0500
++++ enblend/src/minimizer.cc	2021-11-27 22:17:15.316421636 -0500
+@@ -20,6 +20,8 @@
+ 
+ #include <gsl/gsl_errno.h>
+ 
++#include <limits>
++
+ #include "minimizer.h"
+ 
+ 

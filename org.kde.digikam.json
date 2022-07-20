@@ -224,6 +224,7 @@
             "-DEXIV2_ENABLE_DYNAMIC_RUNTIME=OFF",
             "-DEXIV2_ENABLE_CURL=OFF",
             "-DEXIV2_ENABLE_SSH=OFF",
+            "-DEXIV2_ENABLE_BMFF=ON",
             "-DEXIV2_BUILD_SAMPLES=OFF",
             "-DEXIV2_BUILD_PO=OFF",
             "-DEXIV2_BUILD_EXIV2_COMMAND=OFF",

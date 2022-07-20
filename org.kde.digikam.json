@@ -715,7 +715,7 @@
           ]
         },
         {
-          "name": "heif",
+          "name": "libheif",
           "buildsystem": "cmake-ninja",
           "builddir": true,
           "cleanup": [
@@ -727,6 +727,20 @@
               "url": "https://github.com/strukturag/libheif.git",
               "tag": "v1.12.0",
               "commit": "56c8a2613370562fc330af2c70c1510aa5fd9ff6"
+            }
+          ],
+          "modules": [
+            {
+              "name": "libde265",
+              "buildsystem": "cmake-ninja",
+              "sources": [
+                {
+                  "type": "git",
+                  "url": "https://github.com/strukturag/libde265.git",
+                  "tag": "v1.0.8",
+                  "commit": "8aed7472df0af25b811828fa14f2f169dc34d35a"
+                }
+              ]
             }
           ]
         },

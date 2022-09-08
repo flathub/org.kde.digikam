@@ -42,8 +42,7 @@
     "/share/doc",
     "/share/eigen3",
     "/share/man",
-    "/share/pkgconfig",
-    "*.la"
+    "/share/pkgconfig"
   ],
   "cleanup-commands": [
     "mkdir -p ${FLATPAK_DEST}/lib/ffmpeg",
@@ -98,6 +97,9 @@
           "name": "eigen",
           "buildsystem": "cmake-ninja",
           "builddir": true,
+          "cleanup": [
+            "*.la"
+          ],
           "sources": [
             {
               "type": "git",
@@ -256,7 +258,8 @@
             "-DBUILD_TESTING=OFF"
           ],
           "cleanup": [
-            "/mkspecs"
+            "/mkspecs",
+            "*.la"
           ],
           "sources": [
             {
@@ -299,6 +302,9 @@
             "python3 lensfun_convert_db.py $PWD lensfun-git/data/db",
             "rm -rf /app/share/lensfun/version_1/*",
             "tar xvf db/version_1.tar -C /app/share/lensfun/version_1"
+          ],
+          "cleanup": [
+            "*.la"
           ],
           "sources": [
             {
@@ -352,7 +358,8 @@
           "name": "libgphoto2",
           "builddir": true,
           "cleanup": [
-            "/doc"
+            "/doc",
+            "*.la"
           ],
           "sources": [
             {
@@ -385,6 +392,9 @@
             "-DJAS_ENABLE_DOC=OFF",
             "-DJAS_ENABLE_PROGRAMS=OFF"
           ],
+          "cleanup": [
+            "*.la"
+          ],
           "sources": [
             {
               "type": "git",
@@ -398,6 +408,9 @@
           "name": "libksane",
           "buildsystem": "cmake-ninja",
           "builddir": true,
+          "cleanup": [
+            "*.la"
+          ],
           "sources": [
             {
               "type": "git",
@@ -421,6 +434,9 @@
               "post-install": [
                 "grep '^[[:blank:]]*localhost[[:blank:]]*$' \"${FLATPAK_DEST}/etc/sane.d/net.conf\" || echo 'localhost' >> \"${FLATPAK_DEST}/etc/sane.d/net.conf\";",
                 "grep '^[[:blank:]]*net[[:blank:]]*$' \"${FLATPAK_DEST}/etc/sane.d/dll.conf\" || echo 'net' >> \"${FLATPAK_DEST}/etc/sane.d/dll.conf\";"
+              ],
+              "cleanup": [
+                "*.la"
               ],
               "sources": [
                 {
@@ -451,6 +467,9 @@
                   "build-options": {
                     "ldflags": "-lncurses -ltinfo"
                   },
+                  "cleanup": [
+                    "*.la"
+                  ],
                   "sources": [
                     {
                       "type": "archive",
@@ -500,7 +519,8 @@
                     "--disable-xmltoman"
                   ],
                   "cleanup": [
-                    "/bin"
+                    "/bin",
+                    "*.la"
                   ],
                   "sources": [
                     {
@@ -520,7 +540,8 @@
                         "--disable-samples"
                       ],
                       "cleanup": [
-                        "/bin"
+                        "/bin",
+                        "*.la"
                       ],
                       "sources": [
                         {
@@ -542,6 +563,9 @@
                   "config-opts": [
                     "--disable-static",
                     "--without-python"
+                  ],
+                  "cleanup": [
+                    "*.la"
                   ],
                   "sources": [
                     {
@@ -571,6 +595,9 @@
                     "--disable-qv4l2",
                     "--with-udevdir=/app/lib/udev"
                   ],
+                  "cleanup": [
+                    "*.la"
+                  ],
                   "sources": [
                     {
                       "type": "archive",
@@ -586,6 +613,9 @@
                     "-DENABLE_LIBOPENJPEG=none",
                     "-DENABLE_UNSTABLE_API_ABI_HEADERS=ON"
                   ],
+                  "cleanup": [
+                    "*.la"
+                  ],
                   "sources": [
                     {
                       "type": "archive",
@@ -597,6 +627,9 @@
                     {
                       "name": "poppler-data",
                       "buildsystem": "cmake-ninja",
+                      "cleanup": [
+                        "*.la"
+                      ],
                       "sources": [
                         {
                           "type": "archive",
@@ -614,6 +647,9 @@
         {
           "name": "liblqr",
           "builddir": true,
+          "cleanup": [
+            "*.la"
+          ],
           "sources": [
             {
               "type": "git",
@@ -631,6 +667,9 @@
             "-DBUILD_EXAMPLES=OFF",
             "-DBUILD_PLAYERS=OFF",
             "-DBUILD_QT5OPENGL=ON"
+          ],
+          "cleanup": [
+            "*.la"
           ],
           "sources": [
             {
@@ -662,6 +701,9 @@
             }
           },
           "subdir": "source",
+          "cleanup": [
+            "*.la"
+          ],
           "sources": [
             {
               "type": "git",
@@ -675,6 +717,9 @@
           "name": "heif",
           "buildsystem": "cmake-ninja",
           "builddir": true,
+          "cleanup": [
+            "*.la"
+          ],
           "sources": [
             {
               "type": "git",
@@ -694,6 +739,9 @@
       "config-opts": [
         "-DENABLE_DPLUGIN=ON"
       ],
+      "cleanup": [
+        "*.la"
+      ],
       "sources": [
         {
           "type": "git",
@@ -707,6 +755,9 @@
       "name": "hugin",
       "buildsystem": "cmake-ninja",
       "builddir": true,
+      "cleanup": [
+        "*.la"
+      ],
       "sources": [
         {
           "type": "archive",
@@ -719,6 +770,9 @@
           "name": "wxWidgets",
           "buildsystem": "cmake-ninja",
           "builddir": true,
+          "cleanup": [
+            "*.la"
+          ],
           "sources": [
             {
               "type": "archive",
@@ -734,6 +788,9 @@
           "config-opts": [
             "-DWITH_OPENEXR=ON"
           ],
+          "cleanup": [
+            "*.la"
+          ],
           "sources": [
             {
               "type": "git",
@@ -747,6 +804,9 @@
               "name": "openexr",
               "buildsystem": "cmake-ninja",
               "builddir": true,
+              "cleanup": [
+                "*.la"
+              ],
               "sources": [
                 {
                   "type": "git",
@@ -760,6 +820,9 @@
                   "name": "imath",
                   "buildsystem": "cmake-ninja",
                   "builddir": true,
+                  "cleanup": [
+                    "*.la"
+                  ],
                   "sources": [
                     {
                       "type": "git",
@@ -778,6 +841,9 @@
           "name": "libpano13",
           "buildsystem": "cmake-ninja",
           "builddir": true,
+          "cleanup": [
+            "*.la"
+          ],
           "sources": [
             {
               "type": "archive",
@@ -801,6 +867,9 @@
             "--enable-shared",
             "--disable-static"
           ],
+          "cleanup": [
+            "*.la"
+          ],
           "sources": [
             {
               "type": "archive",
@@ -809,6 +878,9 @@
             }
           ]
         }
+      ],
+      "cleanup": [
+        "*.la"
       ],
       "sources": [
         {

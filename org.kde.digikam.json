@@ -349,7 +349,7 @@
             {
               "type": "git",
               "url": "https://github.com/ImageMagick/ImageMagick.git",
-              "tag": "7.1.0.43",
+              "tag": "7.1.0-43",
               "commit": "c95ef31d1ed702cc502f06202b17fee39e27ced9"
             }
           ]

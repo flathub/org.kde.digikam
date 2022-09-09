@@ -342,8 +342,10 @@
           ],
           "cleanup": [
             "/bin",
-            "/etc",
-            "/share/ImageMagick-*"
+            "/etc",            
+            "/share/ImageMagick-*",
+            "/lib/ImageMagick-*/modules-*/filters/*.la",
+            "/lib/libMagick*.la"
           ],
           "sources": [
             {

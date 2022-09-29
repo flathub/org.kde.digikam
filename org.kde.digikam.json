@@ -903,6 +903,56 @@
           "path": "patches/enblend-cxx.patch"
         }
       ]
+    },
+    {
+      "name": "exiftool",
+      "buildsystem": "simple",
+      "build-commands": [
+        "perl Makefile.PL",
+        "make install"
+      ],
+      "sources": [
+        {
+          "type": "git",
+          "url": "https://github.com/exiftool/exiftool.git",
+          "tag": "12.45",
+          "commit": "d6a778c11a5ada3a43c1e7830f357ee344f99a0d"
+        }
+      ],
+      "modules": [
+        {
+          "name": "perl",
+          "no-autogen": true,
+          "config-opts": [
+            "-des",
+            "-Duseshrplib"
+          ],
+          "build-options": {
+            "cflags": "-fPIC",
+            "ldflags": "-fpic"
+          },
+          "cleanup": [
+            "*.h"
+          ],
+          "post-install": [
+            "find ${FLATPAK_DEST}/lib/perl5/ -name \\*.so -exec chmod u+w {} \\;"
+          ],
+          "sources": [
+            {
+              "type": "archive",
+              "url": "https://www.cpan.org/src/5.0/perl-5.36.0.tar.gz",
+              "sha256": "e26085af8ac396f62add8a533c3a0ea8c8497d836f0689347ac5abd7b7a4e00a"
+            },
+            {
+              "type": "script",
+              "dest-filename": "configure",
+              "commands": [
+                "exec ./configure.gnu $@"
+              ]
+            }
+          ]
+        }
+      ]
     }
   ]
 }

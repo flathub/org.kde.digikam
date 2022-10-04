@@ -940,8 +940,8 @@
           "sources": [
             {
               "type": "archive",
-              "url": "https://www.cpan.org/src/5.0/perl-5.36.0.tar.gz",
-              "sha256": "e26085af8ac396f62add8a533c3a0ea8c8497d836f0689347ac5abd7b7a4e00a"
+              "url": "https://www.cpan.org/src/5.0/perl-5.34.1.tar.xz",
+              "sha256": "6d52cf833ff1af27bb5e986870a2c30cec73c044b41e3458cd991f94374039f7"
             },
             {
               "type": "script",

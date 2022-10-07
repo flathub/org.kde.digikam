@@ -14,8 +14,8 @@
     "--share=ipc",
     "--share=network",
     "--socket=cups",
+    "--socket=fallback-x11",
     "--socket=wayland",
-    "--socket=x11",
     "--system-talk-name=org.freedesktop.Avahi",
     "--system-talk-name=org.freedesktop.UDisks2",
     "--talk-name=org.kde.StatusNotifierWatcher",
@@ -55,7 +55,6 @@
       "builddir": true,
       "config-opts": [
         "-DCMAKE_BUILD_TYPE=RelWithDebInfo",
-        "-DCMAKE_INSTALL_PREFIX=/app",
         "-DCMAKE_CXX_FLAGS=-isystem /app/include/KF5",
         "-DENABLE_MYSQLSUPPORT=ON",
         "-DENABLE_INTERNALMYSQL=ON",
@@ -70,8 +69,8 @@
       "sources": [
         {
           "type": "archive",
-          "url": "https://download.kde.org/stable/digikam/7.7.0/digiKam-7.7.0.tar.xz",
-          "sha256": "c0c6dd2ea8a07514acbf2462f3a54518e7e8099b3337f881336168cff63d771c"
+          "url": "https://download.kde.org/stable/digikam/7.8.0/digiKam-7.8.0.tar.xz",
+          "sha256": "b08577b0b15ef99843695708aa2c0e98d547303d85be2a3b39905484f2cab6ce"
         }
       ],
       "modules": [
@@ -901,6 +900,56 @@
         {
           "type": "patch",
           "path": "patches/enblend-cxx.patch"
+        }
+      ]
+    },
+    {
+      "name": "exiftool",
+      "buildsystem": "simple",
+      "build-commands": [
+        "perl Makefile.PL",
+        "make install"
+      ],
+      "sources": [
+        {
+          "type": "git",
+          "url": "https://github.com/exiftool/exiftool.git",
+          "tag": "12.45",
+          "commit": "d6a778c11a5ada3a43c1e7830f357ee344f99a0d"
+        }
+      ],
+      "modules": [
+        {
+          "name": "perl",
+          "no-autogen": true,
+          "config-opts": [
+            "-des",
+            "-Duseshrplib"
+          ],
+          "build-options": {
+            "cflags": "-fPIC",
+            "ldflags": "-fpic"
+          },
+          "cleanup": [
+            "*.h"
+          ],
+          "post-install": [
+            "find ${FLATPAK_DEST}/lib/perl5/ -name \\*.so -exec chmod u+w {} \\;"
+          ],
+          "sources": [
+            {
+              "type": "archive",
+              "url": "https://www.cpan.org/src/5.0/perl-5.34.1.tar.xz",
+              "sha256": "6d52cf833ff1af27bb5e986870a2c30cec73c044b41e3458cd991f94374039f7"
+            },
+            {
+              "type": "script",
+              "dest-filename": "configure",
+              "commands": [
+                "exec ./configure.gnu $@"
+              ]
+            }
+          ]
         }
       ]
     }

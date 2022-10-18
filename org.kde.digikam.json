@@ -71,6 +71,10 @@
           "type": "archive",
           "url": "https://download.kde.org/stable/digikam/7.8.0/digiKam-7.8.0.tar.xz",
           "sha256": "b08577b0b15ef99843695708aa2c0e98d547303d85be2a3b39905484f2cab6ce"
+        },
+        {
+          "type": "patch",
+          "path": "patches/digikam-fix-return-from-QIODevice-seek-function.patch"
         }
       ],
       "modules": [
@@ -224,6 +228,7 @@
             "-DEXIV2_ENABLE_DYNAMIC_RUNTIME=OFF",
             "-DEXIV2_ENABLE_CURL=OFF",
             "-DEXIV2_ENABLE_SSH=OFF",
+            "-DEXIV2_ENABLE_BMFF=ON",
             "-DEXIV2_BUILD_SAMPLES=OFF",
             "-DEXIV2_BUILD_PO=OFF",
             "-DEXIV2_BUILD_EXIV2_COMMAND=OFF",
@@ -341,7 +346,7 @@
           ],
           "cleanup": [
             "/bin",
-            "/etc",            
+            "/etc",
             "/share/ImageMagick-*",
             "/lib/ImageMagick-*/modules-*/filters/*.la",
             "/lib/libMagick*.la"
@@ -715,7 +720,7 @@
           ]
         },
         {
-          "name": "heif",
+          "name": "libheif",
           "buildsystem": "cmake-ninja",
           "builddir": true,
           "cleanup": [
@@ -725,8 +730,22 @@
             {
               "type": "git",
               "url": "https://github.com/strukturag/libheif.git",
-              "tag": "v1.12.0",
-              "commit": "56c8a2613370562fc330af2c70c1510aa5fd9ff6"
+              "tag": "v1.13.0",
+              "commit": "5fb52b6134d5e034b51637a86c6e8a7418b35df1"
+            }
+          ],
+          "modules": [
+            {
+              "name": "libde265",
+              "buildsystem": "cmake-ninja",
+              "sources": [
+                {
+                  "type": "git",
+                  "url": "https://github.com/strukturag/libde265.git",
+                  "tag": "v1.0.8",
+                  "commit": "8aed7472df0af25b811828fa14f2f169dc34d35a"
+                }
+              ]
             }
           ]
         },

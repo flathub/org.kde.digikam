@@ -69,12 +69,8 @@
       "sources": [
         {
           "type": "archive",
-          "url": "https://download.kde.org/stable/digikam/7.8.0/digiKam-7.8.0.tar.xz",
-          "sha256": "b08577b0b15ef99843695708aa2c0e98d547303d85be2a3b39905484f2cab6ce"
-        },
-        {
-          "type": "patch",
-          "path": "patches/digikam-fix-return-from-QIODevice-seek-function.patch"
+          "url": "https://download.kde.org/stable/digikam/7.9.0/digiKam-7.9.0.tar.xz",
+          "sha256": "c3b80abc090da3cbbc42e67a403080d7f5fe0a7c98698735bda556c60314bab4"
         }
       ],
       "modules": [
@@ -91,8 +87,8 @@
           "sources": [
             {
               "type": "archive",
-              "url": "https://boostorg.jfrog.io/artifactory/main/release/1.78.0/source/boost_1_78_0.tar.bz2",
-              "sha256": "8681f175d4bdb26c52222665793eef08490d7758529330f98d3b29dd0735bccc"
+              "url": "https://boostorg.jfrog.io/artifactory/main/release/1.81.0/source/boost_1_81_0.tar.bz2",
+              "sha256": "71feeed900fbccca04a3b4f2f84a7c217186f28a940ed8b7ed4725986baf99fa"
             }
           ]
         },
@@ -206,8 +202,8 @@
             {
               "type": "git",
               "url": "https://github.com/Itseez/opencv.git",
-              "tag": "4.6.0",
-              "commit": "b0dc474160e389b9c9045da5db49d03ae17c6a6b"
+              "tag": "4.7.0",
+              "commit": "725e440d278aca07d35a5e8963ef990572b07316"
             }
           ]
         },
@@ -269,8 +265,8 @@
             {
               "type": "git",
               "url": "https://invent.kde.org/education/marble.git",
-              "tag": "v22.04.3",
-              "commit": "a3cf2c3de2163a49e34074f27365006f578aea60"
+              "tag": "v22.12.0",
+              "commit": "bdb848d737e2fa95c796eb24c71fa7c36b1fca4a"
             }
           ]
         },
@@ -329,7 +325,7 @@
               "type": "git",
               "dest": "lensfun-git",
               "url": "https://github.com/lensfun/lensfun.git",
-              "commit": "c7ca3c96a8c727b7762578b619e2b0f1a2924ba8"
+              "commit": "9025d2e46f52c91173f19328235c5c116eacfb97"
             }
           ]
         },
@@ -355,8 +351,8 @@
             {
               "type": "git",
               "url": "https://github.com/ImageMagick/ImageMagick.git",
-              "tag": "7.1.0-43",
-              "commit": "c95ef31d1ed702cc502f06202b17fee39e27ced9"
+              "tag": "7.1.0-57",
+              "commit": "eadf378a6f4e088c32fa5eda62ca6c41d8a84c9c"
             }
           ]
         },
@@ -421,8 +417,8 @@
             {
               "type": "git",
               "url": "https://invent.kde.org/graphics/libksane.git",
-              "tag": "v22.04.3",
-              "commit": "399d5611b66d5ec88206f4353b905f40d2069bdb"
+              "tag": "v22.12.0",
+              "commit": "af86efc8713051035cbdb94a8912b30b932166f2"
             }
           ],
           "modules": [
@@ -479,8 +475,8 @@
                   "sources": [
                     {
                       "type": "archive",
-                      "url": "https://downloads.sourceforge.net/project/net-snmp/net-snmp/5.9.2/net-snmp-5.9.2.tar.gz",
-                      "sha256": "21e86b06c8b54639f915781c9bf6433a79da5b7aa109087ea47a9b5378a6c5fd"
+                      "url": "https://downloads.sourceforge.net/project/net-snmp/net-snmp/5.9.3/net-snmp-5.9.3.tar.gz",
+                      "sha256": "2097f29b7e1bf3f1300b4bae52fa2308d0bb8d5d3998dbe02f9462a413a2ef0a"
                     },
                     {
                       "type": "shell",
@@ -625,8 +621,8 @@
                   "sources": [
                     {
                       "type": "archive",
-                      "url": "https://poppler.freedesktop.org/poppler-22.07.0.tar.xz",
-                      "sha256": "420230c5c43782e2151259b3e523e632f4861342aad70e7e20b8773d9eaf3428"
+                      "url": "https://poppler.freedesktop.org/poppler-23.01.0.tar.xz",
+                      "sha256": "fae9b88d3d5033117d38477b79220cfd0d8e252c278ec870ab1832501741fd94"
                     }
                   ],
                   "modules": [
@@ -645,6 +641,22 @@
                       ]
                     }
                   ]
+                }
+              ]
+            },
+            {
+              "name": "ksanecore",
+              "buildsystem": "cmake-ninja",
+              "builddir": true,
+              "cleanup": [
+                "*.la"
+              ],
+              "sources": [
+                {
+                  "type": "git",
+                  "url": "https://invent.kde.org/libraries/ksanecore.git",
+                  "tag": "v22.12.0",
+                  "commit": "2031fe5005262de48cc91327bb1dc2cfd7292683"
                 }
               ]
             }
@@ -730,8 +742,8 @@
             {
               "type": "git",
               "url": "https://github.com/strukturag/libheif.git",
-              "tag": "v1.13.0",
-              "commit": "5fb52b6134d5e034b51637a86c6e8a7418b35df1"
+              "tag": "v1.14.0",
+              "commit": "2275b1035575d47fe3f614bb20f8f28a85e27edb"
             }
           ],
           "modules": [
@@ -742,8 +754,8 @@
                 {
                   "type": "git",
                   "url": "https://github.com/strukturag/libde265.git",
-                  "tag": "v1.0.8",
-                  "commit": "8aed7472df0af25b811828fa14f2f169dc34d35a"
+                  "tag": "v1.0.9",
+                  "commit": "b578ae56eb2eb257e19158282c2af9d552565c1c"
                 }
               ]
             }
@@ -781,8 +793,8 @@
       "sources": [
         {
           "type": "archive",
-          "url": "https://download.sourceforge.net/project/hugin/hugin/hugin-2021.0/hugin-2021.0.0.tar.bz2",
-          "sha256": "047aea8a7fa47844b34ef27c19d3b697e84939dcb1fdbbeb2c204621b66eead9"
+          "url": "https://download.sourceforge.net/project/hugin/hugin/hugin-2022.0/hugin-2022.0.0.tar.bz2",
+          "sha256": "97c8562a0ba9a743e0b955a43dfde048b1c60cd9e5f2ee2b69de1a81646e05a7"
         }
       ],
       "modules": [
@@ -796,8 +808,8 @@
           "sources": [
             {
               "type": "archive",
-              "url": "https://github.com/wxWidgets/wxWidgets/releases/download/v3.2.0/wxWidgets-3.2.0.tar.bz2",
-              "sha256": "356e9b55f1ae3d58ae1fed61478e9b754d46b820913e3bfbc971c50377c1903a"
+              "url": "https://github.com/wxWidgets/wxWidgets/releases/download/v3.2.1/wxWidgets-3.2.1.tar.bz2",
+              "sha256": "c229976bb413eb88e45cb5dfb68b27890d450149c09b331abd751e7ae0f5fa66"
             }
           ]
         },
@@ -847,8 +859,8 @@
                     {
                       "type": "git",
                       "url": "https://github.com/AcademySoftwareFoundation/Imath.git",
-                      "tag": "v3.1.5",
-                      "commit": "90c47b495b3ecf863a8a5de562c6e47d49cfb27b"
+                      "tag": "v3.1.6",
+                      "commit": "7c6c5fd76edf0c71db1a5a14d66a04a7d2bf9c1f"
                     }
                   ]
                 }
@@ -867,8 +879,8 @@
           "sources": [
             {
               "type": "archive",
-              "url": "https://downloads.sourceforge.net/project/panotools/libpano13/libpano13-2.9.19/libpano13-2.9.19.tar.gz",
-              "sha256": "037357383978341dea8f572a5d2a0876c5ab0a83dffda431bd393357e91d95a8"
+              "url": "https://downloads.sourceforge.net/project/panotools/libpano13/libpano13-2.9.21/libpano13-2.9.21.tar.gz",
+              "sha256": "79e5a1452199305e2961462720ef5941152779c127c5b96fc340d2492e633590"
             }
           ]
         }
@@ -893,8 +905,8 @@
           "sources": [
             {
               "type": "archive",
-              "url": "http://mirror.sergal.org/gnu/gsl/gsl-2.5.tar.gz",
-              "sha256": "0460ad7c2542caaddc6729762952d345374784100223995eb14d614861f2258d"
+              "url": "https://ftp.gnu.org/gnu/gsl/gsl-2.7.tar.gz",
+              "sha256": "efbbf3785da0e53038be7907500628b466152dbc3c173a87de1b5eba2e23602b"
             }
           ]
         }
@@ -933,8 +945,8 @@
         {
           "type": "git",
           "url": "https://github.com/exiftool/exiftool.git",
-          "tag": "12.45",
-          "commit": "d6a778c11a5ada3a43c1e7830f357ee344f99a0d"
+          "tag": "12.52",
+          "commit": "ac4151014c3d9b7d15ebd3bdfdc01405492a05ee"
         }
       ],
       "modules": [

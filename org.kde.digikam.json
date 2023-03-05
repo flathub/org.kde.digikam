@@ -298,10 +298,10 @@
             }
           },
           "post-install": [
-            "pip3 install --no-index --find-links=file://${PWD} --prefix=${FLATPAK_DEST} lxml",
+            "pip3 install --no-index --find-links=\"file://${PWD}\" tar xvf db/version_1.tar -C ${FLATPAK_DEST}/share/lensfun/version_1--prefix=${FLATPAK_DEST} --ignore-installed lxml",
             "PYTHONPATH=${FLATPAK_DEST}/lib/python3.10/site-packages python3 lensfun_convert_db.py $PWD lensfun-git/data/db",
-            "rm -rf /app/share/lensfun/version_1/*",
-            "tar xvf db/version_1.tar -C /app/share/lensfun/version_1"
+            "rm -rf ${FLATPAK_DEST}/share/lensfun/version_1/*",
+            "tar xvf db/version_1.tar -C ${FLATPAK_DEST}/share/lensfun/version_1"
           ],
           "cleanup": [
             "*.la"
@@ -314,8 +314,8 @@
             },
             {
               "type": "file",
-              "url": "https://files.pythonhosted.org/packages/2c/4d/3ec1ea8512a7fbf57f02dee3035e2cce2d63d0e9c0ab8e4e376e01452597/lxml-4.5.2.tar.gz",
-              "sha256": "cdc13a1682b2a6241080745b1953719e7fe0850b40a5c71ca574f090a1391df6"
+              "url": "https://files.pythonhosted.org/packages/70/bb/7a2c7b4f8f434aa1ee801704bf08f1e53d7b5feba3d5313ab17003477808/lxml-4.9.1.tar.gz",
+              "sha256": "fe749b052bb7233fe5d072fcb549221a8cb1a16725c47c37e42b0b9cb3ff2c3f"
             },
             {
               "type": "file",

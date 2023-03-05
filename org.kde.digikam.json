@@ -298,7 +298,7 @@
             }
           },
           "post-install": [
-            "pip3 install --no-index --find-links=\"file://${PWD}\" tar xvf db/version_1.tar -C ${FLATPAK_DEST}/share/lensfun/version_1--prefix=${FLATPAK_DEST} --ignore-installed lxml",
+            "pip3 install --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} --ignore-installed lxml",
             "PYTHONPATH=${FLATPAK_DEST}/lib/python3.10/site-packages python3 lensfun_convert_db.py $PWD lensfun-git/data/db",
             "rm -rf ${FLATPAK_DEST}/share/lensfun/version_1/*",
             "tar xvf db/version_1.tar -C ${FLATPAK_DEST}/share/lensfun/version_1"

@@ -21,15 +21,6 @@
     "--talk-name=org.kde.StatusNotifierWatcher",
     "--env=DK_PLUGIN_PATH=/app/lib/plugins/digikam"
   ],
-  "add-extensions": {
-    "org.freedesktop.Platform.ffmpeg-full": {
-      "directory": "lib/ffmpeg",
-      "add-ld-path": ".",
-      "version": "22.08",
-      "autodownload": true,
-      "autodelete": false
-    }
-  },
   "rename-icon": "digikam",
   "cleanup": [
     "/doc",
@@ -45,7 +36,6 @@
     "/share/pkgconfig"
   ],
   "cleanup-commands": [
-    "mkdir -p ${FLATPAK_DEST}/lib/ffmpeg",
     "/app/cleanup-BaseApp.sh"
   ],
   "modules": [
@@ -107,6 +97,28 @@
               "commit": "3147391d946bb4b6c68edd901f2add6ac1f31f8c"
             }
           ]
+        },
+        {
+            "name": "ffmpeg-4.4",
+            "config-opts": [
+                "--enable-shared",
+                "--disable-static",
+                "--enable-gnutls",
+                "--disable-doc",
+                "--disable-programs",
+                "--disable-stripping"
+            ],
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://ffmpeg.org/releases/ffmpeg-4.4.2.tar.gz",
+                    "sha256": "058efd4b6459bc9df54186f17a989d0af619a793aa62f07e96b88632706d6a17"
+                },
+                {
+                    "type": "patch",
+                    "path": "ffmpeg-patch.patch"
+                }
+            ]
         },
         {
           "name": "opencv",

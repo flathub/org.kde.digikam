@@ -33,7 +33,8 @@
     "/share/doc",
     "/share/eigen3",
     "/share/man",
-    "/share/pkgconfig"
+    "/share/pkgconfig",
+    "*.a"
   ],
   "cleanup-commands": [
     "/app/cleanup-BaseApp.sh"

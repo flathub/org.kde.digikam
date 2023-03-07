@@ -54,7 +54,8 @@
         "-DENABLE_MEDIAPLAYER=ON",
         "-DENABLE_DBUS=ON",
         "-DENABLE_APPSTYLES=ON",
-        "-DENABLE_QWEBENGINE=ON"
+        "-DENABLE_QWEBENGINE=ON",
+        "-DBUILD_TESTING=OFF"
       ],
       "post-install": [
         "gunzip -S z /app/share/icons/hicolor/scalable/apps/*.svgz"

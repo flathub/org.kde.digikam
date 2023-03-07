@@ -43,9 +43,11 @@
       "name": "digikam",
       "buildsystem": "cmake-ninja",
       "builddir": true,
+      "build-options": {
+        "cxxflags": "-isystem /app/include/KF5"
+        },
       "config-opts": [
         "-DCMAKE_BUILD_TYPE=RelWithDebInfo",
-        "-DCMAKE_CXX_FLAGS=-isystem /app/include/KF5",
         "-DENABLE_MYSQLSUPPORT=ON",
         "-DENABLE_INTERNALMYSQL=ON",
         "-DENABLE_MEDIAPLAYER=ON",

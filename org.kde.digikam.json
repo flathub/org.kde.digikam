@@ -1,9 +1,9 @@
 {
   "id": "org.kde.digikam",
   "base": "io.qt.qtwebengine.BaseApp",
-  "base-version": "5.15-21.08",
+  "base-version": "5.15-22.08",
   "runtime": "org.kde.Platform",
-  "runtime-version": "5.15-21.08",
+  "runtime-version": "5.15-22.08",
   "sdk": "org.kde.Sdk",
   "command": "digikam",
   "finish-args": [
@@ -21,15 +21,6 @@
     "--talk-name=org.kde.StatusNotifierWatcher",
     "--env=DK_PLUGIN_PATH=/app/lib/plugins/digikam"
   ],
-  "add-extensions": {
-    "org.freedesktop.Platform.ffmpeg-full": {
-      "directory": "lib/ffmpeg",
-      "add-ld-path": ".",
-      "version": "21.08",
-      "autodownload": true,
-      "autodelete": false
-    }
-  },
   "rename-icon": "digikam",
   "cleanup": [
     "/doc",
@@ -42,10 +33,10 @@
     "/share/doc",
     "/share/eigen3",
     "/share/man",
-    "/share/pkgconfig"
+    "/share/pkgconfig",
+    "*.a"
   ],
   "cleanup-commands": [
-    "mkdir -p ${FLATPAK_DEST}/lib/ffmpeg",
     "/app/cleanup-BaseApp.sh"
   ],
   "modules": [
@@ -53,15 +44,18 @@
       "name": "digikam",
       "buildsystem": "cmake-ninja",
       "builddir": true,
+      "build-options": {
+        "cxxflags": "-isystem /app/include/KF5"
+        },
       "config-opts": [
         "-DCMAKE_BUILD_TYPE=RelWithDebInfo",
-        "-DCMAKE_CXX_FLAGS=-isystem /app/include/KF5",
         "-DENABLE_MYSQLSUPPORT=ON",
         "-DENABLE_INTERNALMYSQL=ON",
         "-DENABLE_MEDIAPLAYER=ON",
         "-DENABLE_DBUS=ON",
         "-DENABLE_APPSTYLES=ON",
-        "-DENABLE_QWEBENGINE=ON"
+        "-DENABLE_QWEBENGINE=ON",
+        "-DBUILD_TESTING=OFF"
       ],
       "post-install": [
         "gunzip -S z /app/share/icons/hicolor/scalable/apps/*.svgz"
@@ -107,6 +101,28 @@
               "commit": "3147391d946bb4b6c68edd901f2add6ac1f31f8c"
             }
           ]
+        },
+        {
+            "name": "ffmpeg-4.4",
+            "config-opts": [
+                "--enable-shared",
+                "--disable-static",
+                "--enable-gnutls",
+                "--disable-doc",
+                "--disable-programs",
+                "--disable-stripping"
+            ],
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://ffmpeg.org/releases/ffmpeg-4.4.2.tar.gz",
+                    "sha256": "058efd4b6459bc9df54186f17a989d0af619a793aa62f07e96b88632706d6a17"
+                },
+                {
+                    "type": "patch",
+                    "path": "ffmpeg-patch.patch"
+                }
+            ]
         },
         {
           "name": "opencv",
@@ -298,10 +314,10 @@
             }
           },
           "post-install": [
-            "pip3 install --no-index --find-links=file://${PWD} --prefix=${FLATPAK_DEST} lxml",
-            "python3 lensfun_convert_db.py $PWD lensfun-git/data/db",
-            "rm -rf /app/share/lensfun/version_1/*",
-            "tar xvf db/version_1.tar -C /app/share/lensfun/version_1"
+            "pip3 install --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} --ignore-installed lxml",
+            "PYTHONPATH=${FLATPAK_DEST}/lib/python3.10/site-packages python3 lensfun_convert_db.py $PWD lensfun-git/data/db",
+            "rm -rf ${FLATPAK_DEST}/share/lensfun/version_1/*",
+            "tar xvf db/version_1.tar -C ${FLATPAK_DEST}/share/lensfun/version_1"
           ],
           "cleanup": [
             "*.la"
@@ -314,8 +330,8 @@
             },
             {
               "type": "file",
-              "url": "https://files.pythonhosted.org/packages/2c/4d/3ec1ea8512a7fbf57f02dee3035e2cce2d63d0e9c0ab8e4e376e01452597/lxml-4.5.2.tar.gz",
-              "sha256": "cdc13a1682b2a6241080745b1953719e7fe0850b40a5c71ca574f090a1391df6"
+              "url": "https://files.pythonhosted.org/packages/06/5a/e11cad7b79f2cf3dd2ff8f81fa8ca667e7591d3d8451768589996b65dec1/lxml-4.9.2.tar.gz",
+              "sha256": "2455cfaeb7ac70338b3257f41e21f0724f4b5b0c0e7702da67ee6c3640835b67"
             },
             {
               "type": "file",
@@ -754,8 +770,8 @@
                 {
                   "type": "git",
                   "url": "https://github.com/strukturag/libde265.git",
-                  "tag": "v1.0.9",
-                  "commit": "b578ae56eb2eb257e19158282c2af9d552565c1c"
+                  "tag": "v1.0.11",
+                  "commit": "e255f0571a46935955deef15808e52b18043788c"
                 }
               ]
             }

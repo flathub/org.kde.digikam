@@ -63,8 +63,15 @@
       "sources": [
         {
           "type": "archive",
-          "url": "https://download.kde.org/stable/digikam/7.9.0/digiKam-7.9.0.tar.xz",
-          "sha256": "c3b80abc090da3cbbc42e67a403080d7f5fe0a7c98698735bda556c60314bab4"
+          "url": "https://download.kde.org/stable/digikam/7.10.0/digiKam-7.10.0.tar.xz",
+          "sha256": "a3f30f01b7d1b6d585822bcd5ebf8df69e0ff024563a72462ebf8069dbda22e1",
+            "x-checker-data": {
+                "type": "anitya",
+                "project-id": 437,
+                "stable-only": true,
+                "url-template": "https://download.kde.org/stable/digikam/$version/digiKam-$version.tar.xz"
+            }
+
         }
       ],
       "modules": [
@@ -82,7 +89,13 @@
             {
               "type": "archive",
               "url": "https://boostorg.jfrog.io/artifactory/main/release/1.81.0/source/boost_1_81_0.tar.bz2",
-              "sha256": "71feeed900fbccca04a3b4f2f84a7c217186f28a940ed8b7ed4725986baf99fa"
+              "sha256": "71feeed900fbccca04a3b4f2f84a7c217186f28a940ed8b7ed4725986baf99fa",
+              "x-checker-data": {
+                  "type": "anitya",
+                  "project-id": 6845,
+                  "stable-only": true,
+                  "url-template": "https://boostorg.jfrog.io/artifactory/main/release/$version/source/boost_${major}_${minor}_$patch.tar.bz2"
+              }
             }
           ]
         },
@@ -94,12 +107,17 @@
             "*.la"
           ],
           "sources": [
-            {
-              "type": "git",
-              "url": "https://gitlab.com/libeigen/eigen.git",
-              "tag": "3.4.0",
-              "commit": "3147391d946bb4b6c68edd901f2add6ac1f31f8c"
-            }
+              {
+                  "type": "archive",
+                  "url": "https://gitlab.com/libeigen/eigen/-/archive/3.4.0/eigen-3.4.0.tar.bz2",
+                  "sha256": "b4c198460eba6f28d34894e3a5710998818515104d6e74e5cc331ce31e46e626",
+                  "x-checker-data": {
+                      "type": "anitya",
+                      "project-id": 666,
+                      "stable-only": true,
+                      "url-template": "https://gitlab.com/libeigen/eigen/-/archive/$version/eigen-$version.tar.bz2"
+                  }
+              }
           ]
         },
         {
@@ -252,13 +270,18 @@
             "-DEXIV2_ENABLE_WIN_UNICODE=OFF"
           ],
           "sources": [
-            {
-              "type": "git",
-              "url": "https://github.com/Exiv2/exiv2.git",
-              "tag": "v0.27.5",
-              "commit": "ad5484cb1eaba3ad0e49b290d244f6b1ee9ff076"
-            }
-          ]
+                {
+                    "type": "archive",
+                    "url": "https://github.com/Exiv2/exiv2/releases/download/v0.27.6/exiv2-0.27.6-Source.tar.gz",
+                    "sha256": "4c192483a1125dc59a3d70b30d30d32edace9e14adf52802d2f853abf72db8a6",
+                    "x-checker-data": {
+                        "type": "anitya",
+                        "project-id": 769,
+                        "stable-only": true,
+                        "url-template": "https://github.com/Exiv2/exiv2/releases/download/v$version/exiv2-$version-Source.tar.gz"
+                    }
+                }
+            ]
         },
         {
           "name": "marble",

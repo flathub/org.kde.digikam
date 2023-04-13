@@ -1,1027 +1,1026 @@
 {
-  "id": "org.kde.digikam",
-  "base": "io.qt.qtwebengine.BaseApp",
-  "base-version": "5.15-22.08",
-  "runtime": "org.kde.Platform",
-  "runtime-version": "5.15-22.08",
-  "sdk": "org.kde.Sdk",
-  "command": "digikam",
-  "finish-args": [
-    "--device=all",
-    "--filesystem=xdg-pictures",
-    "--filesystem=/media",
-    "--filesystem=/run/media",
-    "--share=ipc",
-    "--share=network",
-    "--socket=cups",
-    "--socket=fallback-x11",
-    "--socket=wayland",
-    "--system-talk-name=org.freedesktop.Avahi",
-    "--system-talk-name=org.freedesktop.UDisks2",
-    "--talk-name=org.kde.StatusNotifierWatcher",
-    "--env=DK_PLUGIN_PATH=/app/lib/plugins/digikam"
-  ],
-  "rename-icon": "digikam",
-  "cleanup": [
-    "/doc",
-    "/include",
-    "/lib/cmake",
-    "/lib/libexec",
-    "/lib/pkgconfig",
-    "/lib/vigra/*.cmake",
-    "/man",
-    "/share/doc",
-    "/share/eigen3",
-    "/share/man",
-    "/share/pkgconfig",
-    "*.a"
-  ],
-  "cleanup-commands": [
-    "/app/cleanup-BaseApp.sh"
-  ],
-  "modules": [
-    {
-      "name": "digikam",
-      "buildsystem": "cmake-ninja",
-      "builddir": true,
-      "build-options": {
-        "cxxflags": "-isystem /app/include/KF5"
-        },
-      "config-opts": [
-        "-DCMAKE_BUILD_TYPE=RelWithDebInfo",
-        "-DENABLE_MYSQLSUPPORT=ON",
-        "-DENABLE_INTERNALMYSQL=ON",
-        "-DENABLE_MEDIAPLAYER=ON",
-        "-DENABLE_DBUS=ON",
-        "-DENABLE_APPSTYLES=ON",
-        "-DENABLE_QWEBENGINE=ON",
-        "-DBUILD_TESTING=OFF"
-      ],
-      "post-install": [
-        "gunzip -S z /app/share/icons/hicolor/scalable/apps/*.svgz"
-      ],
-      "sources": [
+    "id": "org.kde.digikam",
+    "base": "io.qt.qtwebengine.BaseApp",
+    "base-version": "5.15-22.08",
+    "runtime": "org.kde.Platform",
+    "runtime-version": "5.15-22.08",
+    "sdk": "org.kde.Sdk",
+    "command": "digikam",
+    "finish-args": [
+        "--device=all",
+        "--filesystem=xdg-pictures",
+        "--filesystem=/media",
+        "--filesystem=/run/media",
+        "--share=ipc",
+        "--share=network",
+        "--socket=cups",
+        "--socket=fallback-x11",
+        "--socket=wayland",
+        "--system-talk-name=org.freedesktop.Avahi",
+        "--system-talk-name=org.freedesktop.UDisks2",
+        "--talk-name=org.kde.StatusNotifierWatcher",
+        "--env=DK_PLUGIN_PATH=/app/lib/plugins/digikam"
+    ],
+    "rename-icon": "digikam",
+    "cleanup": [
+        "/doc",
+        "/include",
+        "/lib/cmake",
+        "/lib/libexec",
+        "/lib/pkgconfig",
+        "/lib/vigra/*.cmake",
+        "/man",
+        "/share/doc",
+        "/share/eigen3",
+        "/share/man",
+        "/share/pkgconfig",
+        "*.a"
+    ],
+    "cleanup-commands": [
+        "/app/cleanup-BaseApp.sh"
+    ],
+    "modules": [
         {
-          "type": "archive",
-          "url": "https://download.kde.org/stable/digikam/7.10.0/digiKam-7.10.0.tar.xz",
-          "sha256": "a3f30f01b7d1b6d585822bcd5ebf8df69e0ff024563a72462ebf8069dbda22e1",
-            "x-checker-data": {
-                "type": "anitya",
-                "project-id": 437,
-                "stable-only": true,
-                "url-template": "https://download.kde.org/stable/digikam/$version/digiKam-$version.tar.xz"
-            }
-
-        }
-      ],
-      "modules": [
-        {
-          "name": "boost",
-          "buildsystem": "simple",
-          "build-commands": [
-            "./bootstrap.sh --prefix=/app --with-libraries=system,filesystem",
-            "./b2 install variant=release link=shared runtime-link=shared cxxflags='$CXXFLAGS' linkflags='$LDFLAGS' -j $FLATPAK_BUILDER_N_JOBS"
-          ],
-          "cleanup": [
-            "/lib/libboost_*.a"
-          ],
-          "sources": [
-            {
-              "type": "archive",
-              "url": "https://boostorg.jfrog.io/artifactory/main/release/1.81.0/source/boost_1_81_0.tar.bz2",
-              "sha256": "71feeed900fbccca04a3b4f2f84a7c217186f28a940ed8b7ed4725986baf99fa",
-              "x-checker-data": {
-                  "type": "anitya",
-                  "project-id": 6845,
-                  "stable-only": true,
-                  "url-template": "https://boostorg.jfrog.io/artifactory/main/release/$version/source/boost_${major}_${minor}_$patch.tar.bz2"
-              }
-            }
-          ]
-        },
-        {
-          "name": "eigen",
-          "buildsystem": "cmake-ninja",
-          "builddir": true,
-          "cleanup": [
-            "*.la"
-          ],
-          "sources": [
-              {
-                  "type": "archive",
-                  "url": "https://gitlab.com/libeigen/eigen/-/archive/3.4.0/eigen-3.4.0.tar.bz2",
-                  "sha256": "b4c198460eba6f28d34894e3a5710998818515104d6e74e5cc331ce31e46e626",
-                  "x-checker-data": {
-                      "type": "anitya",
-                      "project-id": 666,
-                      "stable-only": true,
-                      "url-template": "https://gitlab.com/libeigen/eigen/-/archive/$version/eigen-$version.tar.bz2"
-                  }
-              }
-          ]
-        },
-        {
-            "name": "ffmpeg-4.4",
+            "name": "digikam",
+            "buildsystem": "cmake-ninja",
+            "builddir": true,
+            "build-options": {
+                "cxxflags": "-isystem /app/include/KF5"
+            },
             "config-opts": [
-                "--enable-shared",
-                "--disable-static",
-                "--enable-gnutls",
-                "--disable-doc",
-                "--disable-programs",
-                "--disable-stripping"
+                "-DCMAKE_BUILD_TYPE=RelWithDebInfo",
+                "-DENABLE_MYSQLSUPPORT=ON",
+                "-DENABLE_INTERNALMYSQL=ON",
+                "-DENABLE_MEDIAPLAYER=ON",
+                "-DENABLE_DBUS=ON",
+                "-DENABLE_APPSTYLES=ON",
+                "-DENABLE_QWEBENGINE=ON",
+                "-DBUILD_TESTING=OFF"
+            ],
+            "post-install": [
+                "gunzip -S z /app/share/icons/hicolor/scalable/apps/*.svgz"
             ],
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://ffmpeg.org/releases/ffmpeg-4.4.2.tar.gz",
-                    "sha256": "058efd4b6459bc9df54186f17a989d0af619a793aa62f07e96b88632706d6a17"
+                    "url": "https://download.kde.org/stable/digikam/8.0.0/digiKam-8.0.0.tar.xz",
+                    "sha256": "102c712b6209fe2ac877c9b1d019dacadaf115adf915570d26816066d151e847",
+                    "x-checker-data": {
+                        "type": "anitya",
+                        "project-id": 437,
+                        "stable-only": true,
+                        "url-template": "https://download.kde.org/stable/digikam/$version/digiKam-$version.tar.xz"
+                    }
+                }
+            ],
+            "modules": [
+                {
+                    "name": "boost",
+                    "buildsystem": "simple",
+                    "build-commands": [
+                        "./bootstrap.sh --prefix=/app --with-libraries=system,filesystem",
+                        "./b2 install variant=release link=shared runtime-link=shared cxxflags='$CXXFLAGS' linkflags='$LDFLAGS' -j $FLATPAK_BUILDER_N_JOBS"
+                    ],
+                    "cleanup": [
+                        "/lib/libboost_*.a"
+                    ],
+                    "sources": [
+                        {
+                            "type": "archive",
+                            "url": "https://boostorg.jfrog.io/artifactory/main/release/1.81.0/source/boost_1_81_0.tar.bz2",
+                            "sha256": "71feeed900fbccca04a3b4f2f84a7c217186f28a940ed8b7ed4725986baf99fa",
+                            "x-checker-data": {
+                                "type": "anitya",
+                                "project-id": 6845,
+                                "stable-only": true,
+                                "url-template": "https://boostorg.jfrog.io/artifactory/main/release/$version/source/boost_${major}_${minor}_$patch.tar.bz2"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "eigen",
+                    "buildsystem": "cmake-ninja",
+                    "builddir": true,
+                    "cleanup": [
+                        "*.la"
+                    ],
+                    "sources": [
+                        {
+                            "type": "archive",
+                            "url": "https://gitlab.com/libeigen/eigen/-/archive/3.4.0/eigen-3.4.0.tar.bz2",
+                            "sha256": "b4c198460eba6f28d34894e3a5710998818515104d6e74e5cc331ce31e46e626",
+                            "x-checker-data": {
+                                "type": "anitya",
+                                "project-id": 666,
+                                "stable-only": true,
+                                "url-template": "https://gitlab.com/libeigen/eigen/-/archive/$version/eigen-$version.tar.bz2"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "ffmpeg-4.4",
+                    "config-opts": [
+                        "--enable-shared",
+                        "--disable-static",
+                        "--enable-gnutls",
+                        "--disable-doc",
+                        "--disable-programs",
+                        "--disable-stripping"
+                    ],
+                    "sources": [
+                        {
+                            "type": "archive",
+                            "url": "https://ffmpeg.org/releases/ffmpeg-4.4.2.tar.gz",
+                            "sha256": "058efd4b6459bc9df54186f17a989d0af619a793aa62f07e96b88632706d6a17"
+                        },
+                        {
+                            "type": "patch",
+                            "path": "ffmpeg-patch.patch"
+                        }
+                    ]
+                },
+                {
+                    "name": "opencv",
+                    "buildsystem": "cmake-ninja",
+                    "builddir": true,
+                    "config-opts": [
+                        "-DBUILD_EXAMPLES=OFF",
+                        "-DBUILD_TESTS=OFF",
+                        "-DBUILD_DOCS=OFF",
+                        "-DBUILD_PERF_TESTS=OFF",
+                        "-DBUILD_NEW_PYTHON_SUPPORT=OFF",
+                        "-DBUILD_ZLIB=OFF",
+                        "-DOPENCV_BUILD_3RDPARTY_LIBS=OFF",
+                        "-DINSTALL_C_EXAMPLES=OFF",
+                        "-DINSTALL_PYTHON_EXAMPLES=OFF",
+                        "-DBUILD_opencv_core=ON",
+                        "-DBUILD_opencv_imgproc=ON",
+                        "-DBUILD_opencv_imgcodecs=ON",
+                        "-DBUILD_opencv_objdetect=ON",
+                        "-DBUILD_opencv_calib3d=ON",
+                        "-DBUILD_opencv_features2d=ON",
+                        "-DBUILD_opencv_flann=ON",
+                        "-DBUILD_opencv_dnn=ON",
+                        "-DBUILD_opencv_photo=OFF",
+                        "-DBUILD_opencv_java=OFF",
+                        "-DBUILD_opencv_java_bindings_generator=OFF",
+                        "-DBUILD_opencv_js=OFF",
+                        "-DBUILD_opencv_python2=OFF",
+                        "-DBUILD_opencv_python3=OFF",
+                        "-DBUILD_opencv_python_bindings_generator=OFF",
+                        "-DBUILD_opencv_shape=OFF",
+                        "-DBUILD_opencv_highgui=OFF",
+                        "-DBUILD_opencv_superres=OFF",
+                        "-DBUILD_opencv_stitching=OFF",
+                        "-DBUILD_opencv_videostab=OFF",
+                        "-DBUILD_opencv_videoio=OFF",
+                        "-DBUILD_opencv_video=OFF",
+                        "-DBUILD_opencv_apps=OFF",
+                        "-DBUILD_opencv_gapi=OFF",
+                        "-DWITH_PROTOBUF=ON",
+                        "-DWITH_1394=OFF",
+                        "-DWITH_VTK=OFF",
+                        "-DWITH_DIRECTX=OFF",
+                        "-DWITH_DSHOW=OFF",
+                        "-DWITH_EIGEN=OFF",
+                        "-DWITH_FFMPEG=OFF",
+                        "-DWITH_GSTREAMER=OFF",
+                        "-DWITH_GTK=OFF",
+                        "-DWITH_IPP=OFF",
+                        "-DWITH_JASPER=OFF",
+                        "-DWITH_JPEG=OFF",
+                        "-DWITH_MATLAB=OFF",
+                        "-DWITH_OPENJPEG=OFF",
+                        "-DWITH_OPENEXR=OFF",
+                        "-DWITH_OPENNI=OFF",
+                        "-DWITH_OPENMP=OFF",
+                        "-DWITH_PNG=OFF",
+                        "-DWITH_PVAPI=OFF",
+                        "-DWITH_WIN32UI=OFF",
+                        "-DWITH_QT=OFF",
+                        "-DWITH_QUICKTIME=OFF",
+                        "-DWITH_QT_OPENGL=OFF",
+                        "-DWITH_TBB=OFF",
+                        "-DWITH_TIFF=OFF",
+                        "-DWITH_UNICAP=OFF",
+                        "-DWITH_V4L=OFF",
+                        "-DWITH_VFW=OFF",
+                        "-DWITH_VIDEOINPUT=OFF",
+                        "-DWITH_XINE=OFF",
+                        "-DWITH_VA_INTEL=OFF",
+                        "-DWITH_GPHOTO2=OFF",
+                        "-DWITH_WEBP=OFF",
+                        "-DWITH_IMGCODEC_HDR=OFF",
+                        "-DWITH_IMGCODEC_SUNRASTER=OFF",
+                        "-DWITH_IMGCODEC_PXM=OFF",
+                        "-DWITH_CUDA=OFF",
+                        "-DWITH_CUFFT=OFF",
+                        "-DWITH_CUBLAS=OFF",
+                        "-DWITH_NVCUVID=OFF",
+                        "-DWITH_OPENCL=OFF",
+                        "-DWITH_OPENCL_SVM=OFF",
+                        "-DWITH_OPENCLAMDFFT=OFF",
+                        "-DWITH_OPENCLAMDBLAS=OFF",
+                        "-DCV_ENABLE_INTRINSICS=OFF",
+                        "-DCV_DISABLE_OPTIMIZATION=ON",
+                        "-DCV_TRACE=OFF",
+                        "-DWITH_OPENJPEG=OFF"
+                    ],
+                    "cleanup": [
+                        "/bin"
+                    ],
+                    "sources": [
+                        {
+                            "type": "git",
+                            "url": "https://github.com/Itseez/opencv.git",
+                            "tag": "4.7.0",
+                            "commit": "725e440d278aca07d35a5e8963ef990572b07316"
+                        }
+                    ]
+                },
+                {
+                    "name": "exiv2",
+                    "buildsystem": "cmake-ninja",
+                    "builddir": true,
+                    "config-opts": [
+                        "-DBUILD_SHARED_LIBS=ON",
+                        "-DEXIV2_ENABLE_XMP=ON",
+                        "-DEXIV2_ENABLE_EXTERNAL_XMP=OFF",
+                        "-DEXIV2_ENABLE_PNG=ON",
+                        "-DEXIV2_ENABLE_NLS=ON",
+                        "-DEXIV2_ENABLE_PRINTUCS2=ON",
+                        "-DEXIV2_ENABLE_LENSDATA=ON",
+                        "-DEXIV2_ENABLE_VIDEO=OFF",
+                        "-DEXIV2_ENABLE_WEBREADY=OFF",
+                        "-DEXIV2_ENABLE_DYNAMIC_RUNTIME=OFF",
+                        "-DEXIV2_ENABLE_CURL=OFF",
+                        "-DEXIV2_ENABLE_SSH=OFF",
+                        "-DEXIV2_ENABLE_BMFF=ON",
+                        "-DEXIV2_BUILD_SAMPLES=OFF",
+                        "-DEXIV2_BUILD_PO=OFF",
+                        "-DEXIV2_BUILD_EXIV2_COMMAND=OFF",
+                        "-DEXIV2_BUILD_UNIT_TESTS=OFF",
+                        "-DEXIV2_BUILD_DOC=OFF",
+                        "-DEXIV2_TEAM_EXTRA_WARNINGS=OFF",
+                        "-DEXIV2_TEAM_WARNINGS_AS_ERRORS=OFF",
+                        "-DEXIV2_TEAM_USE_SANITIZERS=OFF",
+                        "-DEXIV2_ENABLE_WIN_UNICODE=OFF"
+                    ],
+                    "sources": [
+                        {
+                            "type": "archive",
+                            "url": "https://github.com/Exiv2/exiv2/releases/download/v0.27.6/exiv2-0.27.6-Source.tar.gz",
+                            "sha256": "4c192483a1125dc59a3d70b30d30d32edace9e14adf52802d2f853abf72db8a6",
+                            "x-checker-data": {
+                                "type": "anitya",
+                                "project-id": 769,
+                                "stable-only": true,
+                                "url-template": "https://github.com/Exiv2/exiv2/releases/download/v$version/exiv2-$version-Source.tar.gz"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "marble",
+                    "buildsystem": "cmake-ninja",
+                    "builddir": true,
+                    "config-opts": [
+                        "-DWITH_DESIGNER_PLUGIN=OFF",
+                        "-DBUILD_MARBLE_TESTS=OFF",
+                        "-DBUILD_MARBLE_TOOLS=OFF",
+                        "-DBUILD_MARBLE_EXAMPLES=OFF",
+                        "-DBUILD_MARBLE_APPS=OFF",
+                        "-DBUILD_WITH_DBUS=ON",
+                        "-DBUILD_TESTING=OFF"
+                    ],
+                    "cleanup": [
+                        "/mkspecs",
+                        "*.la"
+                    ],
+                    "sources": [
+                        {
+                            "type": "git",
+                            "url": "https://invent.kde.org/education/marble.git",
+                            "tag": "v22.12.0",
+                            "commit": "bdb848d737e2fa95c796eb24c71fa7c36b1fca4a"
+                        }
+                    ]
+                },
+                {
+                    "name": "lensfun",
+                    "buildsystem": "cmake-ninja",
+                    "config-opts": [
+                        "-DCMAKE_BUILD_TYPE=RelWithDebInfo",
+                        "-DBUILD_STATIC=OFF",
+                        "-DBUILD_TESTS=OFF",
+                        "-DBUILD_LENSTOOL=OFF",
+                        "-DBUILD_DOC=OFF",
+                        "-DINSTALL_HELPER_SCRIPTS=OFF"
+                    ],
+                    "build-options": {
+                        "arch": {
+                            "arm": {
+                                "config-opts": [
+                                    "-DBUILD_FOR_SSE=off",
+                                    "-DBUILD_FOR_SSE2=off"
+                                ]
+                            },
+                            "aarch64": {
+                                "config-opts": [
+                                    "-DBUILD_FOR_SSE=off",
+                                    "-DBUILD_FOR_SSE2=off"
+                                ]
+                            }
+                        }
+                    },
+                    "post-install": [
+                        "pip3 install --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} --ignore-installed lxml",
+                        "PYTHONPATH=${FLATPAK_DEST}/lib/python3.10/site-packages python3 lensfun_convert_db.py $PWD lensfun-git/data/db",
+                        "rm -rf ${FLATPAK_DEST}/share/lensfun/version_1/*",
+                        "tar xvf db/version_1.tar -C ${FLATPAK_DEST}/share/lensfun/version_1"
+                    ],
+                    "cleanup": [
+                        "*.la"
+                    ],
+                    "sources": [
+                        {
+                            "type": "archive",
+                            "url": "https://download.sourceforge.net/project/lensfun/0.3.2/lensfun-0.3.2.tar.gz",
+                            "sha256": "ae8bcad46614ca47f5bda65b00af4a257a9564a61725df9c74cb260da544d331"
+                        },
+                        {
+                            "type": "file",
+                            "url": "https://files.pythonhosted.org/packages/06/5a/e11cad7b79f2cf3dd2ff8f81fa8ca667e7591d3d8451768589996b65dec1/lxml-4.9.2.tar.gz",
+                            "sha256": "2455cfaeb7ac70338b3257f41e21f0724f4b5b0c0e7702da67ee6c3640835b67"
+                        },
+                        {
+                            "type": "file",
+                            "path": "lensfun_convert_db.py"
+                        },
+                        {
+                            "type": "git",
+                            "dest": "lensfun-git",
+                            "url": "https://github.com/lensfun/lensfun.git",
+                            "commit": "9025d2e46f52c91173f19328235c5c116eacfb97"
+                        }
+                    ]
+                },
+                {
+                    "name": "ImageMagick",
+                    "builddir": true,
+                    "config-opts": [
+                        "--enable-shared",
+                        "--disable-static",
+                        "--disable-docs",
+                        "--with-modules",
+                        "--with-threads",
+                        "--with-png"
+                    ],
+                    "cleanup": [
+                        "/bin",
+                        "/etc",
+                        "/share/ImageMagick-*",
+                        "/lib/ImageMagick-*/modules-*/filters/*.la",
+                        "/lib/libMagick*.la"
+                    ],
+                    "sources": [
+                        {
+                            "type": "git",
+                            "url": "https://github.com/ImageMagick/ImageMagick.git",
+                            "tag": "7.1.0-57",
+                            "commit": "eadf378a6f4e088c32fa5eda62ca6c41d8a84c9c"
+                        }
+                    ]
+                },
+                {
+                    "name": "libgphoto2",
+                    "builddir": true,
+                    "cleanup": [
+                        "/doc",
+                        "*.la"
+                    ],
+                    "sources": [
+                        {
+                            "type": "git",
+                            "url": "https://github.com/gphoto/libgphoto2.git",
+                            "tag": "v2.5.30",
+                            "commit": "6511898c4be52a9306f0791476561bdcebf5317d"
+                        },
+                        {
+                            "type": "script",
+                            "dest-filename": "autogen.sh",
+                            "commands": [
+                                "AUTOMAKE=\"automake --foreign\" autoreconf -vfis"
+                            ]
+                        }
+                    ],
+                    "modules": [
+                        "shared-modules/libusb/libusb.json"
+                    ]
+                },
+                {
+                    "name": "jasper",
+                    "buildsystem": "cmake-ninja",
+                    "builddir": true,
+                    "config-opts": [
+                        "-DJAS_ENABLE_SHARED=ON",
+                        "-DJAS_ENABLE_LIBJPEG=ON",
+                        "-DJAS_ENABLE_OPENGL=OFF",
+                        "-DJAS_LOCAL=OFF",
+                        "-DJAS_ENABLE_DOC=OFF",
+                        "-DJAS_ENABLE_PROGRAMS=OFF"
+                    ],
+                    "cleanup": [
+                        "*.la"
+                    ],
+                    "sources": [
+                        {
+                            "type": "git",
+                            "url": "https://github.com/mdadams/jasper.git",
+                            "tag": "version-3.0.5",
+                            "commit": "2f472a1d7f3faa213bc826ae258768d849964cfe"
+                        }
+                    ]
+                },
+                {
+                    "name": "libksane",
+                    "buildsystem": "cmake-ninja",
+                    "builddir": true,
+                    "cleanup": [
+                        "*.la"
+                    ],
+                    "sources": [
+                        {
+                            "type": "git",
+                            "url": "https://invent.kde.org/graphics/libksane.git",
+                            "tag": "v22.12.0",
+                            "commit": "af86efc8713051035cbdb94a8912b30b932166f2"
+                        }
+                    ],
+                    "modules": [
+                        {
+                            "name": "sane-backends",
+                            "builddir": true,
+                            "config-opts": [
+                                "--disable-saned",
+                                "--with-avahi",
+                                "--with-libcurl",
+                                "--with-usb",
+                                "--with-snmp",
+                                "--with-v4l"
+                            ],
+                            "post-install": [
+                                "grep '^[[:blank:]]*localhost[[:blank:]]*$' \"${FLATPAK_DEST}/etc/sane.d/net.conf\" || echo 'localhost' >> \"${FLATPAK_DEST}/etc/sane.d/net.conf\";",
+                                "grep '^[[:blank:]]*net[[:blank:]]*$' \"${FLATPAK_DEST}/etc/sane.d/dll.conf\" || echo 'net' >> \"${FLATPAK_DEST}/etc/sane.d/dll.conf\";"
+                            ],
+                            "cleanup": [
+                                "*.la"
+                            ],
+                            "sources": [
+                                {
+                                    "type": "git",
+                                    "url": "https://gitlab.com/sane-project/backends.git",
+                                    "tag": "1.1.1",
+                                    "commit": "332edc8b7ce642bb06132cf204a8c2dd57720bce"
+                                }
+                            ],
+                            "modules": [
+                                {
+                                    "name": "net-snmp",
+                                    "builddir": true,
+                                    "no-parallel-make": true,
+                                    "config-opts": [
+                                        "--disable-static",
+                                        "--enable-shared",
+                                        "--disable-embedded-perl",
+                                        "--without-perl-modules",
+                                        "--without-rpm",
+                                        "--enable-ucd-snmp-compatibility",
+                                        "--enable-ipv6",
+                                        "--with-openssl",
+                                        "--with-pic",
+                                        "--with-default-snmp-version=3",
+                                        "--with-sys-contact=root@localhost"
+                                    ],
+                                    "build-options": {
+                                        "ldflags": "-lncurses -ltinfo"
+                                    },
+                                    "cleanup": [
+                                        "*.la"
+                                    ],
+                                    "sources": [
+                                        {
+                                            "type": "archive",
+                                            "url": "https://downloads.sourceforge.net/project/net-snmp/net-snmp/5.9.3/net-snmp-5.9.3.tar.gz",
+                                            "sha256": "2097f29b7e1bf3f1300b4bae52fa2308d0bb8d5d3998dbe02f9462a413a2ef0a"
+                                        },
+                                        {
+                                            "type": "shell",
+                                            "commands": [
+                                                "cp -p /usr/share/automake-*/config.{sub,guess} ."
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "name": "avahi",
+                                    "config-opts": [
+                                        "--enable-shared",
+                                        "--disable-static",
+                                        "--with-distro=none",
+                                        "--with-systemdsystemunitdir=/app/lib/systemd",
+                                        "--enable-dbus",
+                                        "--enable-compat-libdns_sd",
+                                        "--disable-libdaemon",
+                                        "--disable-python",
+                                        "--disable-pygobject",
+                                        "--disable-python-dbus",
+                                        "--disable-gtk",
+                                        "--disable-gtk3",
+                                        "--disable-qt3",
+                                        "--disable-qt4",
+                                        "--disable-qt5",
+                                        "--disable-mono",
+                                        "--disable-monodoc",
+                                        "--disable-doxygen-doc",
+                                        "--disable-doxygen-dot",
+                                        "--disable-doxygen-man",
+                                        "--disable-doxygen-rtf",
+                                        "--disable-doxygen-xml",
+                                        "--disable-doxygen-chm",
+                                        "--disable-doxygen-chi",
+                                        "--disable-doxygen-html",
+                                        "--disable-doxygen-ps",
+                                        "--disable-doxygen-pdf",
+                                        "--disable-core-docs",
+                                        "--disable-manpages",
+                                        "--disable-xmltoman"
+                                    ],
+                                    "cleanup": [
+                                        "/bin",
+                                        "*.la"
+                                    ],
+                                    "sources": [
+                                        {
+                                            "type": "archive",
+                                            "url": "https://avahi.org/download/avahi-0.8.tar.gz",
+                                            "sha256": "060309d7a333d38d951bc27598c677af1796934dbd98e1024e7ad8de798fedda"
+                                        }
+                                    ],
+                                    "modules": [
+                                        "shared-modules/dbus-glib/dbus-glib.json",
+                                        {
+                                            "name": "libevent",
+                                            "config-opts": [
+                                                "--enable-shared",
+                                                "--disable-static",
+                                                "--enable-openssl",
+                                                "--disable-samples"
+                                            ],
+                                            "cleanup": [
+                                                "/bin",
+                                                "*.la"
+                                            ],
+                                            "sources": [
+                                                {
+                                                    "type": "git",
+                                                    "url": "https://github.com/libevent/libevent.git",
+                                                    "tag": "release-2.1.12-stable",
+                                                    "commit": "5df3037d10556bfcb675bc73e516978b75fc7bc7"
+                                                },
+                                                {
+                                                    "type": "patch",
+                                                    "path": "patches/libevent-disable-network-tests.patch"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "name": "libieee1284",
+                                    "config-opts": [
+                                        "--disable-static",
+                                        "--without-python"
+                                    ],
+                                    "cleanup": [
+                                        "*.la"
+                                    ],
+                                    "sources": [
+                                        {
+                                            "type": "archive",
+                                            "url": "https://downloads.sourceforge.net/project/libieee1284/libieee1284/0.2.11//libieee1284-0.2.11.tar.bz2",
+                                            "sha256": "7730de107782e5d2b071bdcb5b06a44da74856f00ef4a9be85d1ba4806a38f1a"
+                                        },
+                                        {
+                                            "type": "patch",
+                                            "path": "patches/libieee1284-strict-aliasing.patch"
+                                        },
+                                        {
+                                            "type": "shell",
+                                            "commands": [
+                                                "cp -p /usr/share/automake-*/config.{sub,guess} ."
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "name": "v4l-utils",
+                                    "config-opts": [
+                                        "--disable-static",
+                                        "--disable-doxygen-doc",
+                                        "--disable-libdvbv5",
+                                        "--disable-v4l-utils",
+                                        "--disable-qv4l2",
+                                        "--with-udevdir=/app/lib/udev"
+                                    ],
+                                    "cleanup": [
+                                        "*.la"
+                                    ],
+                                    "sources": [
+                                        {
+                                            "type": "archive",
+                                            "url": "https://linuxtv.org/downloads/v4l-utils/v4l-utils-1.22.1.tar.bz2",
+                                            "sha256": "65c6fbe830a44ca105c443b027182c1b2c9053a91d1e72ad849dfab388b94e31"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "name": "poppler",
+                                    "buildsystem": "cmake-ninja",
+                                    "config-opts": [
+                                        "-DENABLE_LIBOPENJPEG=none",
+                                        "-DENABLE_UNSTABLE_API_ABI_HEADERS=ON"
+                                    ],
+                                    "cleanup": [
+                                        "*.la"
+                                    ],
+                                    "sources": [
+                                        {
+                                            "type": "archive",
+                                            "url": "https://poppler.freedesktop.org/poppler-23.01.0.tar.xz",
+                                            "sha256": "fae9b88d3d5033117d38477b79220cfd0d8e252c278ec870ab1832501741fd94"
+                                        }
+                                    ],
+                                    "modules": [
+                                        {
+                                            "name": "poppler-data",
+                                            "buildsystem": "cmake-ninja",
+                                            "cleanup": [
+                                                "*.la"
+                                            ],
+                                            "sources": [
+                                                {
+                                                    "type": "archive",
+                                                    "url": "https://poppler.freedesktop.org/poppler-data-0.4.11.tar.gz",
+                                                    "sha256": "2cec05cd1bb03af98a8b06a1e22f6e6e1a65b1e2f3816cb3069bb0874825f08c"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "name": "ksanecore",
+                            "buildsystem": "cmake-ninja",
+                            "builddir": true,
+                            "cleanup": [
+                                "*.la"
+                            ],
+                            "sources": [
+                                {
+                                    "type": "git",
+                                    "url": "https://invent.kde.org/libraries/ksanecore.git",
+                                    "tag": "v22.12.0",
+                                    "commit": "2031fe5005262de48cc91327bb1dc2cfd7292683"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "liblqr",
+                    "builddir": true,
+                    "cleanup": [
+                        "*.la"
+                    ],
+                    "sources": [
+                        {
+                            "type": "git",
+                            "url": "https://github.com/carlobaldassi/liblqr.git",
+                            "commit": "7b88c05cec2f0e60125e1cfcad18c79721a2b27c"
+                        }
+                    ]
+                },
+                {
+                    "name": "qtav",
+                    "buildsystem": "cmake-ninja",
+                    "builddir": true,
+                    "config-opts": [
+                        "-DBUILD_TESTS=OFF",
+                        "-DBUILD_EXAMPLES=OFF",
+                        "-DBUILD_PLAYERS=OFF",
+                        "-DBUILD_QT5OPENGL=ON"
+                    ],
+                    "cleanup": [
+                        "*.la"
+                    ],
+                    "sources": [
+                        {
+                            "type": "git",
+                            "url": "https://github.com/wang-bin/QtAV.git",
+                            "tag": "v1.13.0",
+                            "commit": "b51fee72a82fab049faf932fd0414d6a58e6caec",
+                            "disable-submodules": false
+                        },
+                        {
+                            "type": "patch",
+                            "path": "patches/qtav-fix-build.patch"
+                        },
+                        {
+                            "type": "patch",
+                            "path": "patches/qtav-fix-build-with-Qt-5.15.patch"
+                        }
+                    ]
+                },
+                {
+                    "name": "x265",
+                    "buildsystem": "cmake-ninja",
+                    "builddir": true,
+                    "build-options": {
+                        "arch": {
+                            "aarch64": {
+                                "cxxflags": "-fPIC"
+                            }
+                        }
+                    },
+                    "subdir": "source",
+                    "cleanup": [
+                        "*.la"
+                    ],
+                    "sources": [
+                        {
+                            "type": "git",
+                            "url": "https://github.com/videolan/x265.git",
+                            "tag": "3.4",
+                            "commit": "07295ba7ab551bb9c1580fdaee3200f1b45711b7"
+                        }
+                    ]
+                },
+                {
+                    "name": "libheif",
+                    "buildsystem": "cmake-ninja",
+                    "builddir": true,
+                    "cleanup": [
+                        "*.la"
+                    ],
+                    "sources": [
+                        {
+                            "type": "git",
+                            "url": "https://github.com/strukturag/libheif.git",
+                            "tag": "v1.14.0",
+                            "commit": "2275b1035575d47fe3f614bb20f8f28a85e27edb"
+                        }
+                    ],
+                    "modules": [
+                        {
+                            "name": "libde265",
+                            "buildsystem": "cmake-ninja",
+                            "sources": [
+                                {
+                                    "type": "git",
+                                    "url": "https://github.com/strukturag/libde265.git",
+                                    "tag": "v1.0.11",
+                                    "commit": "e255f0571a46935955deef15808e52b18043788c"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "shared-modules/glu/glu-9.json"
+            ]
+        },
+        {
+            "name": "mosaicwall",
+            "buildsystem": "cmake-ninja",
+            "builddir": true,
+            "config-opts": [
+                "-DENABLE_DPLUGIN=ON"
+            ],
+            "cleanup": [
+                "*.la"
+            ],
+            "sources": [
+                {
+                    "type": "git",
+                    "url": "https://github.com/scheckmedia/ImageMosaicWall.git",
+                    "tag": "v0.3",
+                    "commit": "3302603b774186bffe967d76a087de8d58b91d0f"
+                }
+            ]
+        },
+        {
+            "name": "hugin",
+            "buildsystem": "cmake-ninja",
+            "builddir": true,
+            "cleanup": [
+                "*.la"
+            ],
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://download.sourceforge.net/project/hugin/hugin/hugin-2022.0/hugin-2022.0.0.tar.bz2",
+                    "sha256": "97c8562a0ba9a743e0b955a43dfde048b1c60cd9e5f2ee2b69de1a81646e05a7"
+                }
+            ],
+            "modules": [
+                {
+                    "name": "wxWidgets",
+                    "buildsystem": "cmake-ninja",
+                    "builddir": true,
+                    "cleanup": [
+                        "*.la"
+                    ],
+                    "sources": [
+                        {
+                            "type": "archive",
+                            "url": "https://github.com/wxWidgets/wxWidgets/releases/download/v3.2.1/wxWidgets-3.2.1.tar.bz2",
+                            "sha256": "c229976bb413eb88e45cb5dfb68b27890d450149c09b331abd751e7ae0f5fa66"
+                        }
+                    ]
+                },
+                {
+                    "name": "vigra",
+                    "buildsystem": "cmake-ninja",
+                    "builddir": true,
+                    "config-opts": [
+                        "-DWITH_OPENEXR=ON"
+                    ],
+                    "cleanup": [
+                        "*.la"
+                    ],
+                    "sources": [
+                        {
+                            "type": "git",
+                            "url": "https://github.com/ukoethe/vigra.git",
+                            "tag": "Version-1-11-1",
+                            "commit": "ed1e79e4cdcec370cdeef2153f7d3c586a77f2d6"
+                        }
+                    ],
+                    "modules": [
+                        {
+                            "name": "openexr",
+                            "buildsystem": "cmake-ninja",
+                            "builddir": true,
+                            "cleanup": [
+                                "*.la"
+                            ],
+                            "sources": [
+                                {
+                                    "type": "git",
+                                    "url": "https://github.com/AcademySoftwareFoundation/openexr.git",
+                                    "tag": "v2.5.8",
+                                    "commit": "918b8f543e81b5a1e1aca494ab7352ca280afc9e"
+                                }
+                            ],
+                            "modules": [
+                                {
+                                    "name": "imath",
+                                    "buildsystem": "cmake-ninja",
+                                    "builddir": true,
+                                    "cleanup": [
+                                        "*.la"
+                                    ],
+                                    "sources": [
+                                        {
+                                            "type": "git",
+                                            "url": "https://github.com/AcademySoftwareFoundation/Imath.git",
+                                            "tag": "v3.1.6",
+                                            "commit": "7c6c5fd76edf0c71db1a5a14d66a04a7d2bf9c1f"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "shared-modules/glew/glew.json",
+                {
+                    "name": "libpano13",
+                    "buildsystem": "cmake-ninja",
+                    "builddir": true,
+                    "cleanup": [
+                        "*.la"
+                    ],
+                    "sources": [
+                        {
+                            "type": "archive",
+                            "url": "https://downloads.sourceforge.net/project/panotools/libpano13/libpano13-2.9.21/libpano13-2.9.21.tar.gz",
+                            "sha256": "79e5a1452199305e2961462720ef5941152779c127c5b96fc340d2492e633590"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "enblend",
+            "buildsystem": "cmake-ninja",
+            "config-opts": [
+                "-DENABLE_OPENMP=on"
+            ],
+            "modules": [
+                {
+                    "name": "gsl",
+                    "config-opts": [
+                        "--enable-shared",
+                        "--disable-static"
+                    ],
+                    "cleanup": [
+                        "*.la"
+                    ],
+                    "sources": [
+                        {
+                            "type": "archive",
+                            "url": "https://ftp.gnu.org/gnu/gsl/gsl-2.7.tar.gz",
+                            "sha256": "efbbf3785da0e53038be7907500628b466152dbc3c173a87de1b5eba2e23602b"
+                        }
+                    ]
+                }
+            ],
+            "cleanup": [
+                "*.la"
+            ],
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://download.sourceforge.net/project/enblend/enblend-enfuse/enblend-enfuse-4.2/enblend-enfuse-4.2.tar.gz",
+                    "sha256": "8703e324939ebd70d76afd350e56800f5ea2c053a040a5f5218b2a1a4300bd48"
                 },
                 {
                     "type": "patch",
-                    "path": "ffmpeg-patch.patch"
-                }
-            ]
-        },
-        {
-          "name": "opencv",
-          "buildsystem": "cmake-ninja",
-          "builddir": true,
-          "config-opts": [
-            "-DBUILD_EXAMPLES=OFF",
-            "-DBUILD_TESTS=OFF",
-            "-DBUILD_DOCS=OFF",
-            "-DBUILD_PERF_TESTS=OFF",
-            "-DBUILD_NEW_PYTHON_SUPPORT=OFF",
-            "-DBUILD_ZLIB=OFF",
-            "-DOPENCV_BUILD_3RDPARTY_LIBS=OFF",
-            "-DINSTALL_C_EXAMPLES=OFF",
-            "-DINSTALL_PYTHON_EXAMPLES=OFF",
-            "-DBUILD_opencv_core=ON",
-            "-DBUILD_opencv_imgproc=ON",
-            "-DBUILD_opencv_imgcodecs=ON",
-            "-DBUILD_opencv_objdetect=ON",
-            "-DBUILD_opencv_calib3d=ON",
-            "-DBUILD_opencv_features2d=ON",
-            "-DBUILD_opencv_flann=ON",
-            "-DBUILD_opencv_dnn=ON",
-            "-DBUILD_opencv_photo=OFF",
-            "-DBUILD_opencv_java=OFF",
-            "-DBUILD_opencv_java_bindings_generator=OFF",
-            "-DBUILD_opencv_js=OFF",
-            "-DBUILD_opencv_python2=OFF",
-            "-DBUILD_opencv_python3=OFF",
-            "-DBUILD_opencv_python_bindings_generator=OFF",
-            "-DBUILD_opencv_shape=OFF",
-            "-DBUILD_opencv_highgui=OFF",
-            "-DBUILD_opencv_superres=OFF",
-            "-DBUILD_opencv_stitching=OFF",
-            "-DBUILD_opencv_videostab=OFF",
-            "-DBUILD_opencv_videoio=OFF",
-            "-DBUILD_opencv_video=OFF",
-            "-DBUILD_opencv_apps=OFF",
-            "-DBUILD_opencv_gapi=OFF",
-            "-DWITH_PROTOBUF=ON",
-            "-DWITH_1394=OFF",
-            "-DWITH_VTK=OFF",
-            "-DWITH_DIRECTX=OFF",
-            "-DWITH_DSHOW=OFF",
-            "-DWITH_EIGEN=OFF",
-            "-DWITH_FFMPEG=OFF",
-            "-DWITH_GSTREAMER=OFF",
-            "-DWITH_GTK=OFF",
-            "-DWITH_IPP=OFF",
-            "-DWITH_JASPER=OFF",
-            "-DWITH_JPEG=OFF",
-            "-DWITH_MATLAB=OFF",
-            "-DWITH_OPENJPEG=OFF",
-            "-DWITH_OPENEXR=OFF",
-            "-DWITH_OPENNI=OFF",
-            "-DWITH_OPENMP=OFF",
-            "-DWITH_PNG=OFF",
-            "-DWITH_PVAPI=OFF",
-            "-DWITH_WIN32UI=OFF",
-            "-DWITH_QT=OFF",
-            "-DWITH_QUICKTIME=OFF",
-            "-DWITH_QT_OPENGL=OFF",
-            "-DWITH_TBB=OFF",
-            "-DWITH_TIFF=OFF",
-            "-DWITH_UNICAP=OFF",
-            "-DWITH_V4L=OFF",
-            "-DWITH_VFW=OFF",
-            "-DWITH_VIDEOINPUT=OFF",
-            "-DWITH_XINE=OFF",
-            "-DWITH_VA_INTEL=OFF",
-            "-DWITH_GPHOTO2=OFF",
-            "-DWITH_WEBP=OFF",
-            "-DWITH_IMGCODEC_HDR=OFF",
-            "-DWITH_IMGCODEC_SUNRASTER=OFF",
-            "-DWITH_IMGCODEC_PXM=OFF",
-            "-DWITH_CUDA=OFF",
-            "-DWITH_CUFFT=OFF",
-            "-DWITH_CUBLAS=OFF",
-            "-DWITH_NVCUVID=OFF",
-            "-DWITH_OPENCL=OFF",
-            "-DWITH_OPENCL_SVM=OFF",
-            "-DWITH_OPENCLAMDFFT=OFF",
-            "-DWITH_OPENCLAMDBLAS=OFF",
-            "-DCV_ENABLE_INTRINSICS=OFF",
-            "-DCV_DISABLE_OPTIMIZATION=ON",
-            "-DCV_TRACE=OFF",
-            "-DWITH_OPENJPEG=OFF"
-          ],
-          "cleanup": [
-            "/bin"
-          ],
-          "sources": [
-            {
-              "type": "git",
-              "url": "https://github.com/Itseez/opencv.git",
-              "tag": "4.7.0",
-              "commit": "725e440d278aca07d35a5e8963ef990572b07316"
-            }
-          ]
-        },
-        {
-          "name": "exiv2",
-          "buildsystem": "cmake-ninja",
-          "builddir": true,
-          "config-opts": [
-            "-DBUILD_SHARED_LIBS=ON",
-            "-DEXIV2_ENABLE_XMP=ON",
-            "-DEXIV2_ENABLE_EXTERNAL_XMP=OFF",
-            "-DEXIV2_ENABLE_PNG=ON",
-            "-DEXIV2_ENABLE_NLS=ON",
-            "-DEXIV2_ENABLE_PRINTUCS2=ON",
-            "-DEXIV2_ENABLE_LENSDATA=ON",
-            "-DEXIV2_ENABLE_VIDEO=OFF",
-            "-DEXIV2_ENABLE_WEBREADY=OFF",
-            "-DEXIV2_ENABLE_DYNAMIC_RUNTIME=OFF",
-            "-DEXIV2_ENABLE_CURL=OFF",
-            "-DEXIV2_ENABLE_SSH=OFF",
-            "-DEXIV2_ENABLE_BMFF=ON",
-            "-DEXIV2_BUILD_SAMPLES=OFF",
-            "-DEXIV2_BUILD_PO=OFF",
-            "-DEXIV2_BUILD_EXIV2_COMMAND=OFF",
-            "-DEXIV2_BUILD_UNIT_TESTS=OFF",
-            "-DEXIV2_BUILD_DOC=OFF",
-            "-DEXIV2_TEAM_EXTRA_WARNINGS=OFF",
-            "-DEXIV2_TEAM_WARNINGS_AS_ERRORS=OFF",
-            "-DEXIV2_TEAM_USE_SANITIZERS=OFF",
-            "-DEXIV2_ENABLE_WIN_UNICODE=OFF"
-          ],
-          "sources": [
-                {
-                    "type": "archive",
-                    "url": "https://github.com/Exiv2/exiv2/releases/download/v0.27.6/exiv2-0.27.6-Source.tar.gz",
-                    "sha256": "4c192483a1125dc59a3d70b30d30d32edace9e14adf52802d2f853abf72db8a6",
-                    "x-checker-data": {
-                        "type": "anitya",
-                        "project-id": 769,
-                        "stable-only": true,
-                        "url-template": "https://github.com/Exiv2/exiv2/releases/download/v$version/exiv2-$version-Source.tar.gz"
-                    }
-                }
-            ]
-        },
-        {
-          "name": "marble",
-          "buildsystem": "cmake-ninja",
-          "builddir": true,
-          "config-opts": [
-            "-DWITH_DESIGNER_PLUGIN=OFF",
-            "-DBUILD_MARBLE_TESTS=OFF",
-            "-DBUILD_MARBLE_TOOLS=OFF",
-            "-DBUILD_MARBLE_EXAMPLES=OFF",
-            "-DBUILD_MARBLE_APPS=OFF",
-            "-DBUILD_WITH_DBUS=ON",
-            "-DBUILD_TESTING=OFF"
-          ],
-          "cleanup": [
-            "/mkspecs",
-            "*.la"
-          ],
-          "sources": [
-            {
-              "type": "git",
-              "url": "https://invent.kde.org/education/marble.git",
-              "tag": "v22.12.0",
-              "commit": "bdb848d737e2fa95c796eb24c71fa7c36b1fca4a"
-            }
-          ]
-        },
-        {
-          "name": "lensfun",
-          "buildsystem": "cmake-ninja",
-          "config-opts": [
-            "-DCMAKE_BUILD_TYPE=RelWithDebInfo",
-            "-DBUILD_STATIC=OFF",
-            "-DBUILD_TESTS=OFF",
-            "-DBUILD_LENSTOOL=OFF",
-            "-DBUILD_DOC=OFF",
-            "-DINSTALL_HELPER_SCRIPTS=OFF"
-          ],
-          "build-options": {
-            "arch": {
-              "arm": {
-                "config-opts": [
-                  "-DBUILD_FOR_SSE=off",
-                  "-DBUILD_FOR_SSE2=off"
-                ]
-              },
-              "aarch64": {
-                "config-opts": [
-                  "-DBUILD_FOR_SSE=off",
-                  "-DBUILD_FOR_SSE2=off"
-                ]
-              }
-            }
-          },
-          "post-install": [
-            "pip3 install --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} --ignore-installed lxml",
-            "PYTHONPATH=${FLATPAK_DEST}/lib/python3.10/site-packages python3 lensfun_convert_db.py $PWD lensfun-git/data/db",
-            "rm -rf ${FLATPAK_DEST}/share/lensfun/version_1/*",
-            "tar xvf db/version_1.tar -C ${FLATPAK_DEST}/share/lensfun/version_1"
-          ],
-          "cleanup": [
-            "*.la"
-          ],
-          "sources": [
-            {
-              "type": "archive",
-              "url": "https://download.sourceforge.net/project/lensfun/0.3.2/lensfun-0.3.2.tar.gz",
-              "sha256": "ae8bcad46614ca47f5bda65b00af4a257a9564a61725df9c74cb260da544d331"
-            },
-            {
-              "type": "file",
-              "url": "https://files.pythonhosted.org/packages/06/5a/e11cad7b79f2cf3dd2ff8f81fa8ca667e7591d3d8451768589996b65dec1/lxml-4.9.2.tar.gz",
-              "sha256": "2455cfaeb7ac70338b3257f41e21f0724f4b5b0c0e7702da67ee6c3640835b67"
-            },
-            {
-              "type": "file",
-              "path": "lensfun_convert_db.py"
-            },
-            {
-              "type": "git",
-              "dest": "lensfun-git",
-              "url": "https://github.com/lensfun/lensfun.git",
-              "commit": "9025d2e46f52c91173f19328235c5c116eacfb97"
-            }
-          ]
-        },
-        {
-          "name": "ImageMagick",
-          "builddir": true,
-          "config-opts": [
-            "--enable-shared",
-            "--disable-static",
-            "--disable-docs",
-            "--with-modules",
-            "--with-threads",
-            "--with-png"
-          ],
-          "cleanup": [
-            "/bin",
-            "/etc",
-            "/share/ImageMagick-*",
-            "/lib/ImageMagick-*/modules-*/filters/*.la",
-            "/lib/libMagick*.la"
-          ],
-          "sources": [
-            {
-              "type": "git",
-              "url": "https://github.com/ImageMagick/ImageMagick.git",
-              "tag": "7.1.0-57",
-              "commit": "eadf378a6f4e088c32fa5eda62ca6c41d8a84c9c"
-            }
-          ]
-        },
-        {
-          "name": "libgphoto2",
-          "builddir": true,
-          "cleanup": [
-            "/doc",
-            "*.la"
-          ],
-          "sources": [
-            {
-              "type": "git",
-              "url": "https://github.com/gphoto/libgphoto2.git",
-              "tag": "v2.5.30",
-              "commit": "6511898c4be52a9306f0791476561bdcebf5317d"
-            },
-            {
-              "type": "script",
-              "dest-filename": "autogen.sh",
-              "commands": [
-                "AUTOMAKE=\"automake --foreign\" autoreconf -vfis"
-              ]
-            }
-          ],
-          "modules": [
-            "shared-modules/libusb/libusb.json"
-          ]
-        },
-        {
-          "name": "jasper",
-          "buildsystem": "cmake-ninja",
-          "builddir": true,
-          "config-opts": [
-            "-DJAS_ENABLE_SHARED=ON",
-            "-DJAS_ENABLE_LIBJPEG=ON",
-            "-DJAS_ENABLE_OPENGL=OFF",
-            "-DJAS_LOCAL=OFF",
-            "-DJAS_ENABLE_DOC=OFF",
-            "-DJAS_ENABLE_PROGRAMS=OFF"
-          ],
-          "cleanup": [
-            "*.la"
-          ],
-          "sources": [
-            {
-              "type": "git",
-              "url": "https://github.com/mdadams/jasper.git",
-              "tag": "version-3.0.5",
-              "commit": "2f472a1d7f3faa213bc826ae258768d849964cfe"
-            }
-          ]
-        },
-        {
-          "name": "libksane",
-          "buildsystem": "cmake-ninja",
-          "builddir": true,
-          "cleanup": [
-            "*.la"
-          ],
-          "sources": [
-            {
-              "type": "git",
-              "url": "https://invent.kde.org/graphics/libksane.git",
-              "tag": "v22.12.0",
-              "commit": "af86efc8713051035cbdb94a8912b30b932166f2"
-            }
-          ],
-          "modules": [
-            {
-              "name": "sane-backends",
-              "builddir": true,
-              "config-opts": [
-                "--disable-saned",
-                "--with-avahi",
-                "--with-libcurl",
-                "--with-usb",
-                "--with-snmp",
-                "--with-v4l"
-              ],
-              "post-install": [
-                "grep '^[[:blank:]]*localhost[[:blank:]]*$' \"${FLATPAK_DEST}/etc/sane.d/net.conf\" || echo 'localhost' >> \"${FLATPAK_DEST}/etc/sane.d/net.conf\";",
-                "grep '^[[:blank:]]*net[[:blank:]]*$' \"${FLATPAK_DEST}/etc/sane.d/dll.conf\" || echo 'net' >> \"${FLATPAK_DEST}/etc/sane.d/dll.conf\";"
-              ],
-              "cleanup": [
-                "*.la"
-              ],
-              "sources": [
-                {
-                  "type": "git",
-                  "url": "https://gitlab.com/sane-project/backends.git",
-                  "tag": "1.1.1",
-                  "commit": "332edc8b7ce642bb06132cf204a8c2dd57720bce"
-                }
-              ],
-              "modules": [
-                {
-                  "name": "net-snmp",
-                  "builddir": true,
-                  "no-parallel-make": true,
-                  "config-opts": [
-                    "--disable-static",
-                    "--enable-shared",
-                    "--disable-embedded-perl",
-                    "--without-perl-modules",
-                    "--without-rpm",
-                    "--enable-ucd-snmp-compatibility",
-                    "--enable-ipv6",
-                    "--with-openssl",
-                    "--with-pic",
-                    "--with-default-snmp-version=3",
-                    "--with-sys-contact=root@localhost"
-                  ],
-                  "build-options": {
-                    "ldflags": "-lncurses -ltinfo"
-                  },
-                  "cleanup": [
-                    "*.la"
-                  ],
-                  "sources": [
-                    {
-                      "type": "archive",
-                      "url": "https://downloads.sourceforge.net/project/net-snmp/net-snmp/5.9.3/net-snmp-5.9.3.tar.gz",
-                      "sha256": "2097f29b7e1bf3f1300b4bae52fa2308d0bb8d5d3998dbe02f9462a413a2ef0a"
-                    },
-                    {
-                      "type": "shell",
-                      "commands": [
-                        "cp -p /usr/share/automake-*/config.{sub,guess} ."
-                      ]
-                    }
-                  ]
+                    "path": "patches/enblend-cmake.patch"
                 },
                 {
-                  "name": "avahi",
-                  "config-opts": [
-                    "--enable-shared",
-                    "--disable-static",
-                    "--with-distro=none",
-                    "--with-systemdsystemunitdir=/app/lib/systemd",
-                    "--enable-dbus",
-                    "--enable-compat-libdns_sd",
-                    "--disable-libdaemon",
-                    "--disable-python",
-                    "--disable-pygobject",
-                    "--disable-python-dbus",
-                    "--disable-gtk",
-                    "--disable-gtk3",
-                    "--disable-qt3",
-                    "--disable-qt4",
-                    "--disable-qt5",
-                    "--disable-mono",
-                    "--disable-monodoc",
-                    "--disable-doxygen-doc",
-                    "--disable-doxygen-dot",
-                    "--disable-doxygen-man",
-                    "--disable-doxygen-rtf",
-                    "--disable-doxygen-xml",
-                    "--disable-doxygen-chm",
-                    "--disable-doxygen-chi",
-                    "--disable-doxygen-html",
-                    "--disable-doxygen-ps",
-                    "--disable-doxygen-pdf",
-                    "--disable-core-docs",
-                    "--disable-manpages",
-                    "--disable-xmltoman"
-                  ],
-                  "cleanup": [
-                    "/bin",
-                    "*.la"
-                  ],
-                  "sources": [
-                    {
-                      "type": "archive",
-                      "url": "https://avahi.org/download/avahi-0.8.tar.gz",
-                      "sha256": "060309d7a333d38d951bc27598c677af1796934dbd98e1024e7ad8de798fedda"
-                    }
-                  ],
-                  "modules": [
-                    "shared-modules/dbus-glib/dbus-glib.json",
-                    {
-                      "name": "libevent",
-                      "config-opts": [
-                        "--enable-shared",
-                        "--disable-static",
-                        "--enable-openssl",
-                        "--disable-samples"
-                      ],
-                      "cleanup": [
-                        "/bin",
-                        "*.la"
-                      ],
-                      "sources": [
+                    "type": "patch",
+                    "path": "patches/enblend-dl.patch"
+                },
+                {
+                    "type": "patch",
+                    "path": "patches/enblend-cxx.patch"
+                }
+            ]
+        },
+        {
+            "name": "exiftool",
+            "buildsystem": "simple",
+            "build-commands": [
+                "perl Makefile.PL",
+                "make install"
+            ],
+            "sources": [
+                {
+                    "type": "git",
+                    "url": "https://github.com/exiftool/exiftool.git",
+                    "tag": "12.52",
+                    "commit": "ac4151014c3d9b7d15ebd3bdfdc01405492a05ee"
+                }
+            ],
+            "modules": [
+                {
+                    "name": "perl",
+                    "no-autogen": true,
+                    "config-opts": [
+                        "-des",
+                        "-Duseshrplib"
+                    ],
+                    "build-options": {
+                        "cflags": "-fPIC",
+                        "ldflags": "-fpic"
+                    },
+                    "cleanup": [
+                        "*.h"
+                    ],
+                    "post-install": [
+                        "find ${FLATPAK_DEST}/lib/perl5/ -name \\*.so -exec chmod u+w {} \\;"
+                    ],
+                    "sources": [
                         {
-                          "type": "git",
-                          "url": "https://github.com/libevent/libevent.git",
-                          "tag": "release-2.1.12-stable",
-                          "commit": "5df3037d10556bfcb675bc73e516978b75fc7bc7"
+                            "type": "archive",
+                            "url": "https://www.cpan.org/src/5.0/perl-5.34.1.tar.xz",
+                            "sha256": "6d52cf833ff1af27bb5e986870a2c30cec73c044b41e3458cd991f94374039f7"
                         },
                         {
-                          "type": "patch",
-                          "path": "patches/libevent-disable-network-tests.patch"
+                            "type": "script",
+                            "dest-filename": "configure",
+                            "commands": [
+                                "exec ./configure.gnu $@"
+                            ]
                         }
-                      ]
-                    }
-                  ]
-                },
-                {
-                  "name": "libieee1284",
-                  "config-opts": [
-                    "--disable-static",
-                    "--without-python"
-                  ],
-                  "cleanup": [
-                    "*.la"
-                  ],
-                  "sources": [
-                    {
-                      "type": "archive",
-                      "url": "https://downloads.sourceforge.net/project/libieee1284/libieee1284/0.2.11//libieee1284-0.2.11.tar.bz2",
-                      "sha256": "7730de107782e5d2b071bdcb5b06a44da74856f00ef4a9be85d1ba4806a38f1a"
-                    },
-                    {
-                      "type": "patch",
-                      "path": "patches/libieee1284-strict-aliasing.patch"
-                    },
-                    {
-                      "type": "shell",
-                      "commands": [
-                        "cp -p /usr/share/automake-*/config.{sub,guess} ."
-                      ]
-                    }
-                  ]
-                },
-                {
-                  "name": "v4l-utils",
-                  "config-opts": [
-                    "--disable-static",
-                    "--disable-doxygen-doc",
-                    "--disable-libdvbv5",
-                    "--disable-v4l-utils",
-                    "--disable-qv4l2",
-                    "--with-udevdir=/app/lib/udev"
-                  ],
-                  "cleanup": [
-                    "*.la"
-                  ],
-                  "sources": [
-                    {
-                      "type": "archive",
-                      "url": "https://linuxtv.org/downloads/v4l-utils/v4l-utils-1.22.1.tar.bz2",
-                      "sha256": "65c6fbe830a44ca105c443b027182c1b2c9053a91d1e72ad849dfab388b94e31"
-                    }
-                  ]
-                },
-                {
-                  "name": "poppler",
-                  "buildsystem": "cmake-ninja",
-                  "config-opts": [
-                    "-DENABLE_LIBOPENJPEG=none",
-                    "-DENABLE_UNSTABLE_API_ABI_HEADERS=ON"
-                  ],
-                  "cleanup": [
-                    "*.la"
-                  ],
-                  "sources": [
-                    {
-                      "type": "archive",
-                      "url": "https://poppler.freedesktop.org/poppler-23.01.0.tar.xz",
-                      "sha256": "fae9b88d3d5033117d38477b79220cfd0d8e252c278ec870ab1832501741fd94"
-                    }
-                  ],
-                  "modules": [
-                    {
-                      "name": "poppler-data",
-                      "buildsystem": "cmake-ninja",
-                      "cleanup": [
-                        "*.la"
-                      ],
-                      "sources": [
-                        {
-                          "type": "archive",
-                          "url": "https://poppler.freedesktop.org/poppler-data-0.4.11.tar.gz",
-                          "sha256": "2cec05cd1bb03af98a8b06a1e22f6e6e1a65b1e2f3816cb3069bb0874825f08c"
-                        }
-                      ]
-                    }
-                  ]
+                    ]
                 }
-              ]
-            },
-            {
-              "name": "ksanecore",
-              "buildsystem": "cmake-ninja",
-              "builddir": true,
-              "cleanup": [
-                "*.la"
-              ],
-              "sources": [
-                {
-                  "type": "git",
-                  "url": "https://invent.kde.org/libraries/ksanecore.git",
-                  "tag": "v22.12.0",
-                  "commit": "2031fe5005262de48cc91327bb1dc2cfd7292683"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "name": "liblqr",
-          "builddir": true,
-          "cleanup": [
-            "*.la"
-          ],
-          "sources": [
-            {
-              "type": "git",
-              "url": "https://github.com/carlobaldassi/liblqr.git",
-              "commit": "7b88c05cec2f0e60125e1cfcad18c79721a2b27c"
-            }
-          ]
-        },
-        {
-          "name": "qtav",
-          "buildsystem": "cmake-ninja",
-          "builddir": true,
-          "config-opts": [
-            "-DBUILD_TESTS=OFF",
-            "-DBUILD_EXAMPLES=OFF",
-            "-DBUILD_PLAYERS=OFF",
-            "-DBUILD_QT5OPENGL=ON"
-          ],
-          "cleanup": [
-            "*.la"
-          ],
-          "sources": [
-            {
-              "type": "git",
-              "url": "https://github.com/wang-bin/QtAV.git",
-              "tag": "v1.13.0",
-              "commit": "b51fee72a82fab049faf932fd0414d6a58e6caec",
-              "disable-submodules": false
-            },
-            {
-              "type": "patch",
-              "path": "patches/qtav-fix-build.patch"
-            },
-            {
-              "type": "patch",
-              "path": "patches/qtav-fix-build-with-Qt-5.15.patch"
-            }
-          ]
-        },
-        {
-          "name": "x265",
-          "buildsystem": "cmake-ninja",
-          "builddir": true,
-          "build-options": {
-            "arch": {
-              "aarch64": {
-                "cxxflags": "-fPIC"
-              }
-            }
-          },
-          "subdir": "source",
-          "cleanup": [
-            "*.la"
-          ],
-          "sources": [
-            {
-              "type": "git",
-              "url": "https://github.com/videolan/x265.git",
-              "tag": "3.4",
-              "commit": "07295ba7ab551bb9c1580fdaee3200f1b45711b7"
-            }
-          ]
-        },
-        {
-          "name": "libheif",
-          "buildsystem": "cmake-ninja",
-          "builddir": true,
-          "cleanup": [
-            "*.la"
-          ],
-          "sources": [
-            {
-              "type": "git",
-              "url": "https://github.com/strukturag/libheif.git",
-              "tag": "v1.14.0",
-              "commit": "2275b1035575d47fe3f614bb20f8f28a85e27edb"
-            }
-          ],
-          "modules": [
-            {
-              "name": "libde265",
-              "buildsystem": "cmake-ninja",
-              "sources": [
-                {
-                  "type": "git",
-                  "url": "https://github.com/strukturag/libde265.git",
-                  "tag": "v1.0.11",
-                  "commit": "e255f0571a46935955deef15808e52b18043788c"
-                }
-              ]
-            }
-          ]
-        },
-        "shared-modules/glu/glu-9.json"
-      ]
-    },
-    {
-      "name": "mosaicwall",
-      "buildsystem": "cmake-ninja",
-      "builddir": true,
-      "config-opts": [
-        "-DENABLE_DPLUGIN=ON"
-      ],
-      "cleanup": [
-        "*.la"
-      ],
-      "sources": [
-        {
-          "type": "git",
-          "url": "https://github.com/scheckmedia/ImageMosaicWall.git",
-          "tag": "v0.3",
-          "commit": "3302603b774186bffe967d76a087de8d58b91d0f"
+            ]
         }
-      ]
-    },
-    {
-      "name": "hugin",
-      "buildsystem": "cmake-ninja",
-      "builddir": true,
-      "cleanup": [
-        "*.la"
-      ],
-      "sources": [
-        {
-          "type": "archive",
-          "url": "https://download.sourceforge.net/project/hugin/hugin/hugin-2022.0/hugin-2022.0.0.tar.bz2",
-          "sha256": "97c8562a0ba9a743e0b955a43dfde048b1c60cd9e5f2ee2b69de1a81646e05a7"
-        }
-      ],
-      "modules": [
-        {
-          "name": "wxWidgets",
-          "buildsystem": "cmake-ninja",
-          "builddir": true,
-          "cleanup": [
-            "*.la"
-          ],
-          "sources": [
-            {
-              "type": "archive",
-              "url": "https://github.com/wxWidgets/wxWidgets/releases/download/v3.2.1/wxWidgets-3.2.1.tar.bz2",
-              "sha256": "c229976bb413eb88e45cb5dfb68b27890d450149c09b331abd751e7ae0f5fa66"
-            }
-          ]
-        },
-        {
-          "name": "vigra",
-          "buildsystem": "cmake-ninja",
-          "builddir": true,
-          "config-opts": [
-            "-DWITH_OPENEXR=ON"
-          ],
-          "cleanup": [
-            "*.la"
-          ],
-          "sources": [
-            {
-              "type": "git",
-              "url": "https://github.com/ukoethe/vigra.git",
-              "tag": "Version-1-11-1",
-              "commit": "ed1e79e4cdcec370cdeef2153f7d3c586a77f2d6"
-            }
-          ],
-          "modules": [
-            {
-              "name": "openexr",
-              "buildsystem": "cmake-ninja",
-              "builddir": true,
-              "cleanup": [
-                "*.la"
-              ],
-              "sources": [
-                {
-                  "type": "git",
-                  "url": "https://github.com/AcademySoftwareFoundation/openexr.git",
-                  "tag": "v2.5.8",
-                  "commit": "918b8f543e81b5a1e1aca494ab7352ca280afc9e"
-                }
-              ],
-              "modules": [
-                {
-                  "name": "imath",
-                  "buildsystem": "cmake-ninja",
-                  "builddir": true,
-                  "cleanup": [
-                    "*.la"
-                  ],
-                  "sources": [
-                    {
-                      "type": "git",
-                      "url": "https://github.com/AcademySoftwareFoundation/Imath.git",
-                      "tag": "v3.1.6",
-                      "commit": "7c6c5fd76edf0c71db1a5a14d66a04a7d2bf9c1f"
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        "shared-modules/glew/glew.json",
-        {
-          "name": "libpano13",
-          "buildsystem": "cmake-ninja",
-          "builddir": true,
-          "cleanup": [
-            "*.la"
-          ],
-          "sources": [
-            {
-              "type": "archive",
-              "url": "https://downloads.sourceforge.net/project/panotools/libpano13/libpano13-2.9.21/libpano13-2.9.21.tar.gz",
-              "sha256": "79e5a1452199305e2961462720ef5941152779c127c5b96fc340d2492e633590"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "name": "enblend",
-      "buildsystem": "cmake-ninja",
-      "config-opts": [
-        "-DENABLE_OPENMP=on"
-      ],
-      "modules": [
-        {
-          "name": "gsl",
-          "config-opts": [
-            "--enable-shared",
-            "--disable-static"
-          ],
-          "cleanup": [
-            "*.la"
-          ],
-          "sources": [
-            {
-              "type": "archive",
-              "url": "https://ftp.gnu.org/gnu/gsl/gsl-2.7.tar.gz",
-              "sha256": "efbbf3785da0e53038be7907500628b466152dbc3c173a87de1b5eba2e23602b"
-            }
-          ]
-        }
-      ],
-      "cleanup": [
-        "*.la"
-      ],
-      "sources": [
-        {
-          "type": "archive",
-          "url": "https://download.sourceforge.net/project/enblend/enblend-enfuse/enblend-enfuse-4.2/enblend-enfuse-4.2.tar.gz",
-          "sha256": "8703e324939ebd70d76afd350e56800f5ea2c053a040a5f5218b2a1a4300bd48"
-        },
-        {
-          "type": "patch",
-          "path": "patches/enblend-cmake.patch"
-        },
-        {
-          "type": "patch",
-          "path": "patches/enblend-dl.patch"
-        },
-        {
-          "type": "patch",
-          "path": "patches/enblend-cxx.patch"
-        }
-      ]
-    },
-    {
-      "name": "exiftool",
-      "buildsystem": "simple",
-      "build-commands": [
-        "perl Makefile.PL",
-        "make install"
-      ],
-      "sources": [
-        {
-          "type": "git",
-          "url": "https://github.com/exiftool/exiftool.git",
-          "tag": "12.52",
-          "commit": "ac4151014c3d9b7d15ebd3bdfdc01405492a05ee"
-        }
-      ],
-      "modules": [
-        {
-          "name": "perl",
-          "no-autogen": true,
-          "config-opts": [
-            "-des",
-            "-Duseshrplib"
-          ],
-          "build-options": {
-            "cflags": "-fPIC",
-            "ldflags": "-fpic"
-          },
-          "cleanup": [
-            "*.h"
-          ],
-          "post-install": [
-            "find ${FLATPAK_DEST}/lib/perl5/ -name \\*.so -exec chmod u+w {} \\;"
-          ],
-          "sources": [
-            {
-              "type": "archive",
-              "url": "https://www.cpan.org/src/5.0/perl-5.34.1.tar.xz",
-              "sha256": "6d52cf833ff1af27bb5e986870a2c30cec73c044b41e3458cd991f94374039f7"
-            },
-            {
-              "type": "script",
-              "dest-filename": "configure",
-              "commands": [
-                "exec ./configure.gnu $@"
-              ]
-            }
-          ]
-        }
-      ]
-    }
-  ]
+    ]
 }

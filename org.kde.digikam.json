@@ -715,37 +715,6 @@
                     ]
                 },
                 {
-                    "name": "qtav",
-                    "buildsystem": "cmake-ninja",
-                    "builddir": true,
-                    "config-opts": [
-                        "-DBUILD_TESTS=OFF",
-                        "-DBUILD_EXAMPLES=OFF",
-                        "-DBUILD_PLAYERS=OFF",
-                        "-DBUILD_QT5OPENGL=ON"
-                    ],
-                    "cleanup": [
-                        "*.la"
-                    ],
-                    "sources": [
-                        {
-                            "type": "git",
-                            "url": "https://github.com/wang-bin/QtAV.git",
-                            "tag": "v1.13.0",
-                            "commit": "b51fee72a82fab049faf932fd0414d6a58e6caec",
-                            "disable-submodules": false
-                        },
-                        {
-                            "type": "patch",
-                            "path": "patches/qtav-fix-build.patch"
-                        },
-                        {
-                            "type": "patch",
-                            "path": "patches/qtav-fix-build-with-Qt-5.15.patch"
-                        }
-                    ]
-                },
-                {
                     "name": "x265",
                     "buildsystem": "cmake-ninja",
                     "builddir": true,

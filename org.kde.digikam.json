@@ -242,6 +242,28 @@
                     ]
                 },
                 {
+                    "name": "inih",
+                    "buildsystem": "meson",
+                    "config-opts": [
+                        "-Ddefault_library=shared",
+                        "-Ddistro_install=true",
+                        "-Dwith_INIReader=true"
+                    ],
+                    "sources": [
+                        {
+                            "type": "archive",
+                            "url": "https://github.com/benhoyt/inih/archive/refs/tags/r57.tar.gz",
+                            "sha256": "f03f98ca35c3adb56b2358573c8d3eda319ccd5287243d691e724b7eafa970b3",
+                            "x-checker-data": {
+                                "type": "anitya",
+                                "project-id": 11600,
+                                "stable-only": true,
+                                "url-template": "https://github.com/benhoyt/inih/archive/refs/tags/r$version.tar.gz"
+                            }
+                        }
+                    ]
+                },
+                {
                     "name": "exiv2",
                     "buildsystem": "cmake-ninja",
                     "builddir": true,

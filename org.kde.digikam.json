@@ -8,7 +8,7 @@
     "command": "digikam",
     "finish-args": [
         "--device=all",
-        "--filesystem=xdg-pictures",
+        "--filesystem=home",
         "--filesystem=/media",
         "--filesystem=/run/media",
         "--share=ipc",

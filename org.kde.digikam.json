@@ -21,6 +21,15 @@
         "--talk-name=org.kde.StatusNotifierWatcher",
         "--env=DK_PLUGIN_PATH=/app/lib/plugins/digikam"
     ],
+    "add-extensions": {
+      "org.freedesktop.Platform.ffmpeg-full": {
+        "directory": "lib/ffmpeg",
+        "add-ld-path": ".",
+        "version": "23.08",
+        "autodownload": true,
+        "autodelete": false
+      }
+    },
     "rename-icon": "digikam",
     "cleanup": [
         "/doc",
@@ -37,6 +46,7 @@
         "*.a"
     ],
     "cleanup-commands": [
+        "mkdir -p ${FLATPAK_DEST}/lib/ffmpeg",
         "/app/cleanup-BaseApp.sh"
     ],
     "modules": [
@@ -117,28 +127,6 @@
                                 "stable-only": true,
                                 "url-template": "https://gitlab.com/libeigen/eigen/-/archive/$version/eigen-$version.tar.bz2"
                             }
-                        }
-                    ]
-                },
-                {
-                    "name": "ffmpeg-4.4",
-                    "config-opts": [
-                        "--enable-shared",
-                        "--disable-static",
-                        "--enable-gnutls",
-                        "--disable-doc",
-                        "--disable-programs",
-                        "--disable-stripping"
-                    ],
-                    "sources": [
-                        {
-                            "type": "archive",
-                            "url": "https://ffmpeg.org/releases/ffmpeg-4.4.2.tar.gz",
-                            "sha256": "058efd4b6459bc9df54186f17a989d0af619a793aa62f07e96b88632706d6a17"
-                        },
-                        {
-                            "type": "patch",
-                            "path": "ffmpeg-patch.patch"
                         }
                     ]
                 },

@@ -839,8 +839,8 @@
                                 {
                                     "type": "git",
                                     "url": "https://github.com/AcademySoftwareFoundation/openexr.git",
-                                    "tag": "v2.5.8",
-                                    "commit": "918b8f543e81b5a1e1aca494ab7352ca280afc9e"
+                                    "tag": "v3.2.1",
+                                    "commit": "737b2707a001e67f3812d86a639c3d037efe2ea8"
                                 }
                             ],
                             "modules": [

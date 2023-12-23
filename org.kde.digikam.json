@@ -859,6 +859,25 @@
                                             "commit": "7c6c5fd76edf0c71db1a5a14d66a04a7d2bf9c1f"
                                         }
                                     ]
+                                },
+                                {
+                                    "name": "libdeflate",
+                                    "buildsystem": "cmake-ninja",
+                                    "builddir": true,
+                                    "config-opts": [
+                                       "-DLIBDEFLATE_BUILD_STATIC_LIB=OFF"
+                                    ],
+                                    "cleanup": [
+                                        "*.la"
+                                    ],
+                                    "sources": [
+                                        {
+                                            "type": "git",
+                                            "url": "https://github.com/ebiggers/libdeflate",
+                                            "tag": "v1.19",
+                                            "commit": "dd12ff2b36d603dbb7fa8838fe7e7176fcbd4f6f"
+                                        }
+                                    ]
                                 }
                             ]
                         }

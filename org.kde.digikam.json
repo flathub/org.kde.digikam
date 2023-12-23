@@ -823,8 +823,8 @@
                         {
                             "type": "git",
                             "url": "https://github.com/ukoethe/vigra.git",
-                            "tag": "Version-1-11-1",
-                            "commit": "ed1e79e4cdcec370cdeef2153f7d3c586a77f2d6"
+                            "tag": "Version-1-11-2",
+                            "commit": "501c99c1fa29a958d123925d647f5cb240e27758"
                         }
                     ],
                     "modules": [

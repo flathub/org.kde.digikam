@@ -1,9 +1,9 @@
 {
     "id": "org.kde.digikam",
     "base": "io.qt.qtwebengine.BaseApp",
-    "base-version": "5.15-22.08",
+    "base-version": "5.15-23.08",
     "runtime": "org.kde.Platform",
-    "runtime-version": "5.15-22.08",
+    "runtime-version": "5.15-23.08",
     "sdk": "org.kde.Sdk",
     "command": "digikam",
     "finish-args": [
@@ -21,6 +21,15 @@
         "--talk-name=org.kde.StatusNotifierWatcher",
         "--env=DK_PLUGIN_PATH=/app/lib/plugins/digikam"
     ],
+    "add-extensions": {
+      "org.freedesktop.Platform.ffmpeg-full": {
+        "directory": "lib/ffmpeg",
+        "add-ld-path": ".",
+        "version": "23.08",
+        "autodownload": true,
+        "autodelete": false
+      }
+    },
     "rename-icon": "digikam",
     "cleanup": [
         "/doc",
@@ -37,6 +46,7 @@
         "*.a"
     ],
     "cleanup-commands": [
+        "mkdir -p ${FLATPAK_DEST}/lib/ffmpeg",
         "/app/cleanup-BaseApp.sh"
     ],
     "modules": [
@@ -117,28 +127,6 @@
                                 "stable-only": true,
                                 "url-template": "https://gitlab.com/libeigen/eigen/-/archive/$version/eigen-$version.tar.bz2"
                             }
-                        }
-                    ]
-                },
-                {
-                    "name": "ffmpeg-4.4",
-                    "config-opts": [
-                        "--enable-shared",
-                        "--disable-static",
-                        "--enable-gnutls",
-                        "--disable-doc",
-                        "--disable-programs",
-                        "--disable-stripping"
-                    ],
-                    "sources": [
-                        {
-                            "type": "archive",
-                            "url": "https://ffmpeg.org/releases/ffmpeg-4.4.2.tar.gz",
-                            "sha256": "058efd4b6459bc9df54186f17a989d0af619a793aa62f07e96b88632706d6a17"
-                        },
-                        {
-                            "type": "patch",
-                            "path": "ffmpeg-patch.patch"
                         }
                     ]
                 },
@@ -390,8 +378,8 @@
                         {
                             "type": "git",
                             "url": "https://github.com/ImageMagick/ImageMagick.git",
-                            "tag": "7.1.0-57",
-                            "commit": "eadf378a6f4e088c32fa5eda62ca6c41d8a84c9c"
+                            "tag": "7.1.1-23",
+                            "commit": "54b13e91d262b1083e27fc8c02532c89d3ff649c"
                         }
                     ]
                 },
@@ -750,8 +738,8 @@
                         {
                             "type": "git",
                             "url": "https://github.com/strukturag/libheif.git",
-                            "tag": "v1.14.0",
-                            "commit": "2275b1035575d47fe3f614bb20f8f28a85e27edb"
+                            "tag": "v1.17.6",
+                            "commit": "59b58566de0d8e2e9fea958abeba1d3346bda9de"
                         }
                     ],
                     "modules": [
@@ -835,8 +823,8 @@
                         {
                             "type": "git",
                             "url": "https://github.com/ukoethe/vigra.git",
-                            "tag": "Version-1-11-1",
-                            "commit": "ed1e79e4cdcec370cdeef2153f7d3c586a77f2d6"
+                            "tag": "Version-1-11-2",
+                            "commit": "501c99c1fa29a958d123925d647f5cb240e27758"
                         }
                     ],
                     "modules": [
@@ -851,8 +839,8 @@
                                 {
                                     "type": "git",
                                     "url": "https://github.com/AcademySoftwareFoundation/openexr.git",
-                                    "tag": "v2.5.8",
-                                    "commit": "918b8f543e81b5a1e1aca494ab7352ca280afc9e"
+                                    "tag": "v3.2.1",
+                                    "commit": "737b2707a001e67f3812d86a639c3d037efe2ea8"
                                 }
                             ],
                             "modules": [
@@ -869,6 +857,25 @@
                                             "url": "https://github.com/AcademySoftwareFoundation/Imath.git",
                                             "tag": "v3.1.6",
                                             "commit": "7c6c5fd76edf0c71db1a5a14d66a04a7d2bf9c1f"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "name": "libdeflate",
+                                    "buildsystem": "cmake-ninja",
+                                    "builddir": true,
+                                    "config-opts": [
+                                       "-DLIBDEFLATE_BUILD_STATIC_LIB=OFF"
+                                    ],
+                                    "cleanup": [
+                                        "*.la"
+                                    ],
+                                    "sources": [
+                                        {
+                                            "type": "git",
+                                            "url": "https://github.com/ebiggers/libdeflate",
+                                            "tag": "v1.19",
+                                            "commit": "dd12ff2b36d603dbb7fa8838fe7e7176fcbd4f6f"
                                         }
                                     ]
                                 }
@@ -978,8 +985,8 @@
                     "sources": [
                         {
                             "type": "archive",
-                            "url": "https://www.cpan.org/src/5.0/perl-5.34.1.tar.xz",
-                            "sha256": "6d52cf833ff1af27bb5e986870a2c30cec73c044b41e3458cd991f94374039f7"
+                            "url": "https://www.cpan.org/src/5.0/perl-5.38.2.tar.xz",
+                            "sha256": "d91115e90b896520e83d4de6b52f8254ef2b70a8d545ffab33200ea9f1cf29e8"
                         },
                         {
                             "type": "script",

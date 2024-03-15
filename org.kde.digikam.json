@@ -22,13 +22,13 @@
         "--env=DK_PLUGIN_PATH=/app/lib/plugins/digikam"
     ],
     "add-extensions": {
-      "org.freedesktop.Platform.ffmpeg-full": {
-        "directory": "lib/ffmpeg",
-        "add-ld-path": ".",
-        "version": "23.08",
-        "autodownload": true,
-        "autodelete": false
-      }
+        "org.freedesktop.Platform.ffmpeg-full": {
+            "directory": "lib/ffmpeg",
+            "add-ld-path": ".",
+            "version": "23.08",
+            "autodownload": true,
+            "autodelete": false
+        }
     },
     "rename-icon": "digikam",
     "cleanup": [
@@ -74,8 +74,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://download.kde.org/stable/digikam/8.2.0/digiKam-8.2.0.tar.xz",
-                    "sha256": "2f7fcb559b123ed9ecae5a5aef6f4560eee5f49206d9d1746dec9ab6c8fb38bf",
+                    "url": "https://download.kde.org/stable/digikam/8.3.0/digiKam-8.3.0.tar.xz",
+                    "sha256": "74107a2bff8375cddef78da05662af4fa9517acabfa0cf53692a2a338a8bf173",
                     "x-checker-data": {
                         "type": "anitya",
                         "project-id": 437,
@@ -865,7 +865,7 @@
                                     "buildsystem": "cmake-ninja",
                                     "builddir": true,
                                     "config-opts": [
-                                       "-DLIBDEFLATE_BUILD_STATIC_LIB=OFF"
+                                        "-DLIBDEFLATE_BUILD_STATIC_LIB=OFF"
                                     ],
                                     "cleanup": [
                                         "*.la"

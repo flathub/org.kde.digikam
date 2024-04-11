@@ -55,9 +55,6 @@
             "name": "digikam",
             "buildsystem": "cmake-ninja",
             "builddir": true,
-            "build-options": {
-                "cxxflags": "-isystem /app/include/KF5"
-            },
             "config-opts": [
                 "-DCMAKE_BUILD_TYPE=RelWithDebInfo",
                 "-DENABLE_MYSQLSUPPORT=ON",
@@ -67,7 +64,8 @@
                 "-DENABLE_APPSTYLES=ON",
                 "-DENABLE_QWEBENGINE=ON",
                 "-DBUILD_TESTING=OFF",
-                "-DSSE4_1_FOUND=OFF"
+                "-DSSE4_1_FOUND=OFF",
+                "-DBUILD_WITH_QT6=ON"
             ],
             "post-install": [
                 "gunzip -S z /app/share/icons/hicolor/scalable/apps/*.svgz"
@@ -422,15 +420,27 @@
                     "name": "libksane",
                     "buildsystem": "cmake-ninja",
                     "builddir": true,
+                    "config-opts": [
+                        "-DQT_MAJOR_VERSION=6"
+                    ],
                     "cleanup": [
                         "*.la"
                     ],
                     "sources": [
                         {
-                            "type": "git",
-                            "url": "https://invent.kde.org/graphics/libksane.git",
-                            "tag": "v22.12.0",
-                            "commit": "af86efc8713051035cbdb94a8912b30b932166f2"
+                            "type": "archive",
+                            "url": "https://download.kde.org/stable/release-service/24.02.1/src/libksane-24.02.1.tar.xz",
+                            "sha256": "f806dd3b396a8e3583320a8a8fa081ac171ae377c0b3748fd1e0e8acdae71bff",
+                            "x-checker-data": {
+                                "type": "anitya",
+                                "project-id": 8763,
+                                "stable-only": true,
+                                "url-template": "https://download.kde.org/stable/release-service/$version/src/libksane-$version.tar.xz"
+                            }
+                        },
+                        {
+                            "type": "patch",
+                            "path": "0001-CMakeLists-Use-QT_REQUIRED_VERSION-consistently.patch"
                         }
                     ],
                     "modules": [
@@ -660,15 +670,23 @@
                             "name": "ksanecore",
                             "buildsystem": "cmake-ninja",
                             "builddir": true,
+                            "config-opts": [
+                                "-DQT_MAJOR_VERSION=6"
+                            ],
                             "cleanup": [
                                 "*.la"
                             ],
                             "sources": [
                                 {
-                                    "type": "git",
-                                    "url": "https://invent.kde.org/libraries/ksanecore.git",
-                                    "tag": "v22.12.0",
-                                    "commit": "2031fe5005262de48cc91327bb1dc2cfd7292683"
+                                    "type": "archive",
+                                    "url": "https://download.kde.org/stable/release-service/24.02.1/src/ksanecore-24.02.1.tar.xz",
+                                    "sha256": "b4fe58554fe2e3d69f399d674d9478ca0e8de865ddfbbd18f8e6966384727373",
+                                    "x-checker-data": {
+                                        "type": "anitya",
+                                        "project-id": 8763,
+                                        "stable-only": true,
+                                        "url-template": "https://download.kde.org/stable/release-service/$version/src/ksanecore-$version.tar.xz"
+                                    }
                                 }
                             ]
                         }

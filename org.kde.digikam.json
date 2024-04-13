@@ -400,8 +400,8 @@
                         {
                             "type": "git",
                             "url": "https://github.com/gphoto/libgphoto2.git",
-                            "tag": "v2.5.30",
-                            "commit": "6511898c4be52a9306f0791476561bdcebf5317d"
+                            "tag": "v2.5.31",
+                            "commit": "ba28af2d22fd4cb7fa76a8ff569ba498e8021db5"
                         },
                         {
                             "type": "script",

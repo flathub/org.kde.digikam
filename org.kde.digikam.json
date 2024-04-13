@@ -222,10 +222,15 @@
                     ],
                     "sources": [
                         {
-                            "type": "git",
-                            "url": "https://github.com/Itseez/opencv.git",
-                            "tag": "4.7.0",
-                            "commit": "725e440d278aca07d35a5e8963ef990572b07316"
+                            "type": "archive",
+                            "url": "https://github.com/opencv/opencv/archive/4.9.0.tar.gz",
+                            "sha256": "ddf76f9dffd322c7c3cb1f721d0887f62d747b82059342213138dc190f28bc6c",
+                            "x-checker-data": {
+                                "type": "anitya",
+                                "project-id": 6615,
+                                "stable-only": true,
+                                "url-template": "https://github.com/opencv/opencv/archive/$version.tar.gz"
+                            }
                         }
                     ]
                 },

@@ -377,10 +377,15 @@
                     ],
                     "sources": [
                         {
-                            "type": "git",
-                            "url": "https://github.com/ImageMagick/ImageMagick.git",
-                            "tag": "7.1.1-23",
-                            "commit": "54b13e91d262b1083e27fc8c02532c89d3ff649c"
+                            "type": "archive",
+                            "url": "https://imagemagick.org/archive/releases/ImageMagick-7.1.1-30.tar.gz",
+                            "sha256": "0ad8bac20d30fd38d1046cbcfa913de9615ac49b4bbb2cdc0985e6bde79c7db3",
+                            "x-checker-data": {
+                                "type": "anitya",
+                                "project-id": 1372,
+                                "stable-only": true,
+                                "url-template": "https://imagemagick.org/archive/releases/ImageMagick-$version.tar.gz"
+                            }
                         }
                     ]
                 },

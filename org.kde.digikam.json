@@ -633,9 +633,20 @@
                                 {
                                     "name": "poppler",
                                     "buildsystem": "cmake-ninja",
+                                    "builddir": true,
                                     "config-opts": [
                                         "-DENABLE_LIBOPENJPEG=none",
-                                        "-DENABLE_UNSTABLE_API_ABI_HEADERS=ON"
+                                        "-DENABLE_UNSTABLE_API_ABI_HEADERS=ON",
+                                        "-DCMAKE_BUILD_TYPE=RelWithDebInfo",
+                                        "-DBUILD_GTK_TESTS=OFF",
+                                        "-DBUILD_QT5_TESTS=OFF",
+                                        "-DBUILD_QT6_TESTS=OFF",
+                                        "-DBUILD_CPP_TESTS=OFF",
+                                        "-DENABLE_UTILS=OFF",
+                                        "-DENABLE_CPP=OFF",
+                                        "-DENABLE_GLIB=OFF",
+                                        "-DENABLE_QT5=OFF",
+                                        "-DENABLE_QT6=ON"
                                     ],
                                     "cleanup": [
                                         "*.la"
@@ -643,22 +654,38 @@
                                     "sources": [
                                         {
                                             "type": "archive",
-                                            "url": "https://poppler.freedesktop.org/poppler-23.01.0.tar.xz",
-                                            "sha256": "fae9b88d3d5033117d38477b79220cfd0d8e252c278ec870ab1832501741fd94"
+                                            "url": "https://poppler.freedesktop.org/poppler-24.04.0.tar.xz",
+                                            "sha256": "1e804ec565acf7126eb2e9bb3b56422ab2039f7e05863a5dfabdd1ffd1bb77a7",
+                                            "x-checker-data": {
+                                                "type": "anitya",
+                                                "project-id": 3686,
+                                                "stable-only": true,
+                                                "url-template": "https://poppler.freedesktop.org/poppler-$version.tar.xz"
+                                            }
                                         }
                                     ],
                                     "modules": [
                                         {
                                             "name": "poppler-data",
                                             "buildsystem": "cmake-ninja",
+                                            "builddir": true,
+                                            "config-opts": [
+                                                "-DCMAKE_BUILD_TYPE=RelWithDebInfo"
+                                            ],
                                             "cleanup": [
                                                 "*.la"
                                             ],
                                             "sources": [
                                                 {
                                                     "type": "archive",
-                                                    "url": "https://poppler.freedesktop.org/poppler-data-0.4.11.tar.gz",
-                                                    "sha256": "2cec05cd1bb03af98a8b06a1e22f6e6e1a65b1e2f3816cb3069bb0874825f08c"
+                                                    "url": "https://poppler.freedesktop.org/poppler-data-0.4.12.tar.gz",
+                                                    "sha256": "c835b640a40ce357e1b83666aabd95edffa24ddddd49b8daff63adb851cdab74",
+                                                    "x-checker-data": {
+                                                        "type": "anitya",
+                                                        "project-id": 3687,
+                                                        "stable-only": true,
+                                                        "url-template": "https://poppler.freedesktop.org/poppler-data-$version.tar.gz"
+                                                    }
                                                 }
                                             ]
                                         }

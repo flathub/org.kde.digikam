@@ -451,8 +451,8 @@
                     "sources": [
                         {
                             "type": "archive",
-                            "url": "https://download.kde.org/stable/release-service/24.02.1/src/libksane-24.02.1.tar.xz",
-                            "sha256": "f806dd3b396a8e3583320a8a8fa081ac171ae377c0b3748fd1e0e8acdae71bff",
+                            "url": "https://download.kde.org/stable/release-service/24.02.2/src/libksane-24.02.2.tar.xz",
+                            "sha256": "2ffc7fddb953ef0f9c38eb2c2bf402de0f9520c3542d3247f7b5c19ee185d8ff",
                             "x-checker-data": {
                                 "type": "anitya",
                                 "project-id": 8763,
@@ -728,8 +728,8 @@
                             "sources": [
                                 {
                                     "type": "archive",
-                                    "url": "https://download.kde.org/stable/release-service/24.02.1/src/ksanecore-24.02.1.tar.xz",
-                                    "sha256": "b4fe58554fe2e3d69f399d674d9478ca0e8de865ddfbbd18f8e6966384727373",
+                                    "url": "https://download.kde.org/stable/release-service/24.02.2/src/ksanecore-24.02.2.tar.xz",
+                                    "sha256": "18636264095bb56ee64185b4189d7ea14f33a69e392b818bbb0de6ffc1bb8170",
                                     "x-checker-data": {
                                         "type": "anitya",
                                         "project-id": 8763,

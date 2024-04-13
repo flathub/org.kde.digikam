@@ -817,7 +817,8 @@
             "buildsystem": "cmake-ninja",
             "builddir": true,
             "config-opts": [
-                "-DENABLE_DPLUGIN=ON"
+                "-DENABLE_DPLUGIN=ON",
+                "-DBUILD_WITH_QT6=ON"
             ],
             "cleanup": [
                 "*.la"
@@ -826,8 +827,8 @@
                 {
                     "type": "git",
                     "url": "https://github.com/scheckmedia/ImageMosaicWall.git",
-                    "tag": "v0.3",
-                    "commit": "3302603b774186bffe967d76a087de8d58b91d0f"
+                    "branch": "master",
+                    "commit": "a03eed03ae37831f002587145066476d2dc44eea"
                 }
             ]
         },

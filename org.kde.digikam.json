@@ -1,16 +1,17 @@
 {
     "id": "org.kde.digikam",
     "base": "io.qt.qtwebengine.BaseApp",
-    "base-version": "5.15-23.08",
+    "base-version": "6.6",
     "runtime": "org.kde.Platform",
-    "runtime-version": "5.15-23.08",
+    "runtime-version": "6.6",
     "sdk": "org.kde.Sdk",
     "command": "digikam",
     "finish-args": [
         "--device=all",
-        "--filesystem=xdg-pictures",
         "--filesystem=/media",
         "--filesystem=/run/media",
+        "--filesystem=home",
+        "--filesystem=xdg-pictures",
         "--share=ipc",
         "--share=network",
         "--socket=cups",
@@ -54,9 +55,6 @@
             "name": "digikam",
             "buildsystem": "cmake-ninja",
             "builddir": true,
-            "build-options": {
-                "cxxflags": "-isystem /app/include/KF5"
-            },
             "config-opts": [
                 "-DCMAKE_BUILD_TYPE=RelWithDebInfo",
                 "-DENABLE_MYSQLSUPPORT=ON",
@@ -66,7 +64,8 @@
                 "-DENABLE_APPSTYLES=ON",
                 "-DENABLE_QWEBENGINE=ON",
                 "-DBUILD_TESTING=OFF",
-                "-DSSE4_1_FOUND=OFF"
+                "-DSSE4_1_FOUND=OFF",
+                "-DBUILD_WITH_QT6=ON"
             ],
             "post-install": [
                 "gunzip -S z /app/share/icons/hicolor/scalable/apps/*.svgz"
@@ -74,8 +73,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://download.kde.org/stable/digikam/8.3.0/digiKam-8.3.0.tar.xz",
-                    "sha256": "74107a2bff8375cddef78da05662af4fa9517acabfa0cf53692a2a338a8bf173",
+                    "url": "https://download.kde.org/stable/digikam/8.3.0/digiKam-8.3.0-1.tar.xz",
+                    "sha256": "05b145ff7f2f2005fa21bc579c152ab23c8191b678ff2944c8f0406d6b9de6d8",
                     "x-checker-data": {
                         "type": "anitya",
                         "project-id": 437,
@@ -222,10 +221,37 @@
                     ],
                     "sources": [
                         {
-                            "type": "git",
-                            "url": "https://github.com/Itseez/opencv.git",
-                            "tag": "4.7.0",
-                            "commit": "725e440d278aca07d35a5e8963ef990572b07316"
+                            "type": "archive",
+                            "url": "https://github.com/opencv/opencv/archive/4.9.0.tar.gz",
+                            "sha256": "ddf76f9dffd322c7c3cb1f721d0887f62d747b82059342213138dc190f28bc6c",
+                            "x-checker-data": {
+                                "type": "anitya",
+                                "project-id": 6615,
+                                "stable-only": true,
+                                "url-template": "https://github.com/opencv/opencv/archive/$version.tar.gz"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "inih",
+                    "buildsystem": "meson",
+                    "config-opts": [
+                        "-Ddefault_library=shared",
+                        "-Ddistro_install=true",
+                        "-Dwith_INIReader=true"
+                    ],
+                    "sources": [
+                        {
+                            "type": "archive",
+                            "url": "https://github.com/benhoyt/inih/archive/refs/tags/r58.tar.gz",
+                            "sha256": "e79216260d5dffe809bda840be48ab0eec7737b2bb9f02d2275c1b46344ea7b7",
+                            "x-checker-data": {
+                                "type": "anitya",
+                                "project-id": 11600,
+                                "stable-only": true,
+                                "url-template": "https://github.com/benhoyt/inih/archive/refs/tags/r$version.tar.gz"
+                            }
                         }
                     ]
                 },
@@ -260,40 +286,14 @@
                     "sources": [
                         {
                             "type": "archive",
-                            "url": "https://github.com/Exiv2/exiv2/releases/download/v0.27.6/exiv2-0.27.6-Source.tar.gz",
-                            "sha256": "4c192483a1125dc59a3d70b30d30d32edace9e14adf52802d2f853abf72db8a6",
+                            "url": "https://github.com/Exiv2/exiv2/archive/refs/tags/v0.28.2.tar.gz",
+                            "sha256": "543bead934135f20f438e0b6d8858c55c5fcb7ff80f5d1d55489965f1aad58b9",
                             "x-checker-data": {
                                 "type": "anitya",
                                 "project-id": 769,
                                 "stable-only": true,
-                                "url-template": "https://github.com/Exiv2/exiv2/releases/download/v$version/exiv2-$version-Source.tar.gz"
+                                "url-template": "https://github.com/Exiv2/exiv2/archive/refs/tags/v$version.tar.gz"
                             }
-                        }
-                    ]
-                },
-                {
-                    "name": "marble",
-                    "buildsystem": "cmake-ninja",
-                    "builddir": true,
-                    "config-opts": [
-                        "-DWITH_DESIGNER_PLUGIN=OFF",
-                        "-DBUILD_MARBLE_TESTS=OFF",
-                        "-DBUILD_MARBLE_TOOLS=OFF",
-                        "-DBUILD_MARBLE_EXAMPLES=OFF",
-                        "-DBUILD_MARBLE_APPS=OFF",
-                        "-DBUILD_WITH_DBUS=ON",
-                        "-DBUILD_TESTING=OFF"
-                    ],
-                    "cleanup": [
-                        "/mkspecs",
-                        "*.la"
-                    ],
-                    "sources": [
-                        {
-                            "type": "git",
-                            "url": "https://invent.kde.org/education/marble.git",
-                            "tag": "v22.12.0",
-                            "commit": "bdb848d737e2fa95c796eb24c71fa7c36b1fca4a"
                         }
                     ]
                 },
@@ -376,10 +376,15 @@
                     ],
                     "sources": [
                         {
-                            "type": "git",
-                            "url": "https://github.com/ImageMagick/ImageMagick.git",
-                            "tag": "7.1.1-23",
-                            "commit": "54b13e91d262b1083e27fc8c02532c89d3ff649c"
+                            "type": "archive",
+                            "url": "https://imagemagick.org/archive/releases/ImageMagick-7.1.1-30.tar.gz",
+                            "sha256": "0ad8bac20d30fd38d1046cbcfa913de9615ac49b4bbb2cdc0985e6bde79c7db3",
+                            "x-checker-data": {
+                                "type": "anitya",
+                                "project-id": 1372,
+                                "stable-only": true,
+                                "url-template": "https://imagemagick.org/archive/releases/ImageMagick-$version.tar.gz"
+                            }
                         }
                     ]
                 },
@@ -394,8 +399,8 @@
                         {
                             "type": "git",
                             "url": "https://github.com/gphoto/libgphoto2.git",
-                            "tag": "v2.5.30",
-                            "commit": "6511898c4be52a9306f0791476561bdcebf5317d"
+                            "tag": "v2.5.31",
+                            "commit": "ba28af2d22fd4cb7fa76a8ff569ba498e8021db5"
                         },
                         {
                             "type": "script",
@@ -437,15 +442,27 @@
                     "name": "libksane",
                     "buildsystem": "cmake-ninja",
                     "builddir": true,
+                    "config-opts": [
+                        "-DQT_MAJOR_VERSION=6"
+                    ],
                     "cleanup": [
                         "*.la"
                     ],
                     "sources": [
                         {
-                            "type": "git",
-                            "url": "https://invent.kde.org/graphics/libksane.git",
-                            "tag": "v22.12.0",
-                            "commit": "af86efc8713051035cbdb94a8912b30b932166f2"
+                            "type": "archive",
+                            "url": "https://download.kde.org/stable/release-service/24.02.2/src/libksane-24.02.2.tar.xz",
+                            "sha256": "2ffc7fddb953ef0f9c38eb2c2bf402de0f9520c3542d3247f7b5c19ee185d8ff",
+                            "x-checker-data": {
+                                "type": "anitya",
+                                "project-id": 8763,
+                                "stable-only": true,
+                                "url-template": "https://download.kde.org/stable/release-service/$version/src/libksane-$version.tar.xz"
+                            }
+                        },
+                        {
+                            "type": "patch",
+                            "path": "0001-CMakeLists-Use-QT_REQUIRED_VERSION-consistently.patch"
                         }
                     ],
                     "modules": [
@@ -638,9 +655,20 @@
                                 {
                                     "name": "poppler",
                                     "buildsystem": "cmake-ninja",
+                                    "builddir": true,
                                     "config-opts": [
                                         "-DENABLE_LIBOPENJPEG=none",
-                                        "-DENABLE_UNSTABLE_API_ABI_HEADERS=ON"
+                                        "-DENABLE_UNSTABLE_API_ABI_HEADERS=ON",
+                                        "-DCMAKE_BUILD_TYPE=RelWithDebInfo",
+                                        "-DBUILD_GTK_TESTS=OFF",
+                                        "-DBUILD_QT5_TESTS=OFF",
+                                        "-DBUILD_QT6_TESTS=OFF",
+                                        "-DBUILD_CPP_TESTS=OFF",
+                                        "-DENABLE_UTILS=OFF",
+                                        "-DENABLE_CPP=OFF",
+                                        "-DENABLE_GLIB=OFF",
+                                        "-DENABLE_QT5=OFF",
+                                        "-DENABLE_QT6=ON"
                                     ],
                                     "cleanup": [
                                         "*.la"
@@ -648,22 +676,38 @@
                                     "sources": [
                                         {
                                             "type": "archive",
-                                            "url": "https://poppler.freedesktop.org/poppler-23.01.0.tar.xz",
-                                            "sha256": "fae9b88d3d5033117d38477b79220cfd0d8e252c278ec870ab1832501741fd94"
+                                            "url": "https://poppler.freedesktop.org/poppler-24.04.0.tar.xz",
+                                            "sha256": "1e804ec565acf7126eb2e9bb3b56422ab2039f7e05863a5dfabdd1ffd1bb77a7",
+                                            "x-checker-data": {
+                                                "type": "anitya",
+                                                "project-id": 3686,
+                                                "stable-only": true,
+                                                "url-template": "https://poppler.freedesktop.org/poppler-$version.tar.xz"
+                                            }
                                         }
                                     ],
                                     "modules": [
                                         {
                                             "name": "poppler-data",
                                             "buildsystem": "cmake-ninja",
+                                            "builddir": true,
+                                            "config-opts": [
+                                                "-DCMAKE_BUILD_TYPE=RelWithDebInfo"
+                                            ],
                                             "cleanup": [
                                                 "*.la"
                                             ],
                                             "sources": [
                                                 {
                                                     "type": "archive",
-                                                    "url": "https://poppler.freedesktop.org/poppler-data-0.4.11.tar.gz",
-                                                    "sha256": "2cec05cd1bb03af98a8b06a1e22f6e6e1a65b1e2f3816cb3069bb0874825f08c"
+                                                    "url": "https://poppler.freedesktop.org/poppler-data-0.4.12.tar.gz",
+                                                    "sha256": "c835b640a40ce357e1b83666aabd95edffa24ddddd49b8daff63adb851cdab74",
+                                                    "x-checker-data": {
+                                                        "type": "anitya",
+                                                        "project-id": 3687,
+                                                        "stable-only": true,
+                                                        "url-template": "https://poppler.freedesktop.org/poppler-data-$version.tar.gz"
+                                                    }
                                                 }
                                             ]
                                         }
@@ -675,15 +719,23 @@
                             "name": "ksanecore",
                             "buildsystem": "cmake-ninja",
                             "builddir": true,
+                            "config-opts": [
+                                "-DQT_MAJOR_VERSION=6"
+                            ],
                             "cleanup": [
                                 "*.la"
                             ],
                             "sources": [
                                 {
-                                    "type": "git",
-                                    "url": "https://invent.kde.org/libraries/ksanecore.git",
-                                    "tag": "v22.12.0",
-                                    "commit": "2031fe5005262de48cc91327bb1dc2cfd7292683"
+                                    "type": "archive",
+                                    "url": "https://download.kde.org/stable/release-service/24.02.2/src/ksanecore-24.02.2.tar.xz",
+                                    "sha256": "18636264095bb56ee64185b4189d7ea14f33a69e392b818bbb0de6ffc1bb8170",
+                                    "x-checker-data": {
+                                        "type": "anitya",
+                                        "project-id": 8763,
+                                        "stable-only": true,
+                                        "url-template": "https://download.kde.org/stable/release-service/$version/src/ksanecore-$version.tar.xz"
+                                    }
                                 }
                             ]
                         }
@@ -765,7 +817,8 @@
             "buildsystem": "cmake-ninja",
             "builddir": true,
             "config-opts": [
-                "-DENABLE_DPLUGIN=ON"
+                "-DENABLE_DPLUGIN=ON",
+                "-DBUILD_WITH_QT6=ON"
             ],
             "cleanup": [
                 "*.la"
@@ -774,8 +827,8 @@
                 {
                     "type": "git",
                     "url": "https://github.com/scheckmedia/ImageMosaicWall.git",
-                    "tag": "v0.3",
-                    "commit": "3302603b774186bffe967d76a087de8d58b91d0f"
+                    "branch": "master",
+                    "commit": "a03eed03ae37831f002587145066476d2dc44eea"
                 }
             ]
         },
@@ -789,8 +842,14 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://download.sourceforge.net/project/hugin/hugin/hugin-2022.0/hugin-2022.0.0.tar.bz2",
-                    "sha256": "97c8562a0ba9a743e0b955a43dfde048b1c60cd9e5f2ee2b69de1a81646e05a7"
+                    "url": "https://download.sourceforge.net/project/hugin/hugin/hugin-2023.0/hugin-2023.0.0.tar.bz2",
+                    "sha256": "04a39fccc6017e0544c639bd22309472c574d35b3455cbade1fc3870e631632b",
+                    "x-checker-data": {
+                        "type": "anitya",
+                        "project-id": 1341,
+                        "stable-only": true,
+                        "url-template": "https://download.sourceforge.net/project/hugin/hugin/hugin-$major.$minor/hugin-$version.tar.bz2"
+                    }
                 }
             ],
             "modules": [

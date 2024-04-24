@@ -1,0 +1,34 @@
+From 9088d4d1437857f6564b92491dff65909f2c6007 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Timoth=C3=A9e=20Ravier?= <tim@siosm.fr>
+Date: Fri, 29 Mar 2024 17:07:45 +0100
+Subject: [PATCH] CMakeLists: Use QT_REQUIRED_VERSION consistently
+
+---
+ CMakeLists.txt | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 31deadd..b6d39ba 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -61,7 +61,7 @@ ecm_setup_version(
+   SOVERSION ${SOVERSION}
+ )
+ # Dependencies
+-set(REQUIRED_QT_VERSION "5.15.2")
++set(QT_REQUIRED_VERSION "5.15.2")
+ if (QT_MAJOR_VERSION STREQUAL "6")
+     set(QT_REQUIRED_VERSION "6.4.0")
+     set(KF_MIN_VERSION "5.240.0")
+@@ -70,7 +70,7 @@ else()
+     set(KF_MAJOR_VERSION "5")
+ endif()
+ # Required Qt5 components to build this framework
+-find_package(Qt${QT_MAJOR_VERSION} ${REQUIRED_QT_VERSION} NO_MODULE REQUIRED Core Widgets)
++find_package(Qt${QT_MAJOR_VERSION} ${QT_REQUIRED_VERSION} NO_MODULE REQUIRED Core Widgets)
+ 
+ # Required KF5 frameworks
+ find_package(KF${KF_MAJOR_VERSION}I18n ${KF5_VERSION} REQUIRED)
+-- 
+2.44.0
+

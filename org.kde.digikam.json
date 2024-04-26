@@ -827,7 +827,6 @@
                 {
                     "type": "git",
                     "url": "https://github.com/scheckmedia/ImageMosaicWall.git",
-                    "branch": "master",
                     "commit": "a03eed03ae37831f002587145066476d2dc44eea"
                 }
             ]

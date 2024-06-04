@@ -97,8 +97,8 @@
                     "sources": [
                         {
                             "type": "archive",
-                            "url": "https://boostorg.jfrog.io/artifactory/main/release/1.84.0/source/boost_1_84_0.tar.bz2",
-                            "sha256": "cc4b893acf645c9d4b698e9a0f08ca8846aa5d6c68275c14c3e7949c24109454",
+                            "url": "https://boostorg.jfrog.io/artifactory/main/release/1.85.0/source/boost_1_85_0.tar.bz2",
+                            "sha256": "7009fe1faa1697476bdc7027703a2badb84e849b7b0baad5086b087b971f8617",
                             "x-checker-data": {
                                 "type": "anitya",
                                 "project-id": 6845,
@@ -222,8 +222,8 @@
                     "sources": [
                         {
                             "type": "archive",
-                            "url": "https://github.com/opencv/opencv/archive/4.9.0.tar.gz",
-                            "sha256": "ddf76f9dffd322c7c3cb1f721d0887f62d747b82059342213138dc190f28bc6c",
+                            "url": "https://github.com/opencv/opencv/archive/4.10.0.tar.gz",
+                            "sha256": "b2171af5be6b26f7a06b1229948bbb2bdaa74fcf5cd097e0af6378fce50a6eb9",
                             "x-checker-data": {
                                 "type": "anitya",
                                 "project-id": 6615,
@@ -377,8 +377,8 @@
                     "sources": [
                         {
                             "type": "archive",
-                            "url": "https://imagemagick.org/archive/releases/ImageMagick-7.1.1-31.tar.gz",
-                            "sha256": "63a49fdb23767db55d25fcdd3147a2e1b4f7e9c568bc5b8a4bd30f3dbc62a35d",
+                            "url": "https://imagemagick.org/archive/releases/ImageMagick-7.1.1-33.tar.gz",
+                            "sha256": "c90713af57cafe4971006ca8b1c7748e6b52e5c0d3b4eae6ba5fe007934d9316",
                             "x-checker-data": {
                                 "type": "anitya",
                                 "project-id": 1372,
@@ -451,8 +451,8 @@
                     "sources": [
                         {
                             "type": "archive",
-                            "url": "https://download.kde.org/stable/release-service/24.02.2/src/libksane-24.02.2.tar.xz",
-                            "sha256": "2ffc7fddb953ef0f9c38eb2c2bf402de0f9520c3542d3247f7b5c19ee185d8ff",
+                            "url": "https://download.kde.org/stable/release-service/24.05.0/src/libksane-24.05.0.tar.xz",
+                            "sha256": "e73c6f1a65ae40daecd994c29aae0e879b9832f00783ea229a5c8970691711c8",
                             "x-checker-data": {
                                 "type": "anitya",
                                 "project-id": 8763,
@@ -676,8 +676,8 @@
                                     "sources": [
                                         {
                                             "type": "archive",
-                                            "url": "https://poppler.freedesktop.org/poppler-24.04.0.tar.xz",
-                                            "sha256": "1e804ec565acf7126eb2e9bb3b56422ab2039f7e05863a5dfabdd1ffd1bb77a7",
+                                            "url": "https://poppler.freedesktop.org/poppler-24.06.0.tar.xz",
+                                            "sha256": "0cdabd495cada11f6ee9e75c793f80daf46367b66c25a63ee8c26d0f9ec40c76",
                                             "x-checker-data": {
                                                 "type": "anitya",
                                                 "project-id": 3686,
@@ -728,8 +728,8 @@
                             "sources": [
                                 {
                                     "type": "archive",
-                                    "url": "https://download.kde.org/stable/release-service/24.02.2/src/ksanecore-24.02.2.tar.xz",
-                                    "sha256": "18636264095bb56ee64185b4189d7ea14f33a69e392b818bbb0de6ffc1bb8170",
+                                    "url": "https://download.kde.org/stable/release-service/24.05.0/src/ksanecore-24.05.0.tar.xz",
+                                    "sha256": "ca4f80b9b7d7c26483d3ebd7279a7f6b0e08d17c9419dde061780b3bfbc115bd",
                                     "x-checker-data": {
                                         "type": "anitya",
                                         "project-id": 8763,

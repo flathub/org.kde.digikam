@@ -97,8 +97,8 @@
                     "sources": [
                         {
                             "type": "archive",
-                            "url": "https://boostorg.jfrog.io/artifactory/main/release/1.84.0/source/boost_1_84_0.tar.bz2",
-                            "sha256": "cc4b893acf645c9d4b698e9a0f08ca8846aa5d6c68275c14c3e7949c24109454",
+                            "url": "https://boostorg.jfrog.io/artifactory/main/release/1.85.0/source/boost_1_85_0.tar.bz2",
+                            "sha256": "7009fe1faa1697476bdc7027703a2badb84e849b7b0baad5086b087b971f8617",
                             "x-checker-data": {
                                 "type": "anitya",
                                 "project-id": 6845,
@@ -222,8 +222,8 @@
                     "sources": [
                         {
                             "type": "archive",
-                            "url": "https://github.com/opencv/opencv/archive/4.9.0.tar.gz",
-                            "sha256": "ddf76f9dffd322c7c3cb1f721d0887f62d747b82059342213138dc190f28bc6c",
+                            "url": "https://github.com/opencv/opencv/archive/4.10.0.tar.gz",
+                            "sha256": "b2171af5be6b26f7a06b1229948bbb2bdaa74fcf5cd097e0af6378fce50a6eb9",
                             "x-checker-data": {
                                 "type": "anitya",
                                 "project-id": 6615,
@@ -377,8 +377,8 @@
                     "sources": [
                         {
                             "type": "archive",
-                            "url": "https://imagemagick.org/archive/releases/ImageMagick-7.1.1-34.tar.gz",
-                            "sha256": "7fcc8bb701834d8cbadb9233840b08cf51b75827e97e3f3b1798768478b5712a",
+                            "url": "https://imagemagick.org/archive/releases/ImageMagick-7.1.1-35.tar.gz",
+                            "sha256": "bcd1e7122d848ed014a1afd37477de635ea32c14973e5bee8759dc970b1b526e",
                             "x-checker-data": {
                                 "type": "anitya",
                                 "project-id": 1372,

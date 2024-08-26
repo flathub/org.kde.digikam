@@ -103,6 +103,7 @@
                                 "type": "anitya",
                                 "project-id": 6845,
                                 "stable-only": true,
+                                "versions": {"<": "1.85.0"},
                                 "url-template": "https://boostorg.jfrog.io/artifactory/main/release/$version/source/boost_${major}_${minor}_$patch.tar.bz2"
                             }
                         }

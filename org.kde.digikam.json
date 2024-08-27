@@ -225,8 +225,8 @@
                     "sources": [
                         {
                             "type": "archive",
-                            "url": "https://github.com/opencv/opencv/archive/4.9.0.tar.gz",
-                            "sha256": "ddf76f9dffd322c7c3cb1f721d0887f62d747b82059342213138dc190f28bc6c",
+                            "url": "https://github.com/opencv/opencv/archive/4.10.0.tar.gz",
+                            "sha256": "b2171af5be6b26f7a06b1229948bbb2bdaa74fcf5cd097e0af6378fce50a6eb9",
                             "x-checker-data": {
                                 "type": "anitya",
                                 "project-id": 6615,
@@ -380,8 +380,8 @@
                     "sources": [
                         {
                             "type": "archive",
-                            "url": "https://imagemagick.org/archive/releases/ImageMagick-7.1.1-36.tar.gz",
-                            "sha256": "1e9f90e2b2b0612abd157ad1316d0a934bd4841ea3c882b07bccede63b25f297",
+                            "url": "https://imagemagick.org/archive/releases/ImageMagick-7.1.1-37.tar.gz",
+                            "sha256": "4c6a8194c2c405f97d9623933680f0ef41eb4d07cebaaddaea86686894f86446",
                             "x-checker-data": {
                                 "type": "anitya",
                                 "project-id": 1372,

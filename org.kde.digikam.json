@@ -840,8 +840,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://download.sourceforge.net/project/hugin/hugin/hugin-2023.0/hugin-2023.0.0.tar.bz2",
-                    "sha256": "04a39fccc6017e0544c639bd22309472c574d35b3455cbade1fc3870e631632b",
+                    "url": "https://download.sourceforge.net/project/hugin/hugin/hugin-2024.0/hugin-2024.0.0.tar.bz2",
+                    "sha256": "d156fd109587da60d5da580d245f36d74dfba4d28f54ef5519ee43aff6092743",
                     "x-checker-data": {
                         "type": "anitya",
                         "project-id": 1341,

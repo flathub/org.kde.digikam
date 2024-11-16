@@ -73,8 +73,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://download.kde.org/stable/digikam/8.4.0/digiKam-8.4.0.tar.xz",
-                    "sha256": "53c8aca5a2f660173e29a860d8b13844bd0ec748ef3f618c42f7689476494481",
+                    "url": "https://download.kde.org/stable/digikam/8.5.0/digiKam-8.5.0.tar.xz",
+                    "sha256": "5c4eaafbca59425a0fe8cb41e7d7a08446defbbb967528bb1148aed0e0d0e975",
                     "x-checker-data": {
                         "type": "anitya",
                         "project-id": 437,
@@ -840,8 +840,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://download.sourceforge.net/project/hugin/hugin/hugin-2023.0/hugin-2023.0.0.tar.bz2",
-                    "sha256": "04a39fccc6017e0544c639bd22309472c574d35b3455cbade1fc3870e631632b",
+                    "url": "https://download.sourceforge.net/project/hugin/hugin/hugin-2024.0/hugin-2024.0.0.tar.bz2",
+                    "sha256": "d156fd109587da60d5da580d245f36d74dfba4d28f54ef5519ee43aff6092743",
                     "x-checker-data": {
                         "type": "anitya",
                         "project-id": 1341,

@@ -1,9 +1,9 @@
 {
     "id": "org.kde.digikam",
     "base": "io.qt.qtwebengine.BaseApp",
-    "base-version": "6.7",
+    "base-version": "6.8",
     "runtime": "org.kde.Platform",
-    "runtime-version": "6.7",
+    "runtime-version": "6.8",
     "sdk": "org.kde.Sdk",
     "command": "digikam",
     "finish-args": [
@@ -26,7 +26,7 @@
         "org.freedesktop.Platform.ffmpeg-full": {
             "directory": "lib/ffmpeg",
             "add-ld-path": ".",
-            "version": "23.08",
+            "version": "24.08",
             "autodownload": true,
             "autodelete": false
         }
@@ -309,16 +309,11 @@
                         "-DBUILD_TESTS=OFF",
                         "-DBUILD_LENSTOOL=OFF",
                         "-DBUILD_DOC=OFF",
+                        "-DINSTALL_PYTHON_MODULE=OFF",
                         "-DINSTALL_HELPER_SCRIPTS=OFF"
                     ],
                     "build-options": {
                         "arch": {
-                            "arm": {
-                                "config-opts": [
-                                    "-DBUILD_FOR_SSE=off",
-                                    "-DBUILD_FOR_SSE2=off"
-                                ]
-                            },
                             "aarch64": {
                                 "config-opts": [
                                     "-DBUILD_FOR_SSE=off",
@@ -327,35 +322,14 @@
                             }
                         }
                     },
-                    "post-install": [
-                        "pip3 install --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} --ignore-installed lxml",
-                        "PYTHONPATH=${FLATPAK_DEST}/lib/python3.10/site-packages python3 lensfun_convert_db.py $PWD lensfun-git/data/db",
-                        "rm -rf ${FLATPAK_DEST}/share/lensfun/version_1/*",
-                        "tar xvf db/version_1.tar -C ${FLATPAK_DEST}/share/lensfun/version_1"
-                    ],
                     "cleanup": [
                         "*.la"
                     ],
                     "sources": [
                         {
-                            "type": "archive",
-                            "url": "https://download.sourceforge.net/project/lensfun/0.3.2/lensfun-0.3.2.tar.gz",
-                            "sha256": "ae8bcad46614ca47f5bda65b00af4a257a9564a61725df9c74cb260da544d331"
-                        },
-                        {
-                            "type": "file",
-                            "url": "https://files.pythonhosted.org/packages/06/5a/e11cad7b79f2cf3dd2ff8f81fa8ca667e7591d3d8451768589996b65dec1/lxml-4.9.2.tar.gz",
-                            "sha256": "2455cfaeb7ac70338b3257f41e21f0724f4b5b0c0e7702da67ee6c3640835b67"
-                        },
-                        {
-                            "type": "file",
-                            "path": "lensfun_convert_db.py"
-                        },
-                        {
                             "type": "git",
-                            "dest": "lensfun-git",
                             "url": "https://github.com/lensfun/lensfun.git",
-                            "commit": "9025d2e46f52c91173f19328235c5c116eacfb97"
+                            "tag": "v0.3.4"
                         }
                     ]
                 },
@@ -631,27 +605,6 @@
                                     ]
                                 },
                                 {
-                                    "name": "v4l-utils",
-                                    "config-opts": [
-                                        "--disable-static",
-                                        "--disable-doxygen-doc",
-                                        "--disable-libdvbv5",
-                                        "--disable-v4l-utils",
-                                        "--disable-qv4l2",
-                                        "--with-udevdir=/app/lib/udev"
-                                    ],
-                                    "cleanup": [
-                                        "*.la"
-                                    ],
-                                    "sources": [
-                                        {
-                                            "type": "archive",
-                                            "url": "https://linuxtv.org/downloads/v4l-utils/v4l-utils-1.22.1.tar.bz2",
-                                            "sha256": "65c6fbe830a44ca105c443b027182c1b2c9053a91d1e72ad849dfab388b94e31"
-                                        }
-                                    ]
-                                },
-                                {
                                     "name": "poppler",
                                     "buildsystem": "cmake-ninja",
                                     "builddir": true,
@@ -772,39 +725,8 @@
                     "sources": [
                         {
                             "type": "git",
-                            "url": "https://github.com/videolan/x265.git",
-                            "tag": "3.4",
-                            "commit": "07295ba7ab551bb9c1580fdaee3200f1b45711b7"
-                        }
-                    ]
-                },
-                {
-                    "name": "libheif",
-                    "buildsystem": "cmake-ninja",
-                    "builddir": true,
-                    "cleanup": [
-                        "*.la"
-                    ],
-                    "sources": [
-                        {
-                            "type": "git",
-                            "url": "https://github.com/strukturag/libheif.git",
-                            "tag": "v1.17.6",
-                            "commit": "59b58566de0d8e2e9fea958abeba1d3346bda9de"
-                        }
-                    ],
-                    "modules": [
-                        {
-                            "name": "libde265",
-                            "buildsystem": "cmake-ninja",
-                            "sources": [
-                                {
-                                    "type": "git",
-                                    "url": "https://github.com/strukturag/libde265.git",
-                                    "tag": "v1.0.11",
-                                    "commit": "e255f0571a46935955deef15808e52b18043788c"
-                                }
-                            ]
+                            "url": "https://bitbucket.org/multicoreware/x265_git.git",
+                            "tag": "4.1"
                         }
                     ]
                 },
@@ -951,8 +873,8 @@
                     "sources": [
                         {
                             "type": "archive",
-                            "url": "https://downloads.sourceforge.net/project/panotools/libpano13/libpano13-2.9.21/libpano13-2.9.21.tar.gz",
-                            "sha256": "79e5a1452199305e2961462720ef5941152779c127c5b96fc340d2492e633590"
+                            "url": "https://downloads.sourceforge.net/project/panotools/libpano13/libpano13-2.9.22/libpano13-2.9.22.tar.gz",
+                            "sha256": "affc6830cdbe71c28d2731dcbf8dea2acda6d9ffd4609c6dbf3ba0c68440a8e3"
                         }
                     ]
                 }
@@ -1042,8 +964,8 @@
                     "sources": [
                         {
                             "type": "archive",
-                            "url": "https://www.cpan.org/src/5.0/perl-5.38.2.tar.xz",
-                            "sha256": "d91115e90b896520e83d4de6b52f8254ef2b70a8d545ffab33200ea9f1cf29e8"
+                            "url": "https://www.cpan.org/src/5.0/perl-5.40.0.tar.xz",
+                            "sha256": "d5325300ad267624cb0b7d512cfdfcd74fa7fe00c455c5b51a6bd53e5e199ef9"
                         },
                         {
                             "type": "script",

@@ -802,7 +802,12 @@
                 {
                     "type": "git",
                     "url": "https://github.com/scheckmedia/ImageMosaicWall.git",
-                    "commit": "a03eed03ae37831f002587145066476d2dc44eea"
+                    "commit": "a03eed03ae37831f002587145066476d2dc44eea",
+                    "x-checker-data": {
+                        "type": "anitya",
+                        "project-id": 377002,
+                        "stable-only": true
+                    }
                 }
             ]
         },

@@ -512,8 +512,8 @@
                                     "sources": [
                                         {
                                             "type": "archive",
-                                            "url": "https://downloads.sourceforge.net/project/net-snmp/net-snmp/5.9.3/net-snmp-5.9.3.tar.gz",
-                                            "sha256": "2097f29b7e1bf3f1300b4bae52fa2308d0bb8d5d3998dbe02f9462a413a2ef0a",
+                                            "url": "https://downloads.sourceforge.net/project/net-snmp/net-snmp/5.9.4/net-snmp-5.9.4.tar.gz",
+                                            "sha256": "8b4de01391e74e3c7014beb43961a2d6d6fa03acc34280b9585f4930745b0544",
                                             "x-checker-data": {
                                                 "type": "anitya",
                                                 "project-id": 2062,
@@ -842,8 +842,8 @@
                     "sources": [
                         {
                             "type": "archive",
-                            "url": "https://github.com/wxWidgets/wxWidgets/releases/download/v3.2.1/wxWidgets-3.2.1.tar.bz2",
-                            "sha256": "c229976bb413eb88e45cb5dfb68b27890d450149c09b331abd751e7ae0f5fa66",
+                            "url": "https://github.com/wxWidgets/wxWidgets/releases/download/v3.2.6/wxWidgets-3.2.6.tar.bz2",
+                            "sha256": "939e5b77ddc5b6092d1d7d29491fe67010a2433cf9b9c0d841ee4d04acb9dce7",
                             "x-checker-data": {
                                 "type": "anitya",
                                 "project-id": 5150,
@@ -1072,8 +1072,8 @@
                     "sources": [
                         {
                             "type": "archive",
-                            "url": "https://www.cpan.org/src/5.0/perl-5.40.0.tar.xz",
-                            "sha256": "d5325300ad267624cb0b7d512cfdfcd74fa7fe00c455c5b51a6bd53e5e199ef9",
+                            "url": "https://www.cpan.org/src/5.0/perl-5.41.9.tar.xz",
+                            "sha256": "e944c984d9017f9253967557382dd7872459a14d2d55863c5b879caa6b09f447",
                             "x-checker-data": {
                                 "type": "anitya",
                                 "project-id": 13599,

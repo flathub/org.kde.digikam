@@ -20,7 +20,7 @@
         "--socket=wayland",
         "--system-talk-name=org.freedesktop.Avahi",
         "--system-talk-name=org.freedesktop.UDisks2",
-        "--talk-name=org.kde.StatusNotifierWatcher",
+        "--talk-name=org.kde.StatusNotifierWatcher"
     ],
     "add-extensions": {
         "org.freedesktop.Platform.ffmpeg-full": {
@@ -329,7 +329,12 @@
                         {
                             "type": "git",
                             "url": "https://github.com/lensfun/lensfun.git",
-                            "tag": "v0.3.4"
+                            "tag": "v0.3.4",
+                            "x-checker-data": {
+                                "type": "anitya",
+                                "project-id": 1548,
+                                "stable-only": true
+                            }
                         }
                     ]
                 },
@@ -377,7 +382,12 @@
                             "type": "git",
                             "url": "https://github.com/gphoto/libgphoto2.git",
                             "tag": "v2.5.31",
-                            "commit": "ba28af2d22fd4cb7fa76a8ff569ba498e8021db5"
+                            "commit": "ba28af2d22fd4cb7fa76a8ff569ba498e8021db5",
+                            "x-checker-data": {
+                                "type": "anitya",
+                                "project-id": 12558,
+                                "stable-only": true
+                            }
                         },
                         {
                             "type": "script",
@@ -411,7 +421,12 @@
                             "type": "git",
                             "url": "https://github.com/mdadams/jasper.git",
                             "tag": "version-3.0.5",
-                            "commit": "2f472a1d7f3faa213bc826ae258768d849964cfe"
+                            "commit": "2f472a1d7f3faa213bc826ae258768d849964cfe",
+                            "x-checker-data": {
+                                "type": "anitya",
+                                "project-id": 1421,
+                                "stable-only": true
+                            }
                         }
                     ]
                 },
@@ -462,7 +477,12 @@
                                     "type": "git",
                                     "url": "https://gitlab.com/sane-project/backends.git",
                                     "tag": "1.1.1",
-                                    "commit": "332edc8b7ce642bb06132cf204a8c2dd57720bce"
+                                    "commit": "332edc8b7ce642bb06132cf204a8c2dd57720bce",
+                                    "x-checker-data": {
+                                        "type": "anitya",
+                                        "project-id": 4760,
+                                        "stable-only": true
+                                    }
                                 }
                             ],
                             "modules": [
@@ -493,7 +513,13 @@
                                         {
                                             "type": "archive",
                                             "url": "https://downloads.sourceforge.net/project/net-snmp/net-snmp/5.9.3/net-snmp-5.9.3.tar.gz",
-                                            "sha256": "2097f29b7e1bf3f1300b4bae52fa2308d0bb8d5d3998dbe02f9462a413a2ef0a"
+                                            "sha256": "2097f29b7e1bf3f1300b4bae52fa2308d0bb8d5d3998dbe02f9462a413a2ef0a",
+                                            "x-checker-data": {
+                                                "type": "anitya",
+                                                "project-id": 2062,
+                                                "stable-only": true,
+                                                "url-template": "https://downloads.sourceforge.net/project/net-snmp/net-snmp/$version/net-snmp-$version.tar.gz"
+                                            }
                                         },
                                         {
                                             "type": "shell",
@@ -545,7 +571,13 @@
                                         {
                                             "type": "archive",
                                             "url": "https://avahi.org/download/avahi-0.8.tar.gz",
-                                            "sha256": "060309d7a333d38d951bc27598c677af1796934dbd98e1024e7ad8de798fedda"
+                                            "sha256": "060309d7a333d38d951bc27598c677af1796934dbd98e1024e7ad8de798fedda",
+                                            "x-checker-data": {
+                                                "type": "anitya",
+                                                "project-id": 147,
+                                                "stable-only": true,
+                                                "url-template": "https://avahi.org/download/avahi-$version.tar.gz"
+                                            }
                                         }
                                     ],
                                     "modules": [
@@ -567,7 +599,12 @@
                                                     "type": "git",
                                                     "url": "https://github.com/libevent/libevent.git",
                                                     "tag": "release-2.1.12-stable",
-                                                    "commit": "5df3037d10556bfcb675bc73e516978b75fc7bc7"
+                                                    "commit": "5df3037d10556bfcb675bc73e516978b75fc7bc7",
+                                                    "x-checker-data": {
+                                                        "type": "anitya",
+                                                        "project-id": 1606,
+                                                        "stable-only": true
+                                                    }
                                                 },
                                                 {
                                                     "type": "patch",
@@ -590,7 +627,13 @@
                                         {
                                             "type": "archive",
                                             "url": "https://downloads.sourceforge.net/project/libieee1284/libieee1284/0.2.11//libieee1284-0.2.11.tar.bz2",
-                                            "sha256": "7730de107782e5d2b071bdcb5b06a44da74856f00ef4a9be85d1ba4806a38f1a"
+                                            "sha256": "7730de107782e5d2b071bdcb5b06a44da74856f00ef4a9be85d1ba4806a38f1a",
+                                            "x-checker-data": {
+                                                "type": "anitya",
+                                                "project-id": 229574,
+                                                "stable-only": true,
+                                                "url-template": "https://downloads.sourceforge.net/project/libieee1284/libieee1284/$version//libieee1284-$version.tar.bz2"
+                                            }
                                         },
                                         {
                                             "type": "patch",
@@ -701,9 +744,15 @@
                     ],
                     "sources": [
                         {
-                            "type": "git",
-                            "url": "https://github.com/carlobaldassi/liblqr.git",
-                            "commit": "7b88c05cec2f0e60125e1cfcad18c79721a2b27c"
+                            "type": "archive",
+                            "url": "https://github.com/carlobaldassi/liblqr/archive/refs/tags/v0.4.3.tar.gz",
+                            "sha256": "64b0c4ac76d39cca79501b3f53544af3fc5f72b536ac0f28d2928319bfab6def",
+                            "x-checker-data": {
+                                "type": "anitya",
+                                "project-id": 229588,
+                                "stable-only": true,
+                                "url-template": "https://github.com/carlobaldassi/liblqr/archive/refs/tags/v$version.tar.gz"
+                            }
                         }
                     ]
                 },
@@ -726,7 +775,12 @@
                         {
                             "type": "git",
                             "url": "https://bitbucket.org/multicoreware/x265_git.git",
-                            "tag": "4.1"
+                            "tag": "4.1",
+                            "x-checker-data": {
+                                "type": "anitya",
+                                "project-id": 7275,
+                                "stable-only": true
+                            }
                         }
                     ]
                 },
@@ -784,7 +838,13 @@
                         {
                             "type": "archive",
                             "url": "https://github.com/wxWidgets/wxWidgets/releases/download/v3.2.1/wxWidgets-3.2.1.tar.bz2",
-                            "sha256": "c229976bb413eb88e45cb5dfb68b27890d450149c09b331abd751e7ae0f5fa66"
+                            "sha256": "c229976bb413eb88e45cb5dfb68b27890d450149c09b331abd751e7ae0f5fa66",
+                            "x-checker-data": {
+                                "type": "anitya",
+                                "project-id": 5150,
+                                "stable-only": true,
+                                "url-template": "https://github.com/wxWidgets/wxWidgets/releases/download/v$version/wxWidgets-$version.tar.bz2"
+                            }
                         }
                     ]
                 },
@@ -803,7 +863,12 @@
                             "type": "git",
                             "url": "https://github.com/ukoethe/vigra.git",
                             "tag": "Version-1-11-2",
-                            "commit": "501c99c1fa29a958d123925d647f5cb240e27758"
+                            "commit": "501c99c1fa29a958d123925d647f5cb240e27758",
+                            "x-checker-data": {
+                                "type": "anitya",
+                                "project-id": 15957,
+                                "stable-only": true
+                            }
                         }
                     ],
                     "modules": [
@@ -819,7 +884,12 @@
                                     "type": "git",
                                     "url": "https://github.com/AcademySoftwareFoundation/openexr.git",
                                     "tag": "v3.2.1",
-                                    "commit": "737b2707a001e67f3812d86a639c3d037efe2ea8"
+                                    "commit": "737b2707a001e67f3812d86a639c3d037efe2ea8",
+                                    "x-checker-data": {
+                                        "type": "anitya",
+                                        "project-id": 13289,
+                                        "stable-only": true
+                                    }
                                 }
                             ],
                             "modules": [
@@ -835,7 +905,12 @@
                                             "type": "git",
                                             "url": "https://github.com/AcademySoftwareFoundation/Imath.git",
                                             "tag": "v3.1.6",
-                                            "commit": "7c6c5fd76edf0c71db1a5a14d66a04a7d2bf9c1f"
+                                            "commit": "7c6c5fd76edf0c71db1a5a14d66a04a7d2bf9c1f",
+                                            "x-checker-data": {
+                                                "type": "anitya",
+                                                "project-id": 223366,
+                                                "stable-only": true
+                                            }
                                         }
                                     ]
                                 },
@@ -854,7 +929,12 @@
                                             "type": "git",
                                             "url": "https://github.com/ebiggers/libdeflate",
                                             "tag": "v1.19",
-                                            "commit": "dd12ff2b36d603dbb7fa8838fe7e7176fcbd4f6f"
+                                            "commit": "dd12ff2b36d603dbb7fa8838fe7e7176fcbd4f6f",
+                                            "x-checker-data": {
+                                                "type": "anitya",
+                                                "project-id": 242778,
+                                                "stable-only": true
+                                            }
                                         }
                                     ]
                                 }
@@ -874,7 +954,13 @@
                         {
                             "type": "archive",
                             "url": "https://downloads.sourceforge.net/project/panotools/libpano13/libpano13-2.9.22/libpano13-2.9.22.tar.gz",
-                            "sha256": "affc6830cdbe71c28d2731dcbf8dea2acda6d9ffd4609c6dbf3ba0c68440a8e3"
+                            "sha256": "affc6830cdbe71c28d2731dcbf8dea2acda6d9ffd4609c6dbf3ba0c68440a8e3",
+                            "x-checker-data": {
+                                "type": "anitya",
+                                "project-id": 230121,
+                                "stable-only": true,
+                                "url-template": "https://downloads.sourceforge.net/project/panotools/libpano13/libpano13-$version/libpano13-$version.tar.gz"
+                            }
                         }
                     ]
                 }
@@ -900,7 +986,13 @@
                         {
                             "type": "archive",
                             "url": "https://ftp.gnu.org/gnu/gsl/gsl-2.7.tar.gz",
-                            "sha256": "efbbf3785da0e53038be7907500628b466152dbc3c173a87de1b5eba2e23602b"
+                            "sha256": "efbbf3785da0e53038be7907500628b466152dbc3c173a87de1b5eba2e23602b",
+                            "x-checker-data": {
+                                "type": "anitya",
+                                "project-id": 1267,
+                                "stable-only": true,
+                                "url-template": "https://ftp.gnu.org/gnu/gsl/gsl-$verison.tar.gz"
+                            }
                         }
                     ]
                 }
@@ -912,7 +1004,13 @@
                 {
                     "type": "archive",
                     "url": "https://download.sourceforge.net/project/enblend/enblend-enfuse/enblend-enfuse-4.2/enblend-enfuse-4.2.tar.gz",
-                    "sha256": "8703e324939ebd70d76afd350e56800f5ea2c053a040a5f5218b2a1a4300bd48"
+                    "sha256": "8703e324939ebd70d76afd350e56800f5ea2c053a040a5f5218b2a1a4300bd48",
+                    "x-checker-data": {
+                        "type": "anitya",
+                        "project-id": 17784,
+                        "stable-only": true,
+                        "url-template": "https://download.sourceforge.net/project/enblend/enblend-enfuse/enblend-enfuse-$version/enblend-enfuse-$version.tar.gz"
+                    }
                 },
                 {
                     "type": "patch",
@@ -940,7 +1038,12 @@
                     "type": "git",
                     "url": "https://github.com/exiftool/exiftool.git",
                     "tag": "12.52",
-                    "commit": "ac4151014c3d9b7d15ebd3bdfdc01405492a05ee"
+                    "commit": "ac4151014c3d9b7d15ebd3bdfdc01405492a05ee",
+                    "x-checker-data": {
+                        "type": "anitya",
+                        "project-id": 6175,
+                        "stable-only": true
+                    }
                 }
             ],
             "modules": [
@@ -965,7 +1068,13 @@
                         {
                             "type": "archive",
                             "url": "https://www.cpan.org/src/5.0/perl-5.40.0.tar.xz",
-                            "sha256": "d5325300ad267624cb0b7d512cfdfcd74fa7fe00c455c5b51a6bd53e5e199ef9"
+                            "sha256": "d5325300ad267624cb0b7d512cfdfcd74fa7fe00c455c5b51a6bd53e5e199ef9",
+                            "x-checker-data": {
+                                "type": "anitya",
+                                "project-id": 13599,
+                                "stable-only": true,
+                                "url-template": "https://www.cpan.org/src/${major}.0/perl-$version.tar.xz"
+                            }
                         },
                         {
                             "type": "script",

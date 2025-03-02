@@ -8,6 +8,7 @@
     "command": "digikam",
     "finish-args": [
         "--device=all",
+        "--env=DK_PLUGIN_PATH=/app/lib/plugins/digikam",
         "--filesystem=/media",
         "--filesystem=/run/media",
         "--filesystem=home",
@@ -20,7 +21,6 @@
         "--system-talk-name=org.freedesktop.Avahi",
         "--system-talk-name=org.freedesktop.UDisks2",
         "--talk-name=org.kde.StatusNotifierWatcher",
-        "--env=DK_PLUGIN_PATH=/app/lib/plugins/digikam"
     ],
     "add-extensions": {
         "org.freedesktop.Platform.ffmpeg-full": {

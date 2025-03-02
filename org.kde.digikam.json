@@ -1078,6 +1078,9 @@
                                 "type": "anitya",
                                 "project-id": 13599,
                                 "stable-only": true,
+                                "versions": {
+                                    "<": "5.41.0"
+                                },
                                 "url-template": "https://www.cpan.org/src/${major}.0/perl-$version.tar.xz"
                             }
                         },

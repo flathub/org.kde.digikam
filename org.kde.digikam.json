@@ -8,6 +8,7 @@
     "command": "digikam",
     "finish-args": [
         "--device=all",
+        "--device=dri",
         "--env=DK_PLUGIN_PATH=/app/lib/plugins/digikam",
         "--filesystem=/media",
         "--filesystem=/run/media",

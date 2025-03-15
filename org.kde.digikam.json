@@ -73,8 +73,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://download.kde.org/stable/digikam/8.5.0/digiKam-8.5.0.tar.xz",
-                    "sha256": "5c4eaafbca59425a0fe8cb41e7d7a08446defbbb967528bb1148aed0e0d0e975",
+                    "url": "https://download.kde.org/stable/digikam/8.6.0/digiKam-8.6.0.tar.xz",
+                    "sha256": "d5752cf64e5fe84bded23c48d1aa548650ccf8d09f5d45f9e1e2d6423d721064",
                     "x-checker-data": {
                         "type": "anitya",
                         "project-id": 437,

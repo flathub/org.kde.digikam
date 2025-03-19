@@ -359,8 +359,8 @@
                     "sources": [
                         {
                             "type": "archive",
-                            "url": "https://imagemagick.org/archive/releases/ImageMagick-7.1.1-45.tar.gz",
-                            "sha256": "8227fdf71ab226e61bb719fe67e1ca2e80a69fee91eee634aacf62057e6ba7c0",
+                            "url": "https://imagemagick.org/archive/releases/ImageMagick-7.1.1-46.tar.gz",
+                            "sha256": "2a0a8e1a52476349764e24fd7c3568d1256ff72defcfe66764afb2237c64e421",
                             "x-checker-data": {
                                 "type": "anitya",
                                 "project-id": 1372,
@@ -842,8 +842,8 @@
                     "sources": [
                         {
                             "type": "archive",
-                            "url": "https://github.com/wxWidgets/wxWidgets/releases/download/v3.2.6/wxWidgets-3.2.6.tar.bz2",
-                            "sha256": "939e5b77ddc5b6092d1d7d29491fe67010a2433cf9b9c0d841ee4d04acb9dce7",
+                            "url": "https://github.com/wxWidgets/wxWidgets/releases/download/v3.2.7/wxWidgets-3.2.7.tar.bz2",
+                            "sha256": "69a1722f874d91cd1c9e742b72df49e0fab02890782cf794791c3104cee868c6",
                             "x-checker-data": {
                                 "type": "anitya",
                                 "project-id": 5150,

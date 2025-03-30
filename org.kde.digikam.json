@@ -247,8 +247,8 @@
                     "sources": [
                         {
                             "type": "archive",
-                            "url": "https://github.com/benhoyt/inih/archive/refs/tags/r58.tar.gz",
-                            "sha256": "e79216260d5dffe809bda840be48ab0eec7737b2bb9f02d2275c1b46344ea7b7",
+                            "url": "https://github.com/benhoyt/inih/archive/refs/tags/r59.tar.gz",
+                            "sha256": "062279922805f5e9a369551a08d5ddb506140fe50774183ffdbb7c22bb97e3f4",
                             "x-checker-data": {
                                 "type": "anitya",
                                 "project-id": 11600,
@@ -359,8 +359,8 @@
                     "sources": [
                         {
                             "type": "archive",
-                            "url": "https://imagemagick.org/archive/releases/ImageMagick-7.1.1-46.tar.gz",
-                            "sha256": "2a0a8e1a52476349764e24fd7c3568d1256ff72defcfe66764afb2237c64e421",
+                            "url": "https://imagemagick.org/archive/releases/ImageMagick-7.1.1-47.tar.gz",
+                            "sha256": "6eb2f2adda0b768af2e6abb14f0a2f9187d623420b8430c9d64216bd40c646bf",
                             "x-checker-data": {
                                 "type": "anitya",
                                 "project-id": 1372,

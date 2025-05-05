@@ -85,6 +85,44 @@
             ],
             "modules": [
                 {
+                    "name": "perl",
+                    "no-autogen": true,
+                    "config-opts": [
+                        "-des",
+                        "-Duseshrplib"
+                    ],
+                    "build-options": {
+                        "cflags": "-fPIC",
+                        "ldflags": "-fpic"
+                    },
+                    "cleanup": [
+                        "*.h"
+                    ],
+                    "post-install": [
+                        "find ${FLATPAK_DEST}/lib/perl5/ -name \\*.so -exec chmod u+w {} \\;"
+                    ],
+                    "sources": [
+                        {
+                            "type": "archive",
+                            "url": "https://www.cpan.org/src/5.0/perl-5.40.2.tar.xz",
+                            "sha256": "0551c717458e703ef7972307ab19385edfa231198d88998df74e12226abf563b",
+                            "x-checker-data": {
+                                "type": "anitya",
+                                "project-id": 13599,
+                                "stable-only": true,
+                                "url-template": "https://www.cpan.org/src/${major}.0/perl-$version.tar.xz"
+                            }
+                        },
+                        {
+                            "type": "script",
+                            "dest-filename": "configure",
+                            "commands": [
+                                "exec ./configure.gnu $@"
+                            ]
+                        }
+                    ]
+                },
+                {
                     "name": "boost",
                     "buildsystem": "simple",
                     "build-commands": [
@@ -1049,46 +1087,6 @@
                         "project-id": 6175,
                         "stable-only": true
                     }
-                }
-            ],
-            "modules": [
-                {
-                    "name": "perl",
-                    "no-autogen": true,
-                    "config-opts": [
-                        "-des",
-                        "-Duseshrplib"
-                    ],
-                    "build-options": {
-                        "cflags": "-fPIC",
-                        "ldflags": "-fpic"
-                    },
-                    "cleanup": [
-                        "*.h"
-                    ],
-                    "post-install": [
-                        "find ${FLATPAK_DEST}/lib/perl5/ -name \\*.so -exec chmod u+w {} \\;"
-                    ],
-                    "sources": [
-                        {
-                            "type": "archive",
-                            "url": "https://www.cpan.org/src/5.0/perl-5.40.2.tar.xz",
-                            "sha256": "0551c717458e703ef7972307ab19385edfa231198d88998df74e12226abf563b",
-                            "x-checker-data": {
-                                "type": "anitya",
-                                "project-id": 13599,
-                                "stable-only": true,
-                                "url-template": "https://www.cpan.org/src/${major}.0/perl-$version.tar.xz"
-                            }
-                        },
-                        {
-                            "type": "script",
-                            "dest-filename": "configure",
-                            "commands": [
-                                "exec ./configure.gnu $@"
-                            ]
-                        }
-                    ]
                 }
             ]
         }

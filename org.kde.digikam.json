@@ -81,6 +81,10 @@
                         "stable-only": true,
                         "url-template": "https://download.kde.org/stable/digikam/$version/digiKam-$version.tar.xz"
                     }
+                },
+                {
+                    "type": "patch",
+                    "path": "patches/qt69fix.patch"
                 }
             ],
             "modules": [

@@ -1,9 +1,9 @@
 {
     "id": "org.kde.digikam",
     "base": "io.qt.qtwebengine.BaseApp",
-    "base-version": "6.8",
+    "base-version": "6.9",
     "runtime": "org.kde.Platform",
-    "runtime-version": "6.8",
+    "runtime-version": "6.9",
     "sdk": "org.kde.Sdk",
     "command": "digikam",
     "finish-args": [
@@ -81,6 +81,10 @@
                         "stable-only": true,
                         "url-template": "https://download.kde.org/stable/digikam/$version/digiKam-$version.tar.xz"
                     }
+                },
+                {
+                    "type": "patch",
+                    "path": "patches/qt69fix.patch"
                 }
             ],
             "modules": [

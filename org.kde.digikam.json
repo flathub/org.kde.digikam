@@ -73,8 +73,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://download.kde.org/stable/digikam/8.6.0/digiKam-8.6.0.tar.xz",
-                    "sha256": "000971e117201976cba413b6d7201720a8893799d6064bcf158d4388e829c233",
+                    "url": "https://download.kde.org/stable/digikam/8.7.0/digiKam-8.7.0.tar.xz",
+                    "sha256": "79e35ec20a43934cf8322d47c9c0540b0b8b727fa7d9aceb90f710fcfe9da02f",
                     "x-checker-data": {
                         "type": "anitya",
                         "project-id": 437,
@@ -267,8 +267,8 @@
                     "sources": [
                         {
                             "type": "archive",
-                            "url": "https://github.com/opencv/opencv/archive/4.11.0.tar.gz",
-                            "sha256": "9a7c11f924eff5f8d8070e297b322ee68b9227e003fd600d4b8122198091665f",
+                            "url": "https://github.com/opencv/opencv/archive/4.12.0.tar.gz",
+                            "sha256": "44c106d5bb47efec04e531fd93008b3fcd1d27138985c5baf4eafac0e1ec9e9d",
                             "x-checker-data": {
                                 "type": "anitya",
                                 "project-id": 6615,
@@ -884,8 +884,8 @@
                     "sources": [
                         {
                             "type": "archive",
-                            "url": "https://github.com/wxWidgets/wxWidgets/releases/download/v3.2.8.1/wxWidgets-3.2.8.1.tar.bz2",
-                            "sha256": "ad0cf6c18815dcf1a6a89ad3c3d21a306cd7b5d99a602f77372ef1d92cb7d756",
+                            "url": "https://github.com/wxWidgets/wxWidgets/releases/download/v3.3.0/wxWidgets-3.3.0.tar.bz2",
+                            "sha256": "492f5eb8a58715f2602f31025c3eaa20d71a3ec8e052c7a9d33153966b4badca",
                             "x-checker-data": {
                                 "type": "anitya",
                                 "project-id": 5150,

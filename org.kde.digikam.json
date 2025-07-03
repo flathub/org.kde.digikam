@@ -73,18 +73,14 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://download.kde.org/stable/digikam/8.6.0/digiKam-8.6.0.tar.xz",
-                    "sha256": "000971e117201976cba413b6d7201720a8893799d6064bcf158d4388e829c233",
+                    "url": "https://download.kde.org/stable/digikam/8.7.0/digiKam-8.7.0.tar.xz",
+                    "sha256": "79e35ec20a43934cf8322d47c9c0540b0b8b727fa7d9aceb90f710fcfe9da02f",
                     "x-checker-data": {
                         "type": "anitya",
                         "project-id": 437,
                         "stable-only": true,
                         "url-template": "https://download.kde.org/stable/digikam/$version/digiKam-$version.tar.xz"
                     }
-                },
-                {
-                    "type": "patch",
-                    "path": "patches/qt69fix.patch"
                 }
             ],
             "modules": [
@@ -871,6 +867,10 @@
                         "stable-only": true,
                         "url-template": "https://download.sourceforge.net/project/hugin/hugin/hugin-$major.$minor/hugin-$version.tar.bz2"
                     }
+                },
+                {
+                    "type": "patch",
+                    "path": "patches/hugin-wxwidgets-3.3.patch"
                 }
             ],
             "modules": [
@@ -884,8 +884,8 @@
                     "sources": [
                         {
                             "type": "archive",
-                            "url": "https://github.com/wxWidgets/wxWidgets/releases/download/v3.2.8.1/wxWidgets-3.2.8.1.tar.bz2",
-                            "sha256": "ad0cf6c18815dcf1a6a89ad3c3d21a306cd7b5d99a602f77372ef1d92cb7d756",
+                            "url": "https://github.com/wxWidgets/wxWidgets/releases/download/v3.3.0/wxWidgets-3.3.0.tar.bz2",
+                            "sha256": "492f5eb8a58715f2602f31025c3eaa20d71a3ec8e052c7a9d33153966b4badca",
                             "x-checker-data": {
                                 "type": "anitya",
                                 "project-id": 5150,

@@ -1,0 +1,117 @@
+diff -ru hugin-2024.0.1.orig/src/hugin1/base_wx/StitchingExecutor.cpp hugin-2024.0.1/src/hugin1/base_wx/StitchingExecutor.cpp
+--- hugin-2024.0.1.orig/src/hugin1/base_wx/StitchingExecutor.cpp	2025-06-07 15:55:45.231192342 +0200
++++ hugin-2024.0.1/src/hugin1/base_wx/StitchingExecutor.cpp	2025-06-07 16:07:09.798045156 +0200
+@@ -447,23 +447,23 @@
+         // prepare some often needed variables
+         const wxString quotedProject(wxEscapeFilename(project));
+         // prepare nona arguments
+-        wxString nonaArgs(wxT("-v "));
++        wxString nonaArgs("-v ");
+         wxString enLayersCompressionArgs;
+         if (!opts.outputLayersCompression.empty())
+         {
+-            nonaArgs.Append(wxT("-z ") + opts.outputLayersCompression + wxT(" "));
+-            enLayersCompressionArgs.Append(wxT(" --compression=") + opts.outputLayersCompression + wxT(" "));
++            nonaArgs.Append("-z " + opts.outputLayersCompression + " ");
++            enLayersCompressionArgs.Append(" --compression=" + opts.outputLayersCompression + " ");
+         }
+         else
+         {
+             if (opts.outputImageType == "jpg")
+             {
+-                nonaArgs.Append(wxT("-z LZW "));
++                nonaArgs.Append("-z LZW ");
+             }
+         };
+         if (opts.remapUsingGPU)
+         {
+-            nonaArgs.Append(wxT("-g "));
++            nonaArgs.Append("-g ");
+         };
+         // prepare enblend arguments
+         wxString enblendArgs;
+@@ -510,7 +510,7 @@
+         };
+         finalCompressionArgs.Append(wxT(" "));
+         // prepare enfuse arguments
+-        wxString enfuseArgs(opts.enfuseOptions + wxT(" "));
++        wxString enfuseArgs(opts.enfuseOptions + " ");
+         if ((opts.getHFOV() == 360.0) && (opts.getWidth() == opts.getROI().width()))
+         {
+             enfuseArgs.Append(wxT(" -w"));
+@@ -595,24 +595,24 @@
+                 {
+                     if (opts.outputImageType == "tif")
+                     {
+-                        finalNonaArgs.Append(wxT("-m TIFF "));
++                        finalNonaArgs.Append("-m TIFF ");
+                         if (!opts.outputImageTypeCompression.empty())
+                         {
+-                            finalNonaArgs.Append(wxT("-z ") + opts.outputImageTypeCompression + wxT(" "));
++                            finalNonaArgs.Append("-z " + opts.outputImageTypeCompression + " ");
+                         };
+                     }
+                     else
+                     {
+                         if (opts.outputImageType == "jpg")
+                         {
+-                            finalNonaArgs.Append(wxT("-m JPEG -z "));
+-                            finalNonaArgs << opts.quality << wxT(" ");
++                            finalNonaArgs.Append("-m JPEG -z ");
++                            finalNonaArgs << opts.quality << " ";
+                         }
+                         else
+                         {
+                             if (opts.outputImageType == "png")
+                             {
+-                                finalNonaArgs.Append(wxT("-m PNG "));
++                                finalNonaArgs.Append("-m PNG ");
+                             }
+                             else
+                             {
+@@ -624,10 +624,10 @@
+                 };
+                 if (opts.outputLDRLayers)
+                 {
+-                    finalNonaArgs.Append(wxT("--save-intermediate-images "));
++                    finalNonaArgs.Append("--save-intermediate-images ");
+                     detail::AddToArray(remappedImages, outputFiles);
+                 }
+-                finalNonaArgs.Append(wxT("-o ") + wxEscapeFilename(prefix) + wxT(" ") + quotedProject);
++                finalNonaArgs.Append("-o " + wxEscapeFilename(prefix) + " " + quotedProject);
+                 commands->push_back(new NormalCommand(GetInternalProgram(ExePath, wxT("nona")),
+                     finalNonaArgs, _("Remapping and blending LDR images...")));
+                 outputFiles.Add(finalFilename);
+@@ -934,7 +934,7 @@
+                     stackedImages.Add(stackImgName);
+                     outputFiles.Add(stackImgName);
+                     commands->push_back(new NormalCommand(GetInternalProgram(ExePath, wxT("hugin_hdrmerge")),
+-                        opts.hdrmergeOptions + wxT(" -o ") + wxEscapeFilename(stackImgName) + wxT(" -- ") + GetQuotedFilenamesString(stackImgs),
++                        opts.hdrmergeOptions + " -o " + wxEscapeFilename(stackImgName) + " -- " + GetQuotedFilenamesString(stackImgs),
+                         wxString::Format(_("Merging HDR stack number %u..."), stackNr)));
+                     if (!opts.outputHDRStacks)
+                     {
+diff -ru hugin-2024.0.1.orig/src/hugin1/calibrate_lens/LensCalApp.cpp hugin-2024.0.1/src/hugin1/calibrate_lens/LensCalApp.cpp
+--- hugin-2024.0.1.orig/src/hugin1/calibrate_lens/LensCalApp.cpp	2025-06-07 15:55:45.230723227 +0200
++++ hugin-2024.0.1/src/hugin1/calibrate_lens/LensCalApp.cpp	2025-06-07 18:20:40.914451240 +0200
+@@ -90,7 +90,7 @@
+ 
+     if ( ! wxFile::Exists(m_xrcPrefix + wxT("/lenscal_frame.xrc")) )
+     {
+-        wxMessageBox(_("xrc directory not found, hugin needs to be properly installed\nTried Path:" + m_xrcPrefix ), _("Fatal Error"));
++        wxMessageBox(_("xrc directory not found, hugin needs to be properly installed\nTried Path:") + m_xrcPrefix, _("Fatal Error"));
+         return false;
+     }
+ 
+diff -ru hugin-2024.0.1.orig/src/hugin1/hugin/huginApp.cpp hugin-2024.0.1/src/hugin1/hugin/huginApp.cpp
+--- hugin-2024.0.1.orig/src/hugin1/hugin/huginApp.cpp	2025-06-07 15:55:45.237384909 +0200
++++ hugin-2024.0.1/src/hugin1/hugin/huginApp.cpp	2025-06-07 18:24:15.470596712 +0200
+@@ -279,7 +279,7 @@
+ #endif
+ 
+     if ( ! wxFile::Exists(m_xrcPrefix + wxT("/main_frame.xrc")) ) {
+-        wxMessageBox(_("xrc directory not found, hugin needs to be properly installed\nTried Path:" + m_xrcPrefix ), _("Fatal Error"));
++        wxMessageBox(_("xrc directory not found, hugin needs to be properly installed\nTried Path:") + m_xrcPrefix, _("Fatal Error"));
+         return false;
+     }
+ 

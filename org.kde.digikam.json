@@ -81,10 +81,6 @@
                         "stable-only": true,
                         "url-template": "https://download.kde.org/stable/digikam/$version/digiKam-$version.tar.xz"
                     }
-                },
-                {
-                    "type": "patch",
-                    "path": "patches/qt69fix.patch"
                 }
             ],
             "modules": [
@@ -871,6 +867,10 @@
                         "stable-only": true,
                         "url-template": "https://download.sourceforge.net/project/hugin/hugin/hugin-$major.$minor/hugin-$version.tar.bz2"
                     }
+                },
+                {
+                    "type": "patch",
+                    "path": "patches/hugin-wxwidgets-3.3.patch"
                 }
             ],
             "modules": [

@@ -324,8 +324,8 @@
                     "sources": [
                         {
                             "type": "archive",
-                            "url": "https://github.com/Exiv2/exiv2/archive/refs/tags/v0.28.5.tar.gz",
-                            "sha256": "e1671f744e379a87ba0c984617406fdf8c0ad0c594e5122f525b2fb7c28d394d",
+                            "url": "https://github.com/Exiv2/exiv2/archive/refs/tags/v0.28.7.tar.gz",
+                            "sha256": "5e292b02614dbc0cee40fe1116db2f42f63ef6b2ba430c77b614e17b8d61a638",
                             "x-checker-data": {
                                 "type": "anitya",
                                 "project-id": 769,
@@ -394,8 +394,8 @@
                     "sources": [
                         {
                             "type": "archive",
-                            "url": "https://imagemagick.org/archive/releases/ImageMagick-7.1.2-1.tar.gz",
-                            "sha256": "23c071eaf91f2c4e7e9e0d42d7c3ea616f6c5c42832af3de59e0baf6706fcb85",
+                            "url": "https://imagemagick.org/archive/releases/ImageMagick-7.1.2-3.tar.gz",
+                            "sha256": "f5a1b4a796b81ed000bb1484d43a75cd41374b063dc6488208b32aec4bf05d7b",
                             "x-checker-data": {
                                 "type": "anitya",
                                 "project-id": 1372,
@@ -706,8 +706,8 @@
                                     "sources": [
                                         {
                                             "type": "archive",
-                                            "url": "https://poppler.freedesktop.org/poppler-25.08.0.tar.xz",
-                                            "sha256": "425ed4d4515a093bdcdbbaac6876f20617451edc710df6a4fd6c45dd67eb418d",
+                                            "url": "https://poppler.freedesktop.org/poppler-25.09.0.tar.xz",
+                                            "sha256": "758abfe0c77108c72d654b291dfbce54964b5315a53028e3875f07ef55ff20a3",
                                             "x-checker-data": {
                                                 "type": "anitya",
                                                 "project-id": 3686,

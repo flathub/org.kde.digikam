@@ -135,8 +135,8 @@
                     "sources": [
                         {
                             "type": "archive",
-                            "url": "https://archives.boost.io/release/1.88.0/source/boost_1_88_0.tar.bz2",
-                            "sha256": "46d9d2c06637b219270877c9e16155cbd015b6dc84349af064c088e9b5b12f7b",
+                            "url": "https://archives.boost.io/release/1.89.0/source/boost_1_89_0.tar.bz2",
+                            "sha256": "85a33fa22621b4f314f8e85e1a5e2a9363d22e4f4992925d4bb3bc631b5a0c7a",
                             "x-checker-data": {
                                 "type": "anitya",
                                 "project-id": 6845,
@@ -282,8 +282,8 @@
                     "sources": [
                         {
                             "type": "archive",
-                            "url": "https://github.com/benhoyt/inih/archive/refs/tags/r61.tar.gz",
-                            "sha256": "7caf26a2202a4ca689df3fe4175dfa74e0faa18fcca07331bba934fd0ecb8f12",
+                            "url": "https://github.com/benhoyt/inih/archive/refs/tags/r62.tar.gz",
+                            "sha256": "9c15fa751bb8093d042dae1b9f125eb45198c32c6704cd5481ccde460d4f8151",
                             "x-checker-data": {
                                 "type": "anitya",
                                 "project-id": 11600,
@@ -478,8 +478,8 @@
                     "sources": [
                         {
                             "type": "archive",
-                            "url": "https://download.kde.org/stable/release-service/25.08.0/src/libksane-25.08.0.tar.xz",
-                            "sha256": "99461b135bb55125ca987d4911a32a4c4bac33fdfbf710b6483551ac961fb63b",
+                            "url": "https://download.kde.org/stable/release-service/25.08.1/src/libksane-25.08.1.tar.xz",
+                            "sha256": "ad4024e3bb5a2e975c48945d825c89e37f94f7fefd40b0db53c0d5d62dfdcc7a",
                             "x-checker-data": {
                                 "type": "anitya",
                                 "project-id": 8763,
@@ -706,8 +706,8 @@
                                     "sources": [
                                         {
                                             "type": "archive",
-                                            "url": "https://poppler.freedesktop.org/poppler-25.09.0.tar.xz",
-                                            "sha256": "758abfe0c77108c72d654b291dfbce54964b5315a53028e3875f07ef55ff20a3",
+                                            "url": "https://poppler.freedesktop.org/poppler-25.09.1.tar.xz",
+                                            "sha256": "0c1091d01d3dd1664a13816861e812d02b29201e96665454b81b52d261fad658",
                                             "x-checker-data": {
                                                 "type": "anitya",
                                                 "project-id": 3686,
@@ -758,8 +758,8 @@
                             "sources": [
                                 {
                                     "type": "archive",
-                                    "url": "https://download.kde.org/stable/release-service/25.08.0/src/ksanecore-25.08.0.tar.xz",
-                                    "sha256": "92424bdaa2859ebe53722ea663d4a679484361dca0ab1489236a976efff2f1a9",
+                                    "url": "https://download.kde.org/stable/release-service/25.08.1/src/ksanecore-25.08.1.tar.xz",
+                                    "sha256": "efcbbd6ee797aee03c7d9622a150f0b4ee645f7d0856d379c2495eb25e0697c6",
                                     "x-checker-data": {
                                         "type": "anitya",
                                         "project-id": 8763,

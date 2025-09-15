@@ -18,6 +18,7 @@
         "--socket=cups",
         "--socket=fallback-x11",
         "--socket=wayland",
+        "--socket=pulseaudio",
         "--system-talk-name=org.freedesktop.Avahi",
         "--system-talk-name=org.freedesktop.UDisks2",
         "--talk-name=org.kde.StatusNotifierWatcher"

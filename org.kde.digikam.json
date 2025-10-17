@@ -157,8 +157,8 @@
                     "sources": [
                         {
                             "type": "archive",
-                            "url": "https://gitlab.com/libeigen/eigen/-/archive/3.4.0/eigen-3.4.0.tar.bz2",
-                            "sha256": "b4c198460eba6f28d34894e3a5710998818515104d6e74e5cc331ce31e46e626",
+                            "url": "https://gitlab.com/libeigen/eigen/-/archive/5.0.0/eigen-5.0.0.tar.bz2",
+                            "sha256": "bdca0ec740fb83be21fe038699923f4c589ead9ab904f4058a9c97752e60d50b",
                             "x-checker-data": {
                                 "type": "anitya",
                                 "project-id": 666,
@@ -395,8 +395,8 @@
                     "sources": [
                         {
                             "type": "archive",
-                            "url": "https://imagemagick.org/archive/releases/ImageMagick-7.1.2-3.tar.gz",
-                            "sha256": "f5a1b4a796b81ed000bb1484d43a75cd41374b063dc6488208b32aec4bf05d7b",
+                            "url": "https://imagemagick.org/archive/releases/ImageMagick-7.1.2-7.tar.gz",
+                            "sha256": "dc9efd3a962f65d6b7d16d89c2990d1f88a6e4fbd61598b860309e5bdcb50e62",
                             "x-checker-data": {
                                 "type": "anitya",
                                 "project-id": 1372,
@@ -479,8 +479,8 @@
                     "sources": [
                         {
                             "type": "archive",
-                            "url": "https://download.kde.org/stable/release-service/25.08.1/src/libksane-25.08.1.tar.xz",
-                            "sha256": "ad4024e3bb5a2e975c48945d825c89e37f94f7fefd40b0db53c0d5d62dfdcc7a",
+                            "url": "https://download.kde.org/stable/release-service/25.08.2/src/libksane-25.08.2.tar.xz",
+                            "sha256": "da6b7377609f07896007db05e3323291bb16fcd2d6cd9c2c1b58e0f999ffba33",
                             "x-checker-data": {
                                 "type": "anitya",
                                 "project-id": 8763,
@@ -707,8 +707,8 @@
                                     "sources": [
                                         {
                                             "type": "archive",
-                                            "url": "https://poppler.freedesktop.org/poppler-25.09.1.tar.xz",
-                                            "sha256": "0c1091d01d3dd1664a13816861e812d02b29201e96665454b81b52d261fad658",
+                                            "url": "https://poppler.freedesktop.org/poppler-25.10.0.tar.xz",
+                                            "sha256": "6b5e9bb64dabb15787a14db1675291c7afaf9387438cc93a4fb7f6aec4ee6fe0",
                                             "x-checker-data": {
                                                 "type": "anitya",
                                                 "project-id": 3686,

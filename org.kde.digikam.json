@@ -74,8 +74,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://download.kde.org/stable/digikam/8.7.0/digiKam-8.7.0.tar.xz",
-                    "sha256": "79e35ec20a43934cf8322d47c9c0540b0b8b727fa7d9aceb90f710fcfe9da02f",
+                    "url": "https://download.kde.org/stable/digikam/8.8.0/digiKam-8.8.0.tar.xz",
+                    "sha256": "db3a1b6e3c73f903e3dff8003f52455dd2ecd198cb66534fee4abbd0bdeb6b9a",
                     "x-checker-data": {
                         "type": "anitya",
                         "project-id": 437,
@@ -157,8 +157,8 @@
                     "sources": [
                         {
                             "type": "archive",
-                            "url": "https://gitlab.com/libeigen/eigen/-/archive/3.4.0/eigen-3.4.0.tar.bz2",
-                            "sha256": "b4c198460eba6f28d34894e3a5710998818515104d6e74e5cc331ce31e46e626",
+                            "url": "https://gitlab.com/libeigen/eigen/-/archive/5.0.0/eigen-5.0.0.tar.bz2",
+                            "sha256": "bdca0ec740fb83be21fe038699923f4c589ead9ab904f4058a9c97752e60d50b",
                             "x-checker-data": {
                                 "type": "anitya",
                                 "project-id": 666,
@@ -395,8 +395,8 @@
                     "sources": [
                         {
                             "type": "archive",
-                            "url": "https://imagemagick.org/archive/releases/ImageMagick-7.1.2-3.tar.gz",
-                            "sha256": "f5a1b4a796b81ed000bb1484d43a75cd41374b063dc6488208b32aec4bf05d7b",
+                            "url": "https://imagemagick.org/archive/releases/ImageMagick-7.1.2-8.tar.gz",
+                            "sha256": "c95385629467da65add2299b81bf52501908a4b6b77f288a491ae2bde7caaa52",
                             "x-checker-data": {
                                 "type": "anitya",
                                 "project-id": 1372,
@@ -479,8 +479,8 @@
                     "sources": [
                         {
                             "type": "archive",
-                            "url": "https://download.kde.org/stable/release-service/25.08.1/src/libksane-25.08.1.tar.xz",
-                            "sha256": "ad4024e3bb5a2e975c48945d825c89e37f94f7fefd40b0db53c0d5d62dfdcc7a",
+                            "url": "https://download.kde.org/stable/release-service/25.08.2/src/libksane-25.08.2.tar.xz",
+                            "sha256": "da6b7377609f07896007db05e3323291bb16fcd2d6cd9c2c1b58e0f999ffba33",
                             "x-checker-data": {
                                 "type": "anitya",
                                 "project-id": 8763,
@@ -707,8 +707,8 @@
                                     "sources": [
                                         {
                                             "type": "archive",
-                                            "url": "https://poppler.freedesktop.org/poppler-25.09.1.tar.xz",
-                                            "sha256": "0c1091d01d3dd1664a13816861e812d02b29201e96665454b81b52d261fad658",
+                                            "url": "https://poppler.freedesktop.org/poppler-25.11.0.tar.xz",
+                                            "sha256": "63f155142b77349e2bccaef148e754e7506ab1641e713b83af4f54a8f8b15369",
                                             "x-checker-data": {
                                                 "type": "anitya",
                                                 "project-id": 3686,
@@ -759,8 +759,8 @@
                             "sources": [
                                 {
                                     "type": "archive",
-                                    "url": "https://download.kde.org/stable/release-service/25.08.1/src/ksanecore-25.08.1.tar.xz",
-                                    "sha256": "efcbbd6ee797aee03c7d9622a150f0b4ee645f7d0856d379c2495eb25e0697c6",
+                                    "url": "https://download.kde.org/stable/release-service/25.08.2/src/ksanecore-25.08.2.tar.xz",
+                                    "sha256": "8badb3c8a4d5d466a9229bc46eb1f4fb0a16f382008e6399903413d8fa0a98b1",
                                     "x-checker-data": {
                                         "type": "anitya",
                                         "project-id": 8763,
@@ -1002,8 +1002,8 @@
                     "sources": [
                         {
                             "type": "archive",
-                            "url": "https://downloads.sourceforge.net/project/panotools/libpano13/libpano13-2.9.22/libpano13-2.9.22.tar.gz",
-                            "sha256": "affc6830cdbe71c28d2731dcbf8dea2acda6d9ffd4609c6dbf3ba0c68440a8e3",
+                            "url": "https://downloads.sourceforge.net/project/panotools/libpano13/libpano13-2.9.23/libpano13-2.9.23.tar.gz",
+                            "sha256": "e7c076d37a14c39434962115e47ddbe18452ca3de5ce40e2aaefa7cf5815ea28",
                             "x-checker-data": {
                                 "type": "anitya",
                                 "project-id": 230121,

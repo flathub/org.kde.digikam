@@ -497,8 +497,8 @@
                                 {
                                     "type": "git",
                                     "url": "https://gitlab.com/sane-project/backends.git",
-                                    "tag": "1.1.1",
-                                    "commit": "332edc8b7ce642bb06132cf204a8c2dd57720bce",
+                                    "tag": "1.4.0",
+                                    "commit": "c7e4b5e35e3d614d2b1181d760a717bfc395a203",
                                     "x-checker-data": {
                                         "type": "anitya",
                                         "project-id": 4760,

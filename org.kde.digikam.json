@@ -791,6 +791,9 @@
                             }
                         }
                     },
+                    "config-opts": [
+                        "-DCMAKE_POLICY_VERSION_MINIMUM=3.5"
+                    ],
                     "subdir": "source",
                     "cleanup": [
                         "*.la"
@@ -805,6 +808,10 @@
                                 "project-id": 7275,
                                 "stable-only": true
                             }
+                        },
+                        {
+                            "type": "patch",
+                            "path": "./patches/x265-Fix-CMake-build-error.patch"
                         }
                     ]
                 },

@@ -760,6 +760,9 @@
                 {
                     "name": "liblqr",
                     "builddir": true,
+                    "build-options": {
+                        "cflags": "-std=gnu17"
+                    },
                     "cleanup": [
                         "*.la"
                     ],

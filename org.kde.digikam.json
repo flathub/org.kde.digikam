@@ -23,15 +23,6 @@
         "--system-talk-name=org.freedesktop.UDisks2",
         "--talk-name=org.kde.StatusNotifierWatcher"
     ],
-    "add-extensions": {
-        "org.freedesktop.Platform.ffmpeg-full": {
-            "directory": "lib/ffmpeg",
-            "add-ld-path": ".",
-            "version": "24.08",
-            "autodownload": true,
-            "autodelete": false
-        }
-    },
     "rename-icon": "digikam",
     "cleanup": [
         "/doc",
@@ -46,10 +37,6 @@
         "/share/man",
         "/share/pkgconfig",
         "*.a"
-    ],
-    "cleanup-commands": [
-        "mkdir -p ${FLATPAK_DEST}/lib/ffmpeg",
-        "/app/cleanup-BaseApp.sh"
     ],
     "modules": [
         {

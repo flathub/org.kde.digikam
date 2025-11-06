@@ -419,9 +419,6 @@
                                 "AUTOMAKE=\"automake --foreign\" autoreconf -vfis"
                             ]
                         }
-                    ],
-                    "modules": [
-                        "shared-modules/libusb/libusb.json"
                     ]
                 },
                 {

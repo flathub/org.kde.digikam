@@ -738,6 +738,7 @@
             "buildsystem": "cmake-ninja",
             "builddir": true,
             "config-opts": [
+                "-DCMAKE_POLICY_VERSION_MINIMUM=3.5",
                 "-DENABLE_DPLUGIN=ON",
                 "-DBUILD_WITH_QT6=ON"
             ],

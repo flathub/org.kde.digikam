@@ -328,6 +328,7 @@
                     "buildsystem": "cmake-ninja",
                     "config-opts": [
                         "-DCMAKE_BUILD_TYPE=RelWithDebInfo",
+                        "-DCMAKE_POLICY_VERSION_MINIMUM=3.5",
                         "-DBUILD_STATIC=OFF",
                         "-DBUILD_TESTS=OFF",
                         "-DBUILD_LENSTOOL=OFF",

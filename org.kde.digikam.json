@@ -956,7 +956,7 @@
                                 "type": "anitya",
                                 "project-id": 1267,
                                 "stable-only": true,
-                                "url-template": "https://ftp.fau.de/gnu/gsl/gsl-$verison.tar.gz"
+                                "url-template": "https://ftp.fau.de/gnu/gsl/gsl-$version.tar.gz"
                             }
                         }
                     ]

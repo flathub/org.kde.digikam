@@ -357,7 +357,8 @@
                             "x-checker-data": {
                                 "type": "anitya",
                                 "project-id": 1548,
-                                "stable-only": true
+                                "stable-only": true,
+                                "tag-template": "v$version"
                             }
                         }
                     ]
@@ -410,7 +411,8 @@
                             "x-checker-data": {
                                 "type": "anitya",
                                 "project-id": 12558,
-                                "stable-only": true
+                                "stable-only": true,
+                                "tag-template": "v$version"
                             }
                         },
                         {
@@ -446,7 +448,8 @@
                             "x-checker-data": {
                                 "type": "anitya",
                                 "project-id": 1421,
-                                "stable-only": true
+                                "stable-only": true,
+                                "tag-template": "version-$version"
                             }
                         }
                     ]
@@ -502,7 +505,8 @@
                                     "x-checker-data": {
                                         "type": "anitya",
                                         "project-id": 4760,
-                                        "stable-only": true
+                                        "stable-only": true,
+                                        "tag-template": "$version"
                                     }
                                 }
                             ],
@@ -721,7 +725,8 @@
                             "x-checker-data": {
                                 "type": "anitya",
                                 "project-id": 7275,
-                                "stable-only": true
+                                "stable-only": true,
+                                "tag-template": "$version"
                             }
                         },
                         {
@@ -749,12 +754,7 @@
                 {
                     "type": "git",
                     "url": "https://github.com/scheckmedia/ImageMosaicWall.git",
-                    "commit": "a03eed03ae37831f002587145066476d2dc44eea",
-                    "x-checker-data": {
-                        "type": "anitya",
-                        "project-id": 377002,
-                        "stable-only": true
-                    }
+                    "commit": "a03eed03ae37831f002587145066476d2dc44eea"
                 }
             ]
         },
@@ -827,7 +827,8 @@
                             "x-checker-data": {
                                 "type": "anitya",
                                 "project-id": 15957,
-                                "stable-only": true
+                                "stable-only": true,
+                                "tag-template": "Version-$version"
                             }
                         }
                     ],
@@ -848,7 +849,8 @@
                                     "x-checker-data": {
                                         "type": "anitya",
                                         "project-id": 13289,
-                                        "stable-only": true
+                                        "stable-only": true,
+                                        "tag-template": "v$version"
                                     }
                                 }
                             ],
@@ -869,7 +871,8 @@
                                             "x-checker-data": {
                                                 "type": "anitya",
                                                 "project-id": 223366,
-                                                "stable-only": true
+                                                "stable-only": true,
+                                                "tag-template": "v$version"
                                             }
                                         }
                                     ]
@@ -893,7 +896,8 @@
                                             "x-checker-data": {
                                                 "type": "anitya",
                                                 "project-id": 242778,
-                                                "stable-only": true
+                                                "stable-only": true,
+                                                "tag-template": "v$version"
                                             }
                                         }
                                     ]
@@ -952,7 +956,7 @@
                                 "type": "anitya",
                                 "project-id": 1267,
                                 "stable-only": true,
-                                "url-template": "https://ftp.fau.de/gnu/gsl/gsl-$verison.tar.gz"
+                                "url-template": "https://ftp.fau.de/gnu/gsl/gsl-$version.tar.gz"
                             }
                         }
                     ]
@@ -1003,7 +1007,8 @@
                     "x-checker-data": {
                         "type": "anitya",
                         "project-id": 6175,
-                        "stable-only": true
+                        "stable-only": true,
+                        "tag-template": "$version"
                     }
                 }
             ]

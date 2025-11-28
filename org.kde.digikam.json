@@ -430,6 +430,7 @@
                     "buildsystem": "cmake-ninja",
                     "builddir": true,
                     "config-opts": [
+                        "-DALLOW_IN_SOURCE_BUILD=ON",
                         "-DJAS_ENABLE_SHARED=ON",
                         "-DJAS_ENABLE_LIBJPEG=ON",
                         "-DJAS_ENABLE_OPENGL=OFF",

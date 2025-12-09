@@ -1,0 +1,36 @@
+From 8b4ef501680251f5f295b5d1d4061c625c2aea16 Mon Sep 17 00:00:00 2001
+From: Antonio Rojas <arojas@archlinux.org>
+Date: Mon, 1 Dec 2025 08:46:28 +0100
+Subject: [PATCH] Fix build with Eigen3 5.x
+
+Eigen3 5 does no longer provide the custom EIGEN3_INCLUDE_DIRS variable, use the standard cmake targets instead
+---
+ core/libs/dimg/CMakeLists.txt | 8 ++++++--
+ 1 file changed, 6 insertions(+), 2 deletions(-)
+
+diff --git a/core/libs/dimg/CMakeLists.txt b/core/libs/dimg/CMakeLists.txt
+index 6430462c68..1e38dad0de 100644
+--- a/core/libs/dimg/CMakeLists.txt
++++ b/core/libs/dimg/CMakeLists.txt
+@@ -195,8 +195,6 @@ if(Eigen3_FOUND)
+         ${CMAKE_CURRENT_SOURCE_DIR}/filters/sharp/refocusmatrix.cpp
+     )
+ 
+-    include_directories(${EIGEN3_INCLUDE_DIR})
+-
+ endif()
+ 
+ set(libdimgloaders_SRCS
+@@ -262,3 +260,9 @@ set_target_properties(core_dimg_obj
+                       C_STANDARD_REQUIRED YES
+                       C_EXTENSIONS NO
+ )
++
++if(Eigen3_FOUND)
++
++    target_link_libraries(core_dimg_obj Eigen3::Eigen)
++
++endif()
+-- 
+2.51.2
+

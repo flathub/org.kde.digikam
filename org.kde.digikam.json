@@ -69,6 +69,13 @@
                         "stable-only": true,
                         "url-template": "https://download.kde.org/stable/digikam/$version/digiKam-$version.tar.xz"
                     }
+                },
+                {
+                    "type": "patch",
+                    "paths": [
+                        "patches/digikam-Use-Eigen3-cmake-configuration-shared-on-the-system.patch",
+                        "patches/digikam-Fix-build-with-Eigen3-5.x.patch"
+                    ]
                 }
             ],
             "modules": [

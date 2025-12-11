@@ -1096,6 +1096,37 @@
                     ]
                 }
             ]
+        },
+        {
+            "name": "digikam-gmic-qt",
+            "buildsystem": "cmake-ninja",
+            "builddir": true,
+            "config-opts": [
+                "-DCMAKE_BUILD_TYPE=RelWithDebInfo",
+                "-DGMIC_QT_HOST=digikam",
+                "-DENABLE_ASAN=OFF",
+                "-DENABLE_FFTW3=ON",
+                "-DENABLE_SYSTEM_GMIC=OFF",
+                "-DENABLE_CURL=OFF",
+                "-DBUILD_TESTING=OFF",
+                "-DBUILD_WITH_QT6=ON"
+            ],
+            "cleanup": [
+                "*.la"
+            ],
+            "sources": [
+                {
+                    "type": "git",
+                    "url": "https://github.com/cgilles/digikam-gmic-qt.git",
+                    "commit": "01a0b2c794b4477971498b2c2ce2ef261d5c9646"
+                },
+                {
+                    "type": "shell",
+                    "commands": [
+                        "sed -i '/QT_INSTALL_PLUGINS/,/)/c set(QT_PLUGINS_DIR \"/app/lib/plugins\")' src/RulesDigikamHost.cmake"
+                    ]
+                }
+            ]
         }
     ]
 }

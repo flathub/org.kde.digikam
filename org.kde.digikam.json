@@ -1038,6 +1038,63 @@
                         "tag-template": "$version"
                     }
                 }
+            ],
+            "modules": [
+                {
+                    "name": "exiftool-brotli",
+                    "buildsystem": "simple",
+                    "build-commands": [
+                        "perl-libs/install.sh"
+                    ],
+                    "post-install": [
+                        "find ${FLATPAK_DEST}/lib/perl5/site_perl/ -name \\*.so -exec chmod u+w {} \\;"
+                    ],
+                    "cleanup": [
+                        "/bin",
+                        "/man"
+                    ],
+                    "sources": [
+                        {
+                            "dest": "perl-libs/ExtUtils-PkgConfig",
+                            "sha256": "bbeaced995d7d8d10cfc51a3a5a66da41ceb2bc04fedcab50e10e6300e801c6e",
+                            "type": "archive",
+                            "url": "https://cpan.metacpan.org/authors/id/X/XA/XAOC/ExtUtils-PkgConfig-1.16.tar.gz"
+                        },
+                        {
+                            "dest": "perl-libs/IO-Compress-Brotli",
+                            "sha256": "37f40dd7cee44acea26f2f763a773e61d4ec223305ddeeca4612443cbf288fbf",
+                            "type": "archive",
+                            "url": "https://cpan.metacpan.org/authors/id/T/TI/TIMLEGGE/IO-Compress-Brotli-0.019.tar.gz"
+                        },
+                        {
+                            "type": "patch",
+                            "dest": "perl-libs/IO-Compress-Brotli",
+                            "path": "patches/IO-Compress-Brotli-0.019-Use-pkgconfig-instead-of-bundled-libbrotli.patch"
+                        },
+                        {
+                            "commands": [
+                                "set -e",
+                                "function make_install {",
+                                "    mod_dir=$1",
+                                "    cd $mod_dir",
+                                "    if [ -f 'Makefile.PL' ]; then",
+                                "        perl Makefile.PL PREFIX=${FLATPAK_DEST} && make install PREFIX=${FLATPAK_DEST}",
+                                "    elif [ -f 'Build.PL' ]; then",
+                                "        perl Build.PL && ./Build && ./Build install",
+                                "    else",
+                                "        echo 'No Makefile.PL or Build.PL found. Do not know how to install this module'",
+                                "        exit 1",
+                                "    fi",
+                                "}",
+                                "(make_install perl-libs/ExtUtils-PkgConfig)",
+                                "(make_install perl-libs/IO-Compress-Brotli)"
+                            ],
+                            "dest": "perl-libs",
+                            "dest-filename": "install.sh",
+                            "type": "script"
+                        }
+                    ]
+                }
             ]
         }
     ]

@@ -50,9 +50,7 @@
                 "-DENABLE_MEDIAPLAYER=ON",
                 "-DENABLE_DBUS=ON",
                 "-DENABLE_APPSTYLES=ON",
-                "-DENABLE_QWEBENGINE=ON",
                 "-DBUILD_TESTING=OFF",
-                "-DSSE4_1_FOUND=OFF",
                 "-DBUILD_WITH_QT6=ON"
             ],
             "post-install": [

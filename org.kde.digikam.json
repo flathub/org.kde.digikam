@@ -20,6 +20,7 @@
         "--socket=pulseaudio",
         "--system-talk-name=org.freedesktop.Avahi",
         "--system-talk-name=org.freedesktop.UDisks2",
+        "--system-talk-name=org.freedesktop.ColorManager",
         "--talk-name=org.kde.StatusNotifierWatcher"
     ],
     "rename-icon": "digikam",

@@ -1093,6 +1093,121 @@
                     ]
                 }
             ]
+        },
+        {
+            "name": "mariadb",
+            "buildsystem": "cmake-ninja",
+            "builddir": true,
+            "post-install": [
+                "install -Dm755 --target-directory=${FLATPAK_DEST}/bin ${FLATPAK_DEST}/scripts/mariadb-install-db"
+            ],
+            "cleanup": [
+                "/COPYING",
+                "/CREDITS",
+                "/INSTALL-BINARY",
+                "/README-wsrep",
+                "/README.md",
+                "/THIRDPARTY",
+                "/include",
+                "/man",
+                "/support-files"
+            ],
+            "config-opts": [
+                "-DBUILD_CONFIG=mysql_release",
+                "-DCMAKE_BUILD_TYPE=Release",
+                "-DCMAKE_POLICY_VERSION_MINIMUM=3.5",
+                "-DINSTALL_MYSQLTESTDIR=",
+                "-DINSTALL_SQLBENCHDIR=",
+                "-DPLUGIN_AUTH_PAM=NO",
+                "-DWITH_LIBFMT=system",
+                "-DWITH_PCRE=system",
+                "-DWITH_SYSTEMD=no"
+            ],
+            "sources": [
+                {
+                    "type": "git",
+                    "url": "https://github.com/MariaDB/server.git",
+                    "tag": "mariadb-10.11.15",
+                    "commit": "cb0d6dd835023a7162ace471cd047161f205dd58"
+                }
+            ],
+            "modules": [
+                {
+                    "name": "libaio",
+                    "no-autogen": true,
+                    "builddir": true,
+                    "make-install-args": [
+                        "prefix=${FLATPAK_DEST}"
+                    ],
+                    "cleanup": [
+                        "*.la"
+                    ],
+                    "sources": [
+                        {
+                            "type": "archive",
+                            "url": "https://releases.pagure.org/libaio/libaio-0.3.113.tar.gz",
+                            "sha256": "2c44d1c5fd0d43752287c9ae1eb9c023f04ef848ea8d4aafa46e9aedb678200b",
+                            "x-checker-data": {
+                                "type": "anitya",
+                                "project-id": 1557,
+                                "stable-only": true,
+                                "url-template": "https://releases.pagure.org/libaio/libaio-$version.tar.gz"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "libfmt",
+                    "buildsystem": "cmake-ninja",
+                    "builddir": true,
+                    "sources": [
+                        {
+                            "type": "git",
+                            "url": "https://github.com/fmtlib/fmt.git",
+                            "tag": "12.1.0",
+                            "commit": "407c905e45ad75fc29bf0f9bb7c5c2fd3475976f",
+                            "x-checker-data": {
+                                "type": "anitya",
+                                "project-id": 11526,
+                                "stable-only": true,
+                                "tag-template": "$version"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "qt6-sqldrivers",
+            "buildsystem": "cmake-ninja",
+            "builddir": true,
+            "subdir": "src/plugins/sqldrivers",
+            "config-opts": [
+                "-DFEATURE_sql_mysql=ON",
+                "-DFEATURE_sql_db2=OFF",
+                "-DFEATURE_sql_ibase=OFF",
+                "-DFEATURE_sql_mimer=OFF",
+                "-DFEATURE_sql_oci=OFF",
+                "-DFEATURE_sql_odbc=OFF",
+                "-DFEATURE_sql_psql=OFF",
+                "-DFEATURE_sql_sqlite=OFF"
+            ],
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://download.qt.io/official_releases/qt/6.10/6.10.1/submodules/qtbase-everywhere-src-6.10.1.tar.xz",
+                    "sha256": "5a6226f7e23db51fdc3223121eba53f3f5447cf0cc4d6cb82a3a2df7a65d265d",
+                    "x-checker-data": {
+                        "type": "anitya",
+                        "project-id": 7927,
+                        "stable-only": true,
+                        "versions": {
+                            "<": "6.11.0"
+                        },
+                        "url-template": "https://download.qt.io/official_releases/qt/6.10/$version/submodules/qtbase-everywhere-src-$version.tar.xz"
+                    }
+                }
+            ]
         }
     ]
 }

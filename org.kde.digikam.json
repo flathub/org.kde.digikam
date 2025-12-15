@@ -8,7 +8,6 @@
     "command": "digikam",
     "finish-args": [
         "--device=all",
-        "--env=DK_PLUGIN_PATH=/app/lib/plugins/digikam",
         "--filesystem=/media",
         "--filesystem=/run/media",
         "--filesystem=home",
@@ -72,7 +71,8 @@
                     "type": "patch",
                     "paths": [
                         "patches/digikam-Use-Eigen3-cmake-configuration-shared-on-the-system.patch",
-                        "patches/digikam-Fix-build-with-Eigen3-5.x.patch"
+                        "patches/digikam-Fix-build-with-Eigen3-5.x.patch",
+                        "patches/digikam-Hardcode-plugin-system-path.patch"
                     ]
                 }
             ],

@@ -1,0 +1,176 @@
+From b52f14e74c65ac3eb7b8e9f8c41ba643554615b7 Mon Sep 17 00:00:00 2001
+From: ElXreno <elxreno@gmail.com>
+Date: Mon, 15 Dec 2025 01:24:01 +0300
+Subject: [PATCH] Hardcode plugin system path
+
+---
+ core/libs/dplugins/setup/dpluginloader_p.cpp  | 13 +-----
+ .../tests/dplugins/loadandrun_generic_gui.cpp |  4 +-
+ .../geolocation/engine/core/MarbleDirs.cpp    | 17 +-------
+ .../engine/plugins/PluginManager.cpp          | 42 ++-----------------
+ 4 files changed, 7 insertions(+), 69 deletions(-)
+
+diff --git a/core/libs/dplugins/setup/dpluginloader_p.cpp b/core/libs/dplugins/setup/dpluginloader_p.cpp
+index 5a46852822..c4c18df895 100644
+--- a/core/libs/dplugins/setup/dpluginloader_p.cpp
++++ b/core/libs/dplugins/setup/dpluginloader_p.cpp
+@@ -21,7 +21,6 @@
+ #include <QDirIterator>
+ #include <QStandardPaths>
+ #include <QMessageBox>
+-#include <QLibraryInfo>
+ #include <QMetaProperty>
+ #include <QFileInfo>
+ 
+@@ -84,17 +83,7 @@ QFileInfoList DPluginLoader::Private::pluginEntriesList() const
+ 
+     if (dkenv.isEmpty())
+     {
+-
+-#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+-
+-        pathList << QLibraryInfo::path(QLibraryInfo::PluginsPath) + QLatin1String("/digikam/");
+-
+-#else
+-
+-        pathList << QLibraryInfo::location(QLibraryInfo::PluginsPath) + QLatin1String("/digikam/");
+-
+-#endif
+-
++        pathList << QLatin1String("/app/lib/plugins/digikam/");
+     }
+     else
+     {
+diff --git a/core/tests/dplugins/loadandrun_generic_gui.cpp b/core/tests/dplugins/loadandrun_generic_gui.cpp
+index df3c829c4e..d9e1f96c19 100644
+--- a/core/tests/dplugins/loadandrun_generic_gui.cpp
++++ b/core/tests/dplugins/loadandrun_generic_gui.cpp
+@@ -39,13 +39,13 @@ int main(int argc, char* argv[])
+ 
+     qCDebug(DIGIKAM_TESTS_LOG) << QLibraryInfo::path(QLibraryInfo::LibrariesPath);
+     qCDebug(DIGIKAM_TESTS_LOG) << QLibraryInfo::path(QLibraryInfo::LibraryExecutablesPath);
+-    qCDebug(DIGIKAM_TESTS_LOG) << QLibraryInfo::path(QLibraryInfo::PluginsPath);
++    qCDebug(DIGIKAM_TESTS_LOG) << QLatin1String("/app/lib/plugins/");
+ 
+ #else
+ 
+     qCDebug(DIGIKAM_TESTS_LOG) << QLibraryInfo::location(QLibraryInfo::LibrariesPath);
+     qCDebug(DIGIKAM_TESTS_LOG) << QLibraryInfo::location(QLibraryInfo::LibraryExecutablesPath);
+-    qCDebug(DIGIKAM_TESTS_LOG) << QLibraryInfo::location(QLibraryInfo::PluginsPath);
++    qCDebug(DIGIKAM_TESTS_LOG) << QLatin1String("/app/lib/plugins/");
+ 
+ #endif
+ 
+diff --git a/core/utilities/geolocation/engine/core/MarbleDirs.cpp b/core/utilities/geolocation/engine/core/MarbleDirs.cpp
+index 27ef4b9288..4888cf475a 100644
+--- a/core/utilities/geolocation/engine/core/MarbleDirs.cpp
++++ b/core/utilities/geolocation/engine/core/MarbleDirs.cpp
+@@ -20,7 +20,6 @@
+ 
+ #include <QFile>
+ #include <QCoreApplication>
+-#include <QLibraryInfo>
+ #include <QStandardPaths>
+ 
+ // Local includes
+@@ -171,23 +170,9 @@ QString MarbleDirs::pluginLocalPath()
+ 
+ QString MarbleDirs::pluginSystemPath()
+ {
+-
+-#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+-
+-    return (
+-               QLibraryInfo::path(QLibraryInfo::PluginsPath) +
+-               QLatin1String("/digikam/marble")
+-           );
+-
+-#else
+-
+     return (
+-               QLibraryInfo::location(QLibraryInfo::PluginsPath) +
+-               QLatin1String("/digikam/marble")
++               QLatin1String("/app/lib/plugins/digikam/marble")
+            );
+-
+-#endif
+-
+ }
+ 
+ void MarbleDirs::debug()
+diff --git a/core/utilities/geolocation/engine/plugins/PluginManager.cpp b/core/utilities/geolocation/engine/plugins/PluginManager.cpp
+index 6e0e580ccf..cab95d3e31 100644
+--- a/core/utilities/geolocation/engine/plugins/PluginManager.cpp
++++ b/core/utilities/geolocation/engine/plugins/PluginManager.cpp
+@@ -21,7 +21,6 @@
+ #include <QPluginLoader>
+ #include <QElapsedTimer>
+ #include <QMessageBox>
+-#include <QLibraryInfo>
+ 
+ // Local includes
+ 
+@@ -154,36 +153,12 @@ void PluginManager::addParseRunnerPlugin(const ParseRunnerPlugin* plugin)
+ 
+ void PluginManager::blacklistPlugin(const QString& filename)
+ {
+-
+-#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+-
+-    PluginManagerPrivate::m_blacklist << QLibraryInfo::path(QLibraryInfo::PluginsPath) +
+-                                         QString::fromUtf8("/marble/") + filename;
+-
+-#else
+-
+-    PluginManagerPrivate::m_blacklist << QLibraryInfo::location(QLibraryInfo::PluginsPath) +
+-                                         QString::fromUtf8("/marble/") + filename;
+-
+-#endif
+-
++    PluginManagerPrivate::m_blacklist << QString::fromUtf8("/app/lib/plugins/marble/") + filename;
+ }
+ 
+ void PluginManager::whitelistPlugin(const QString& filename)
+ {
+-
+-#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+-
+-    PluginManagerPrivate::m_whitelist << QLibraryInfo::path(QLibraryInfo::PluginsPath) +
+-                                         QString::fromUtf8("/marble/") + filename;
+-
+-#else
+-
+-    PluginManagerPrivate::m_whitelist << QLibraryInfo::location(QLibraryInfo::PluginsPath) +
+-                                         QString::fromUtf8("/marble/") + filename;
+-
+-#endif
+-
++    PluginManagerPrivate::m_whitelist << QString::fromUtf8("/app/lib/plugins/marble/") + filename;
+ }
+ 
+ /**
+@@ -264,20 +239,9 @@ void PluginManagerPrivate::loadPlugins()
+     {
+         QString const baseName = QFileInfo(fileName).baseName();
+ 
+-#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+-
+-        QString const libBaseName = QLibraryInfo::path(QLibraryInfo::PluginsPath) +
+-                                    QString::fromUtf8("/marble/")                 +
++        QString const libBaseName = QString::fromUtf8("/app/lib/plugins/marble/") +
+                                     QFileInfo(fileName).baseName();
+ 
+-#else
+-
+-        QString const libBaseName = QLibraryInfo::location(QLibraryInfo::PluginsPath) +
+-                                    QString::fromUtf8("/marble/") +
+-                                    QFileInfo(fileName).baseName();
+-
+-#endif
+-
+         if (!m_whitelist.isEmpty() && !m_whitelist.contains(baseName) && !m_whitelist.contains(libBaseName))
+         {
+             qCDebug(DIGIKAM_GEOENGINE_LOG) << "Ignoring non-whitelisted plugin " << fileName;
+-- 
+2.51.2
+

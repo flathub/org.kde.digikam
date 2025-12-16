@@ -8,7 +8,6 @@
     "command": "digikam",
     "finish-args": [
         "--device=all",
-        "--env=DK_PLUGIN_PATH=/app/lib/plugins/digikam",
         "--filesystem=/media",
         "--filesystem=/run/media",
         "--filesystem=home",
@@ -21,6 +20,7 @@
         "--socket=pulseaudio",
         "--system-talk-name=org.freedesktop.Avahi",
         "--system-talk-name=org.freedesktop.UDisks2",
+        "--system-talk-name=org.freedesktop.ColorManager",
         "--talk-name=org.kde.StatusNotifierWatcher"
     ],
     "rename-icon": "digikam",
@@ -50,9 +50,7 @@
                 "-DENABLE_MEDIAPLAYER=ON",
                 "-DENABLE_DBUS=ON",
                 "-DENABLE_APPSTYLES=ON",
-                "-DENABLE_QWEBENGINE=ON",
                 "-DBUILD_TESTING=OFF",
-                "-DSSE4_1_FOUND=OFF",
                 "-DBUILD_WITH_QT6=ON"
             ],
             "post-install": [
@@ -74,7 +72,8 @@
                     "type": "patch",
                     "paths": [
                         "patches/digikam-Use-Eigen3-cmake-configuration-shared-on-the-system.patch",
-                        "patches/digikam-Fix-build-with-Eigen3-5.x.patch"
+                        "patches/digikam-Fix-build-with-Eigen3-5.x.patch",
+                        "patches/digikam-Hardcode-plugin-system-path.patch"
                     ]
                 }
             ],
@@ -1093,6 +1092,37 @@
                             "dest-filename": "install.sh",
                             "type": "script"
                         }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "digikam-gmic-qt",
+            "buildsystem": "cmake-ninja",
+            "builddir": true,
+            "config-opts": [
+                "-DCMAKE_BUILD_TYPE=RelWithDebInfo",
+                "-DGMIC_QT_HOST=digikam",
+                "-DENABLE_ASAN=OFF",
+                "-DENABLE_FFTW3=ON",
+                "-DENABLE_SYSTEM_GMIC=OFF",
+                "-DENABLE_CURL=OFF",
+                "-DBUILD_TESTING=OFF",
+                "-DBUILD_WITH_QT6=ON"
+            ],
+            "cleanup": [
+                "*.la"
+            ],
+            "sources": [
+                {
+                    "type": "git",
+                    "url": "https://github.com/cgilles/digikam-gmic-qt.git",
+                    "commit": "01a0b2c794b4477971498b2c2ce2ef261d5c9646"
+                },
+                {
+                    "type": "shell",
+                    "commands": [
+                        "sed -i '/QT_INSTALL_PLUGINS/,/)/c set(QT_PLUGINS_DIR \"/app/lib/plugins\")' src/RulesDigikamHost.cmake"
                     ]
                 }
             ]

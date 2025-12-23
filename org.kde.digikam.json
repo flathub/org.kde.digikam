@@ -545,8 +545,8 @@
                                     "sources": [
                                         {
                                             "type": "archive",
-                                            "url": "https://downloads.sourceforge.net/project/net-snmp/net-snmp/5.9.5/net-snmp-5.9.5.tar.gz",
-                                            "sha256": "07f94f06a8d681485e43eeec4f190d9bea43e1b335146d0de466b6de3f3f4c5a",
+                                            "url": "https://downloads.sourceforge.net/project/net-snmp/net-snmp/5.9.5.2/net-snmp-5.9.5.2.tar.gz",
+                                            "sha256": "16707719f833184a4b72835dac359ae188123b06b5e42817c00790d7dc1384bf",
                                             "x-checker-data": {
                                                 "type": "anitya",
                                                 "project-id": 2062,
@@ -823,8 +823,8 @@
                         {
                             "type": "git",
                             "url": "https://github.com/ukoethe/vigra.git",
-                            "tag": "Version-1-12-2",
-                            "commit": "1c09a8256b50f84819b9d874ba901dea543fb65c",
+                            "tag": "Version-1-12-3",
+                            "commit": "5946bac7a9a15542c2612311a280038d71c358f2",
                             "x-checker-data": {
                                 "type": "anitya",
                                 "project-id": 15957,

@@ -391,8 +391,8 @@
                     "sources": [
                         {
                             "type": "archive",
-                            "url": "https://imagemagick.org/archive/releases/ImageMagick-7.1.2-11.tar.gz",
-                            "sha256": "0eec4f9c89de09c754e904678d5907517bcd2c40a59495f77a96240f251441a1",
+                            "url": "https://imagemagick.org/archive/releases/ImageMagick-7.1.2-12.tar.gz",
+                            "sha256": "2f3c8077ac537c5aceec02db9c80fa220766a82a7a78ba327d85a764029339d7",
                             "x-checker-data": {
                                 "type": "anitya",
                                 "project-id": 1372,
@@ -545,8 +545,8 @@
                                     "sources": [
                                         {
                                             "type": "archive",
-                                            "url": "https://downloads.sourceforge.net/project/net-snmp/net-snmp/5.9.5/net-snmp-5.9.5.tar.gz",
-                                            "sha256": "07f94f06a8d681485e43eeec4f190d9bea43e1b335146d0de466b6de3f3f4c5a",
+                                            "url": "https://downloads.sourceforge.net/project/net-snmp/net-snmp/5.9.5.2/net-snmp-5.9.5.2.tar.gz",
+                                            "sha256": "16707719f833184a4b72835dac359ae188123b06b5e42817c00790d7dc1384bf",
                                             "x-checker-data": {
                                                 "type": "anitya",
                                                 "project-id": 2062,
@@ -823,8 +823,8 @@
                         {
                             "type": "git",
                             "url": "https://github.com/ukoethe/vigra.git",
-                            "tag": "Version-1-12-2",
-                            "commit": "1c09a8256b50f84819b9d874ba901dea543fb65c",
+                            "tag": "Version-1-12-3",
+                            "commit": "5946bac7a9a15542c2612311a280038d71c358f2",
                             "x-checker-data": {
                                 "type": "anitya",
                                 "project-id": 15957,
@@ -917,8 +917,8 @@
                                         {
                                             "type": "git",
                                             "url": "https://github.com/aous72/OpenJPH",
-                                            "tag": "0.25.3",
-                                            "commit": "762528c09981f6e9a4c6863fb15fcb5ce42736e5",
+                                            "tag": "0.26.0",
+                                            "commit": "4d4f4e8b7f00d877d6a615a991b48ad08a640990",
                                             "x-checker-data": {
                                                 "type": "anitya",
                                                 "project-id": 375199,
@@ -1028,8 +1028,8 @@
                 {
                     "type": "git",
                     "url": "https://github.com/exiftool/exiftool.git",
-                    "tag": "13.44",
-                    "commit": "aa4baf5c71d92e5dc9a077ee24fcc4fd478936c1",
+                    "tag": "13.45",
+                    "commit": "6219b531484ad790d7fcfa5732d5a9f42ff9e5b7",
                     "x-checker-data": {
                         "type": "anitya",
                         "project-id": 6175,

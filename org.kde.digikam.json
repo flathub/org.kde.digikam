@@ -254,8 +254,8 @@
                     "sources": [
                         {
                             "type": "archive",
-                            "url": "https://github.com/opencv/opencv/archive/4.12.0.tar.gz",
-                            "sha256": "44c106d5bb47efec04e531fd93008b3fcd1d27138985c5baf4eafac0e1ec9e9d",
+                            "url": "https://github.com/opencv/opencv/archive/4.13.0.tar.gz",
+                            "sha256": "1d40ca017ea51c533cf9fd5cbde5b5fe7ae248291ddf2af99d4c17cf8e13017d",
                             "x-checker-data": {
                                 "type": "anitya",
                                 "project-id": 6615,

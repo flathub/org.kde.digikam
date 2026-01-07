@@ -254,8 +254,8 @@
                     "sources": [
                         {
                             "type": "archive",
-                            "url": "https://github.com/opencv/opencv/archive/4.12.0.tar.gz",
-                            "sha256": "44c106d5bb47efec04e531fd93008b3fcd1d27138985c5baf4eafac0e1ec9e9d",
+                            "url": "https://github.com/opencv/opencv/archive/4.13.0.tar.gz",
+                            "sha256": "1d40ca017ea51c533cf9fd5cbde5b5fe7ae248291ddf2af99d4c17cf8e13017d",
                             "x-checker-data": {
                                 "type": "anitya",
                                 "project-id": 6615,
@@ -619,8 +619,8 @@
                                     "sources": [
                                         {
                                             "type": "archive",
-                                            "url": "https://poppler.freedesktop.org/poppler-25.12.0.tar.xz",
-                                            "sha256": "c18b40eb36b1a0c5b86e29ca054bf0770304583da4f2cdd42fe86eca6a20de48",
+                                            "url": "https://poppler.freedesktop.org/poppler-26.01.0.tar.xz",
+                                            "sha256": "1cb944a4b88847f5fb6551683bc799db59f04990f5d8be07aba2acbf38601089",
                                             "x-checker-data": {
                                                 "type": "anitya",
                                                 "project-id": 3686,

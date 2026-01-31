@@ -36,7 +36,11 @@
         "/share/eigen3",
         "/share/man",
         "/share/pkgconfig",
+        "*.la",
         "*.a"
+    ],
+    "cleanup-commands": [
+        "/app/cleanup-BaseApp.sh"
     ],
     "modules": [
         {

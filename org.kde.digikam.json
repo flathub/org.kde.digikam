@@ -78,6 +78,7 @@
                     "paths": [
                         "patches/digikam-Use-Eigen3-cmake-configuration-shared-on-the-system.patch",
                         "patches/digikam-Fix-build-with-Eigen3-5.x.patch",
+                        "patches/digikam-Fix-mysql-config-creation.patch",
                         "patches/digikam-Hardcode-plugin-system-path.patch"
                     ]
                 }

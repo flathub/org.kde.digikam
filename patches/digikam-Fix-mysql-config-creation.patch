@@ -1,0 +1,29 @@
+From 643a5e9d5dc9936c57f351d680fbca340e8df7d2 Mon Sep 17 00:00:00 2001
+From: ElXreno <elxreno@gmail.com>
+Date: Fri, 6 Feb 2026 09:59:09 +0300
+Subject: [PATCH] databaseserver: fix mysql config creation when source
+ timestamps are zero (Flatpak)
+
+---
+ core/libs/database/server/databaseserver.cpp | 3 +--
+ 1 file changed, 1 insertion(+), 2 deletions(-)
+
+diff --git a/core/libs/database/server/databaseserver.cpp b/core/libs/database/server/databaseserver.cpp
+index c07187afd8..9a218e1666 100644
+--- a/core/libs/database/server/databaseserver.cpp
++++ b/core/libs/database/server/databaseserver.cpp
+@@ -371,10 +371,9 @@ DatabaseServerError DatabaseServer::initMysqlConfig() const
+         QFile actualFile(d->actualConfig);
+ 
+         // Update actualconf only if either global or local is newer than actual
+-        // If actual does not yet exist it was initialised with datetime 0
+-        // so it will get updated too
+ 
+         if (
++            !actualFile.exists() ||
+             (QFileInfo(d->globalConfig).lastModified() > QFileInfo(actualFile).lastModified()) ||
+             (QFileInfo(localConfig).lastModified()     > QFileInfo(actualFile).lastModified())
+            )
+-- 
+2.52.0
+

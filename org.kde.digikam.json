@@ -1119,6 +1119,7 @@
                 "-DPLUGIN_AUTH_PAM=NO",
                 "-DWITH_LIBFMT=system",
                 "-DWITH_PCRE=system",
+                "-DWITH_SSL=system",
                 "-DWITH_SYSTEMD=no"
             ],
             "sources": [

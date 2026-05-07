@@ -1117,9 +1117,18 @@
                 "-DINSTALL_MYSQLTESTDIR=",
                 "-DINSTALL_SQLBENCHDIR=",
                 "-DPLUGIN_AUTH_PAM=NO",
+                "-DPLUGIN_FEEDBACK=NO",
+                "-DWITHOUT_ARCHIVE_STORAGE_ENGINE=1",
+                "-DWITHOUT_BLACKHOLE_STORAGE_ENGINE=1",
+                "-DWITHOUT_EXAMPLE_STORAGE_ENGINE=1",
+                "-DWITHOUT_FEDERATED_STORAGE_ENGINE=1",
+                "-DWITHOUT_FEDERATEDX_STORAGE_ENGINE=1",
                 "-DWITH_LIBFMT=system",
                 "-DWITH_PCRE=system",
-                "-DWITH_SYSTEMD=no"
+                "-DWITH_SSL=system",
+                "-DWITH_SYSTEMD=no",
+                "-DWITH_UNIT_TESTS=OFF",
+                "-DWITH_ZLIB=system"
             ],
             "sources": [
                 {

@@ -1,0 +1,44 @@
+From 163ca17437e92695d9bd419aea491158336ef77b Mon Sep 17 00:00:00 2001
+From: Thomas Modes <tmodes@users.sourceforge.net>
+Date: Sat, 2 May 2026 15:58:49 +0300
+Subject: [PATCH] Fix VIGRA version detection for vigra >= 1.12.4
+
+Backport of hugin upstream commit 5dad0e83e6c58dc2425ca3d56659f4c229761870
+(Thomas Modes, 2026-05-02), not yet in a released hugin (fixed for 2026.0beta1).
+vigra 1.12.4 changed include/vigra/config_version.hxx to compose VIGRA_VERSION
+from VIGRA_VERSION_{MAJOR,MINOR,PATCH} macros instead of a literal string, so
+the old FindVIGRA.cmake regex produced an empty version and the IF() check failed.
+
+Upstream message: Fixes parsing of version number in vigra/config_version.hxx
+[2150821]. The format has changed in 1.12.4.
+
+Launchpad: https://bugs.launchpad.net/hugin/+bug/2150821
+---
+ CMakeModules/FindVIGRA.cmake | 11 +++++++++--
+ 1 file changed, 9 insertions(+), 2 deletions(-)
+
+diff --git a/CMakeModules/FindVIGRA.cmake b/CMakeModules/FindVIGRA.cmake
+index 320cf3d..d81b464 100644
+--- a/CMakeModules/FindVIGRA.cmake
++++ b/CMakeModules/FindVIGRA.cmake
+@@ -53,8 +53,15 @@ IF (VIGRA_FOUND)
+   IF(NOT VIGRA_CONFIG_VERSION_HXX)
+     MESSAGE(FATAL_ERROR "Could not find vigra/configVersion.hxx or vigra/config_version.hxx. Your vigra installation seems to be corrupt.")
+   ENDIF()
+-  FILE(STRINGS "${VIGRA_CONFIG_VERSION_HXX}" VIGRA_VERSION_HXX REGEX ".*#define +VIGRA_VERSION +\"")
+-  STRING(REGEX REPLACE ".*#define +VIGRA_VERSION +\"([.0-9]+).*" "\\1" VIGRA_VERSION "${VIGRA_VERSION_HXX}")
++  FILE(STRINGS "${VIGRA_CONFIG_VERSION_HXX}" VIGRA_VERSION_HXX REGEX ".*#define +VIGRA_VERSION_(MAJOR|MINOR|PATCH)")
++  STRING(REGEX REPLACE ".*#define +VIGRA_VERSION_MAJOR +([0-9]+).*" "\\1" VIGRA_VERSION_MAJOR "${VIGRA_VERSION_HXX}") 
++  STRING(REGEX REPLACE ".*#define +VIGRA_VERSION_MINOR +([0-9]+).*" "\\1" VIGRA_VERSION_MINOR "${VIGRA_VERSION_HXX}") 
++  STRING(REGEX REPLACE ".*#define +VIGRA_VERSION_PATCH +([0-9]+).*" "\\1" VIGRA_VERSION_PATCH "${VIGRA_VERSION_HXX}")
++  IF(VIGRA_VERSION_MAJOR AND VIGRA_VERSION_MINOR AND VIGRA_VERSION_PATCH)
++    SET(VIGRA_VERSION "${VIGRA_VERSION_MAJOR}.${VIGRA_VERSION_MINOR}.${VIGRA_VERSION_PATCH}")
++  ELSE()
++    MESSAGE(FATAL_ERROR "Cooud not parse vigra version number from vigra/config_version.hxx")
++  ENDIF()
+   IF(${VIGRA_VERSION} VERSION_EQUAL VIGRA_FIND_VERSION OR ${VIGRA_VERSION} VERSION_GREATER VIGRA_FIND_VERSION)
+     SET(VIGRA_VERSION_CHECK TRUE)
+     MESSAGE(STATUS "VIGRA version: ${VIGRA_VERSION}")
+-- 
+2.54.0
+

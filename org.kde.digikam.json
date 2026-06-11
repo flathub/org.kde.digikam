@@ -702,10 +702,6 @@
                                 "tag-template": "$version"
                             },
                             "commit": "e444744c03978c1fb4e037168967020cf2648427"
-                        },
-                        {
-                            "type": "patch",
-                            "path": "./patches/x265-Fix-CMake-build-error.patch"
                         }
                     ]
                 },

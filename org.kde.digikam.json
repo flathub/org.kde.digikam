@@ -76,7 +76,8 @@
                 {
                     "type": "patch",
                     "paths": [
-                        "patches/digikam-Hardcode-plugin-system-path.patch"
+                        "patches/digikam-Hardcode-plugin-system-path.patch",
+                        "patches/digikam-Fix-sized-deallocation-mismatch-in-marker-tiler.patch"
                     ]
                 }
             ],

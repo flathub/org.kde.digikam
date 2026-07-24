@@ -1,0 +1,63 @@
+From 6186aa52511b5cbfd92bf0664fa4bbcc0a1cb8a9 Mon Sep 17 00:00:00 2001
+From: Mikhail Hrechyn <elxreno@gmail.com>
+Date: Wed, 22 Jul 2026 18:38:31 +0300
+Subject: [PATCH] Fix sized deallocation mismatch in GraphicsDImgItem private
+ container
+
+GraphicsDImgItemPrivate has no virtual destructor, but subclasses
+create the derived DImgPreviewItemPrivate container and hand it down
+to the protected GraphicsDImgItem constructor, and ~GraphicsDImgItem()
+deletes it through the GraphicsDImgItemPrivate pointer. The derived
+destructor is therefore never run, leaking the members of
+DImgPreviewItemPrivate, and the compiler emits C++14 sized
+deallocation with the size of the base class while the allocation has
+the size of the subclass. Allocators enforcing the size argument, like
+hardened_malloc which secureblue preloads into all Flatpak
+applications, abort with "fatal allocator error: sized deallocation
+mismatch (small)" when the preview item is destroyed, e.g. on
+application shutdown while the map view is open.
+
+Same pattern as the AbstractMarkerTiler::Tile fix in the previous
+commit: the destructor must be virtual on the base class.
+
+CCBUG: 522748
+FIXED-IN: 9.2.0
+---
+ core/libs/widgets/graphicsview/dimgitems_p.h | 14 +++++++++++++-
+ 1 file changed, 13 insertions(+), 1 deletion(-)
+
+diff --git a/core/libs/widgets/graphicsview/dimgitems_p.h b/core/libs/widgets/graphicsview/dimgitems_p.h
+index 736634d912..3674f16bff 100644
+--- a/core/libs/widgets/graphicsview/dimgitems_p.h
++++ b/core/libs/widgets/graphicsview/dimgitems_p.h
+@@ -79,6 +79,16 @@ public:
+ 
+     GraphicsDImgItemPrivate() = default;
+ 
++    /**
++     * @note The destructor must be virtual: subclass private containers
++     * like DImgPreviewItemPrivate are deleted through a pointer to this
++     * base class in ~GraphicsDImgItem(), else the subclass destructor
++     * is skipped and C++14 sized deallocation passes the wrong size,
++     * which aborts under allocators enforcing it, like hardened_malloc.
++     * See bug #522748.
++     */
++    virtual ~GraphicsDImgItemPrivate() = default;
++
+     void init(GraphicsDImgItem* const q);
+ 
+ public:
+@@ -99,7 +109,9 @@ class DIGIKAM_EXPORT DImgPreviewItem::DImgPreviewItemPrivate : public GraphicsDI
+ {
+ public:
+ 
+-    DImgPreviewItemPrivate() = default;
++    DImgPreviewItemPrivate()           = default;
++    ~DImgPreviewItemPrivate() override = default;
++
+     void init(DImgPreviewItem* const q);
+ 
+ public:
+-- 
+GitLab
+

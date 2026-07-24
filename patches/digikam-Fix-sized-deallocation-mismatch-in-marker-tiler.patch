@@ -1,0 +1,100 @@
+From bf9c1416f274890ba82c6f7bbad29b7462283088 Mon Sep 17 00:00:00 2001
+From: Mikhail Hrechyn <elxreno@gmail.com>
+Date: Wed, 22 Jul 2026 18:22:22 +0300
+Subject: [PATCH] Fix map view crash with allocators enforcing sized
+ deallocation
+
+AbstractMarkerTiler::Tile has a non-virtual destructor, but the tile
+tree always deletes the ItemMarkerTiler::MyTile and
+GPSMarkerTiler::MyTile subclass objects through Tile pointers (the
+rootTile scoped pointer, the children loop in ~Tile() and
+Tile::deleteChild()). The subclass destructors are therefore never
+run, leaking markerIndices/imagesId, and the compiler emits C++14
+sized deallocation with sizeof(Tile) while the allocation has the
+size of the subclass. The glibc allocator ignores the size argument,
+but allocators that enforce it, like hardened_malloc which secureblue
+preloads into all Flatpak applications, abort with "fatal allocator
+error: sized deallocation mismatch (small)" as soon as the map view
+paints.
+
+Commit 90daa0b725 (Coverity CR 1504108) tried to fix this by making
+the destructor of the derived MyTile virtual, which gives MyTile a
+vtable pointer while Tile stays non-polymorphic. The Tile subobject
+then moves to a nonzero offset and deleting through a Tile pointer
+frees an interior pointer, which is the unit test crash that led to
+the revert in commit a0345e9209. The destructor must be virtual on
+the base class instead: this way the tiles are destroyed and
+deallocated completely and with the correct size everywhere.
+
+BUG: 522748
+FIXED-IN: 9.2.0
+---
+ .../geoiface/tiles/abstractmarkertiler.h          | 15 ++++++++++++++-
+ .../geoiface/tiles/itemmarkertiler.cpp            |  4 ++--
+ .../geolocation/mapsearches/gpsmarkertiler.cpp    |  7 ++-----
+ 3 files changed, 18 insertions(+), 8 deletions(-)
+
+diff --git a/core/utilities/geolocation/geoiface/tiles/abstractmarkertiler.h b/core/utilities/geolocation/geoiface/tiles/abstractmarkertiler.h
+index 2e442e1bc1..64962f19ff 100644
+--- a/core/utilities/geolocation/geoiface/tiles/abstractmarkertiler.h
++++ b/core/utilities/geolocation/geoiface/tiles/abstractmarkertiler.h
+@@ -68,7 +68,20 @@ public:
+     public:
+ 
+         Tile() = default;
+-        ~Tile();
++
++        /**
++         * @note The destructor must be virtual: tiles are created by the
++         * tileNew() factory of the subclasses and are always deleted
++         * through Tile pointers (rootTile, ~Tile(), deleteChild()).
++         * Making only the subclass destructor virtual moves the Tile
++         * subobject to a nonzero offset, so deleting through a Tile
++         * pointer frees an interior pointer and crashes. With no virtual
++         * destructor at all the subclass destructor is skipped (leaking
++         * its members) and C++14 sized deallocation passes the wrong
++         * size, which aborts under allocators enforcing it, like
++         * hardened_malloc. See bug #522748.
++         */
++        virtual ~Tile();
+ 
+     public:
+ 
+diff --git a/core/utilities/geolocation/geoiface/tiles/itemmarkertiler.cpp b/core/utilities/geolocation/geoiface/tiles/itemmarkertiler.cpp
+index 63f1c0152c..672b50e103 100644
+--- a/core/utilities/geolocation/geoiface/tiles/itemmarkertiler.cpp
++++ b/core/utilities/geolocation/geoiface/tiles/itemmarkertiler.cpp
+@@ -28,8 +28,8 @@ class Q_DECL_HIDDEN ItemMarkerTiler::MyTile : public Tile
+ {
+ public:
+ 
+-    MyTile()          = default;
+-    ~MyTile()         = default;      // No virtual destructor else crash at in unit-test.
++    MyTile()           = default;
++    ~MyTile() override = default;
+ 
+     void removeMarkerIndexOrInvalidIndex(const QModelIndex& indexToRemove);
+ 
+diff --git a/core/utilities/geolocation/mapsearches/gpsmarkertiler.cpp b/core/utilities/geolocation/mapsearches/gpsmarkertiler.cpp
+index 63f3c31066..c75dabfc8a 100644
+--- a/core/utilities/geolocation/mapsearches/gpsmarkertiler.cpp
++++ b/core/utilities/geolocation/mapsearches/gpsmarkertiler.cpp
+@@ -50,13 +50,10 @@ class Q_DECL_HIDDEN GPSMarkerTiler::MyTile : public Tile
+ {
+ public:
+ 
+-    MyTile()  = default;
++    MyTile()           = default;
++    ~MyTile() override = default;
+ 
+     QList<qlonglong> imagesId;
+-
+-private:
+-
+-    ~MyTile() = delete;
+ };
+ 
+ class Q_DECL_HIDDEN GPSMarkerTiler::Private
+-- 
+GitLab
+

@@ -103,8 +103,8 @@
                     "sources": [
                         {
                             "type": "archive",
-                            "url": "https://www.cpan.org/src/5.0/perl-5.42.2.tar.xz",
-                            "sha256": "0a585eeb9e363c0f80482ddb3571625250c2c86aeb408853e8ea50805cfb14bb",
+                            "url": "https://www.cpan.org/src/5.0/perl-5.44.0.tar.xz",
+                            "sha256": "505cf43912e9480495c344c70260452e32aa2a73c546a026b3f100053b23ce91",
                             "x-checker-data": {
                                 "type": "anitya",
                                 "project-id": 13599,
@@ -134,8 +134,8 @@
                     "sources": [
                         {
                             "type": "archive",
-                            "url": "https://archives.boost.io/release/1.90.0/source/boost_1_90_0.tar.bz2",
-                            "sha256": "49551aff3b22cbc5c5a9ed3dbc92f0e23ea50a0f7325b0d198b705e8ee3fc305",
+                            "url": "https://archives.boost.io/release/1.92.0/source/boost_1_92_0.tar.bz2",
+                            "sha256": "5c1d40cb8e19adbf740a4ec2da35b3e58f3f5804b1dce44deb53df72193cbc6c",
                             "x-checker-data": {
                                 "type": "anitya",
                                 "project-id": 6845,
@@ -210,8 +210,8 @@
                     "sources": [
                         {
                             "type": "archive",
-                            "url": "https://github.com/opencv/opencv/archive/4.13.0.tar.gz",
-                            "sha256": "1d40ca017ea51c533cf9fd5cbde5b5fe7ae248291ddf2af99d4c17cf8e13017d",
+                            "url": "https://github.com/opencv/opencv/archive/4.14.0.tar.gz",
+                            "sha256": "ee8fb9b30eb60850431b4656447080e3737b56e45719c92b67f245950609f86e",
                             "x-checker-data": {
                                 "type": "anitya",
                                 "project-id": 6615,
@@ -224,8 +224,8 @@
                         },
                         {
                             "type": "archive",
-                            "url": "https://github.com/opencv/opencv_contrib/archive/4.13.0.tar.gz",
-                            "sha256": "1e0077a4fd2960a7d2f4c9e49d6ba7bb891cac2d1be36d7e8e47aa97a9d1039b",
+                            "url": "https://github.com/opencv/opencv_contrib/archive/4.14.0.tar.gz",
+                            "sha256": "4f17abd1bc7f88e19c3380c8de7cbf2d863aced5b5ee8d8934cc7902b67d42c9",
                             "x-checker-data": {
                                 "type": "anitya",
                                 "project-id": 6615,
@@ -249,8 +249,8 @@
                     "sources": [
                         {
                             "type": "archive",
-                            "url": "https://github.com/benhoyt/inih/archive/refs/tags/r62.tar.gz",
-                            "sha256": "9c15fa751bb8093d042dae1b9f125eb45198c32c6704cd5481ccde460d4f8151",
+                            "url": "https://github.com/benhoyt/inih/archive/refs/tags/r63.tar.gz",
+                            "sha256": "5d7967de62c5bfdc4f9f5ab06ce44c9e498bae021c7dac5792c0696e76aa9963",
                             "x-checker-data": {
                                 "type": "anitya",
                                 "project-id": 11600,
@@ -291,8 +291,8 @@
                     "sources": [
                         {
                             "type": "archive",
-                            "url": "https://github.com/Exiv2/exiv2/archive/refs/tags/v0.28.8.tar.gz",
-                            "sha256": "ea51b0609f58a9afa063b60daa1539948b62247721e154f4fff0ad3aec9f9756",
+                            "url": "https://github.com/Exiv2/exiv2/archive/refs/tags/v0.28.9.tar.gz",
+                            "sha256": "700b76b97695b2fab4ef8c79619c68ae57d09e0c130724791cafbd39e0eb4aef",
                             "x-checker-data": {
                                 "type": "anitya",
                                 "project-id": 769,
@@ -364,8 +364,8 @@
                     "sources": [
                         {
                             "type": "archive",
-                            "url": "https://imagemagick.org/archive/releases/ImageMagick-7.1.2-25.tar.gz",
-                            "sha256": "c4ce2d982fbedf0347aeca804326308311d767c8da6a69e91ed39371f8de137b",
+                            "url": "https://github.com/ImageMagick/ImageMagick/archive/refs/tags/7.1.2-36.tar.gz",
+                            "sha256": "5ba807e38a6bcb7c3c96a166485e270c5017aaa6b166f0440dc4b2badf6e6167",
                             "x-checker-data": {
                                 "type": "anitya",
                                 "project-id": 1372,
@@ -448,8 +448,8 @@
                     "sources": [
                         {
                             "type": "archive",
-                            "url": "https://download.kde.org/stable/release-service/26.04.2/src/libksane-26.04.2.tar.xz",
-                            "sha256": "9266e5e33384da1cd7dc8a7fe236ff938e9f075bea9a20560884efcb7fb1c63b",
+                            "url": "https://download.kde.org/stable/release-service/26.08.3/src/libksane-26.08.3.tar.xz",
+                            "sha256": "13c53abde69919006d7ab73ce5b3316a1c815031a1a008e76aac01cdea626472",
                             "x-checker-data": {
                                 "type": "anitya",
                                 "project-id": 8763,
@@ -592,8 +592,8 @@
                                     "sources": [
                                         {
                                             "type": "archive",
-                                            "url": "https://poppler.freedesktop.org/poppler-26.06.0.tar.xz",
-                                            "sha256": "4cb4e5a3dc8cb5eec751c8a23c8ba19f61f96dedc0cd07d2aee6b0c8e2cf6ba4",
+                                            "url": "https://poppler.freedesktop.org/poppler-26.11.0.tar.xz",
+                                            "sha256": "41c32680160addf5a8dd7a830e4869c01e9f6bee1abb91e44fabd1ba9d7828fb",
                                             "x-checker-data": {
                                                 "type": "anitya",
                                                 "project-id": 3686,
@@ -644,8 +644,8 @@
                             "sources": [
                                 {
                                     "type": "archive",
-                                    "url": "https://download.kde.org/stable/release-service/26.04.2/src/ksanecore-26.04.2.tar.xz",
-                                    "sha256": "8f84a08f984055ced7a1a2051b9a2044d15c0a9523121a56aca66bfe5ab269d9",
+                                    "url": "https://download.kde.org/stable/release-service/26.08.3/src/ksanecore-26.08.3.tar.xz",
+                                    "sha256": "360f87193ed6dd6729e67ce09096df1743f892e13db43b6e03b02a8a036524dd",
                                     "x-checker-data": {
                                         "type": "anitya",
                                         "project-id": 8763,
@@ -746,8 +746,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://download.sourceforge.net/project/hugin/hugin/hugin-2025.0/hugin-2025.0.1.tar.bz2",
-                    "sha256": "7cf8eb33a6a8848cc7f816faf4bc88389228883d5513136dccb5cb243912ab79",
+                    "url": "https://download.sourceforge.net/project/hugin/hugin/hugin-2026.0/hugin-2026.0.0.tar.bz2",
+                    "sha256": "61de89179d97c2b601b4636ba17dfdcf25d423e75f6ad50f86acbdd9bff4dde4",
                     "x-checker-data": {
                         "type": "anitya",
                         "project-id": 1341,
@@ -771,8 +771,8 @@
                     "sources": [
                         {
                             "type": "archive",
-                            "url": "https://github.com/wxWidgets/wxWidgets/releases/download/v3.3.2/wxWidgets-3.3.2.tar.bz2",
-                            "sha256": "50a28cb668de47b0e006cd6ebed8cf4f76c1cac6116fb3c978c44478219103f2",
+                            "url": "https://github.com/wxWidgets/wxWidgets/releases/download/v3.2.12/wxWidgets-3.2.12.tar.bz2",
+                            "sha256": "a62719bb5e1dcc41c1a6fc1eecd499c7ee8521f70402c7b1bb3342a1e16344e0",
                             "x-checker-data": {
                                 "type": "anitya",
                                 "project-id": 5150,
@@ -818,8 +818,8 @@
                                 {
                                     "type": "git",
                                     "url": "https://github.com/AcademySoftwareFoundation/openexr.git",
-                                    "tag": "v3.4.12",
-                                    "commit": "4d22f773b88673eea92cdc57c2391fe9dceeabd5",
+                                    "tag": "v3.5.5",
+                                    "commit": "486e238dd28ba6fed22528005b05f9f15bef0cc0",
                                     "x-checker-data": {
                                         "type": "anitya",
                                         "project-id": 13289,
@@ -840,8 +840,8 @@
                                         {
                                             "type": "git",
                                             "url": "https://github.com/AcademySoftwareFoundation/Imath.git",
-                                            "tag": "v3.2.2",
-                                            "commit": "1e480d11cb98b032a2dece9b9a8730512effc7f6",
+                                            "tag": "v3.2.3",
+                                            "commit": "5f27ba266d3ea1565e912570c30b5eafc89959f1",
                                             "x-checker-data": {
                                                 "type": "anitya",
                                                 "project-id": 223366,
@@ -865,8 +865,8 @@
                                         {
                                             "type": "git",
                                             "url": "https://github.com/ebiggers/libdeflate",
-                                            "tag": "v1.25",
-                                            "commit": "c8c56a20f8f621e6a966b716b31f1dedab6a41e3",
+                                            "tag": "v1.26",
+                                            "commit": "92e6a0db9fa848d742f9eb286c92afc60f2c3dda",
                                             "x-checker-data": {
                                                 "type": "anitya",
                                                 "project-id": 242778,
@@ -890,8 +890,8 @@
                                         {
                                             "type": "git",
                                             "url": "https://github.com/aous72/OpenJPH",
-                                            "tag": "0.28.1",
-                                            "commit": "96996b055c39a6165ce5bc036d5ea77e24951008",
+                                            "tag": "0.33.0",
+                                            "commit": "345a8bcd1c7a3908e3870797057277660a412073",
                                             "x-checker-data": {
                                                 "type": "anitya",
                                                 "project-id": 375199,
@@ -1001,8 +1001,8 @@
                 {
                     "type": "git",
                     "url": "https://github.com/exiftool/exiftool.git",
-                    "tag": "13.59",
-                    "commit": "2200871d9cef988051d2a99d67df3bda6cbb30a8",
+                    "tag": "13.60",
+                    "commit": "980409314fddbd83d9092b5c160fafab7f67fd52",
                     "x-checker-data": {
                         "type": "anitya",
                         "project-id": 6175,
@@ -1179,8 +1179,8 @@
                         {
                             "type": "git",
                             "url": "https://github.com/fmtlib/fmt.git",
-                            "tag": "12.1.0",
-                            "commit": "407c905e45ad75fc29bf0f9bb7c5c2fd3475976f",
+                            "tag": "12.2.1",
+                            "commit": "208219daff58f2a7438f6931cc2ddc358acf33ef",
                             "x-checker-data": {
                                 "type": "anitya",
                                 "project-id": 11526,
@@ -1210,13 +1210,13 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://download.qt.io/official_releases/qt/6.10/6.10.3/submodules/qtbase-everywhere-src-6.10.3.tar.xz",
-                    "sha256": "383dc907816338f0cba72088a524c07458dfc69ce684ca9132fcc4fe91c24b0b",
+                    "url": "https://download.qt.io/official_releases/qt/6.11/6.11.3/submodules/qtbase-everywhere-src-6.11.3.tar.xz",
+                    "sha256": "46de0710b594945a5d446ae44354daa386141c6903c53781b2ca547bc62f8f8f",
                     "x-checker-data": {
                         "type": "html",
-                        "url": "https://invent.kde.org/packaging/flatpak-kde-runtime/-/raw/qt6.10/org.kde.Sdk.json.in",
-                        "version-pattern": "qtbase-everywhere-src-(6\\.10\\.\\d+)\\.tar",
-                        "url-template": "https://download.qt.io/official_releases/qt/6.10/$version/submodules/qtbase-everywhere-src-$version.tar.xz"
+                        "url": "https://invent.kde.org/packaging/flatpak-kde-runtime/-/raw/qt6.11/org.kde.Sdk.json.in",
+                        "version-pattern": "qtbase-everywhere-src-(6\\.11\\.\\d+)\\.tar",
+                        "url-template": "https://download.qt.io/official_releases/qt/6.11/$version/submodules/qtbase-everywhere-src-$version.tar.xz"
                     }
                 }
             ]

@@ -754,10 +754,6 @@
                         "stable-only": true,
                         "url-template": "https://download.sourceforge.net/project/hugin/hugin/hugin-$major.$minor/hugin-$version.tar.bz2"
                     }
-                },
-                {
-                    "type": "patch",
-                    "path": "patches/hugin-FindVIGRA-version-detection.patch"
                 }
             ],
             "modules": [
